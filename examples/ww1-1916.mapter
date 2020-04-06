@@ -1,0 +1,437 @@
+{
+	"version": 1,
+	"rows": 13,
+	"columns": 11,
+	"text grid": [
+		{
+			"summary": "Timeline of World War 1 - 1916"
+		},
+		{
+			"summary": "Western Front"
+		},
+		{
+			"summary": "Eastern Front"
+		},
+		{
+			"summary": "Italian Front"
+		},
+		{
+			"summary": "Caucasian Front"
+		},
+		{
+			"summary": "Middle Eastern Theatre"
+		},
+		{
+			"summary": "Balkan Theatre"
+		},
+		{
+			"summary": "African Theatre"
+		},
+		{
+			"summary": "Naval"
+		},
+		{
+			"summary": "Air"
+		},
+		{
+			"summary": "Politics"
+		},
+		{
+			"summary": "January"
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Battles of Wadi and Hanna, a phase of the First Siege of Kut. "
+		},
+		{
+			"summary": "Austro-Hungarian offensive against Montenegro, which capitulates. "
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Reinhard Scheer is appointed commander of Germany's Hochseeflotte."
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Conscription introduced in the United Kingdom by the Military Service Act 1916."
+		},
+		{
+			"summary": "February"
+		},
+		{
+			"summary": "The battle of Verdun begins"
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Trebizond Campaign."
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Battle of Salaita Hill. "
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "March"
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Battle of Dujaila: a British attempt to relieve Kut failed. "
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Battle of Kahe. "
+		},
+		{
+			"summary": "Germany resumes unrestricted submarine warfare. "
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Germany and Austria-Hungary declare war on Portugal. Portugal officially enters the war. "
+		},
+		{
+			"summary": "April"
+		},
+		{
+			"summary": "Gas attacks at Hulluch. "
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "The British forces under siege at Kut surrender to the Ottomans, first siege of Kut ends. "
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Easter Rising by Irish rebels for independence from the United Kingdom. "
+		},
+		{
+			"summary": "May"
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Austro-Hungarian Strafexpedition in Trentino."
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Russian forces in Persia link up with the British in Mesopotamia, but it is too late. "
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Battle of Kondoa Irangi."
+		},
+		{
+			"summary": "Battle of Jutland between Britain's Grand Fleet and Germany's Hochseeflotte. "
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Signing of the Sykes-Picot Agreement between Britain and France defining their proposed spheres in the Middle East. "
+		},
+		{
+			"summary": "June"
+		},
+		{
+			"summary": "Battle of Mont Sorrel. Battle of the Boar's Head, diversion from the Battle of the Somme which began the next day. "
+		},
+		{
+			"summary": "The Brusilov Offensive begins. "
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "The Arab Revolt in Hejaz begins. "
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Italy: Paolo Boselli succeeds Antonio Salandra as Prime Minister. "
+		},
+		{
+			"summary": "July"
+		},
+		{
+			"summary": "The Battle of the Somme begins. "
+		},
+		{
+			"summary": "Battle of Kostiuchnowka. \n\nBattle of Kowel. "
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Battle of Erzincan. "
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "The Social Democratic Party wins a majority in the parliament of the Russian-ruled Grand Duchy of Finland. "
+		},
+		{
+			"summary": "August"
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Sixth Battle of the Isonzo. The Italians capture Gorizia"
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Conquest of Romania by Central Powers. "
+		},
+		{
+			"summary": "Battle of Mlali. "
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Italy declares war on Germany."
+		},
+		{
+			"summary": "September"
+		},
+		{
+			"summary": "Battles of Guillemont, Ginchy, Flers-Courcelette, Morval and Thiepval Ridge (parts of the Battle of the Somme) "
+		},
+		{
+			"summary": "The Brusilov Offensive ends with a substantial Russian success. "
+		},
+		{
+			"summary": "Seventh Battle of the Isonzo"
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Battles of Kisaki, Tabora and Dutumi"
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "October"
+		},
+		{
+			"summary": "Battles of Le Transloy and Ancre Heights (parts of the Battle of the Somme). The French recapture Fort Douaumont near Verdun. "
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Eighth Battle of the Isonzo. "
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "November"
+		},
+		{
+			"summary": "The Battle of the Somme ends with enormous casualties and an Anglo-French advantage. "
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Ninth Battle of the Isonzo."
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Battle of Matamondo. "
+		},
+		{
+			"summary": "David Beatty replaces John Jellicoe as commander of the Grand Fleet. Jellicoe becomes First Lord of the Sea. "
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Francis Joseph I, Emperor of Austria and King of Hungary, dies and is succeeded by Charles I. "
+		},
+		{
+			"summary": "December"
+		},
+		{
+			"summary": "Robert Nivelle replaces Joseph Joffre as Commander-in-Chief of the French Army. "
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Allies capture Yanbu. "
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "Kaocen Revolt: The Tuareg besiege the French garrison at Agadez. "
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": ""
+		},
+		{
+			"summary": "David Lloyd George becomes Prime Minister"
+		}
+	],
+	"general notes": "This data is taken from Wikipedia - https://en.wikipedia.org/wiki/Timeline_of_World_War_I#1916\n\n\"This is a summary of the events of World War one in chronological order. It has been color coded by theatres/fronts to provide a clearer understanding of what events were happening in what places during World War One. \"\n\nNot all of the events from that Wiki page have been used here\n\nNote the licence of this information:\n\nText is available under the Creative Commons Attribution-ShareAlike License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.\n\n( https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License )"
+}
