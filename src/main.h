@@ -28,6 +28,8 @@
 #define MIN_GRID_COLUMNS 1
 #define DEFAULT_ROWS 5
 #define DEFAULT_COLUMNS 5
+#define INITIAL_ROW_HIGHLIGHT 0
+#define INITIAL_COLUMN_HIGHLIGHT 0
 
 // Maximum path & file lengths
 #define APP_NAME_SIZE 256
@@ -58,6 +60,7 @@ typedef struct {
     GtkWidget *w_current_edit_text_element;
     // Pointers to widgets
     GtkWidget *w_window_main;
+    GtkWidget *w_grid_container; // Scrolled window
     GtkWidget *w_grid_viewport;
     GtkWidget *w_text_grid;  // Dynamically added
     GtkWidget *w_dlg_save_as;
@@ -75,6 +78,8 @@ typedef struct {
     GtkWidget *b_rdbtn_row;
     GtkWidget *b_chkbtn_export_series;
     GtkWidget *w_dlg_export;
+    GtkWidget *l_row_id_label;
+    GtkWidget *l_column_id_label;
     // Current open file path
     gchar app_name[ APP_NAME_SIZE ];
     gchar current_file_path[ MAX_PATHSIZE ];

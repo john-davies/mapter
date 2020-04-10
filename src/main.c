@@ -24,6 +24,7 @@
 #include "file.h"
 #include "grid.h"
 #include "util.h"
+#include "css.h"
 
 // --------------------------------------------------------------------------
 // on_window_main_destroy
@@ -58,6 +59,7 @@ int main( int argc, char *argv[] )
     window = GTK_WIDGET(gtk_builder_get_object(builder, "window_main"));
     // Pointers to widgets here
     widgets->w_window_main = window;
+    widgets->w_grid_container  = GTK_WIDGET(gtk_builder_get_object(builder, "grid_container"));
     widgets->w_grid_viewport  = GTK_WIDGET(gtk_builder_get_object(builder, "grid_viewport"));
     widgets->w_dlg_open = GTK_WIDGET(gtk_builder_get_object(builder, "dlg_open"));
     widgets->w_dlg_save_as = GTK_WIDGET(gtk_builder_get_object(builder, "dlg_save_as"));
@@ -74,6 +76,8 @@ int main( int argc, char *argv[] )
     widgets->b_rdbtn_row = GTK_WIDGET(gtk_builder_get_object(builder, "rdbtn_row"));
     widgets->w_dlg_export = GTK_WIDGET(gtk_builder_get_object(builder, "dlg_export"));
     widgets->b_chkbtn_export_series = GTK_WIDGET(gtk_builder_get_object(builder, "chkbtn_export_series"));
+    widgets->l_row_id_label  = GTK_WIDGET(gtk_builder_get_object(builder, "row_id_label"));
+    widgets->l_column_id_label  = GTK_WIDGET(gtk_builder_get_object(builder, "column_id_label"));
 
      // Widgets pointer are passed to all widget handler functions as the user_data parameter
     gtk_builder_connect_signals( builder, widgets );
@@ -102,9 +106,27 @@ int main( int argc, char *argv[] )
     }
 
     gtk_widget_show_all(window);
+
+    // Set up CSS
+    GtkCssProvider *provider;
+    GdkDisplay *display;
+    GdkScreen *screen;
+    GError *error = NULL;
+
+    provider = gtk_css_provider_new();
+    display = gdk_display_get_default();
+    screen = gdk_display_get_default_screen( display );
+    gtk_style_context_add_provider_for_screen( screen, GTK_STYLE_PROVIDER (provider), GTK_STYLE_PROVIDER_PRIORITY_APPLICATION );
+    gtk_css_provider_load_from_data( provider, mapter_CSS, -1, &error );
+    if( error != NULL )
+    {
+      g_info( "  Error loading CSS: %s", error->message );
+    }
+    g_object_unref( provider );
+
     gtk_main();
     // Free up widget structure memory
-    g_slice_free(app_widgets, widgets);
+    g_slice_free( app_widgets, widgets );
 
     return EXIT_SUCCESS;
 }

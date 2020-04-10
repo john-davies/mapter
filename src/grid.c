@@ -19,6 +19,7 @@
 #include "main.h"
 #include "grid.h"
 #include "util.h"
+#include "css.h"
 
 // --------------------------------------------------------------------------
 // add_row
@@ -242,9 +243,56 @@ void on_btn_edit_close_clicked( GtkButton *button, app_widgets *app_wdgts )
 }
 
 // --------------------------------------------------------------------------
+// edit_cell
+//
+// Launches the editor on the selected cell
+//
+// --------------------------------------------------------------------------
+void edit_cell( gint row, gint column, app_widgets *app_wdgts )
+{
+  g_info( "grid.c / edit_cell");
+  g_info( "  Row: %d, Column: %d", row, column );
+  GtkWidget *child = gtk_grid_get_child_at( GTK_GRID( app_wdgts->w_text_grid ),
+                              column, row ); // GtkEventBox
+  child = gtk_bin_get_child( GTK_BIN( child ) ); // GtkFrame
+  app_wdgts->w_current_edit_text_element = gtk_bin_get_child( GTK_BIN( child ) ); // GtkTextView
+  // Copy current text to edit window
+  gtk_text_buffer_set_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_summary_view ) ),
+                        gtk_label_get_text( GTK_LABEL( app_wdgts->w_current_edit_text_element ) ),
+                        -1 );
+  // Show the Edit window
+  gtk_widget_show( app_wdgts->w_editor_window );
+  // Put the keyboard focus in the text window
+  gtk_window_present( GTK_WINDOW( app_wdgts->w_editor_window ) );
+  gtk_widget_grab_focus( app_wdgts->w_edit_summary_view );
+  g_info( "grid.c / ~edit_cell");
+}
+
+// --------------------------------------------------------------------------
+// get_cell_text
+//
+// Gets the text from the cell at row, column
+// Can be limited to length or -1 for all text
+// --------------------------------------------------------------------------
+
+const gchar *get_cell_text( gint row, gint column, app_widgets *app_wdgts )
+{
+  g_info( "grid.c / get_cell_text");
+  g_info( "  Row: %d, Column: %d", row, column );
+  GtkWidget *child = gtk_grid_get_child_at( GTK_GRID( app_wdgts->w_text_grid ),
+                              column, row ); // GtkEventBox
+  child = gtk_bin_get_child( GTK_BIN( child ) ); // GtkFrame
+  child = gtk_bin_get_child( GTK_BIN( child ) ); // GtkTextView
+  g_info( "grid.c / ~get_cell_text");
+  // Return pointer to label text
+  return( gtk_label_get_text( GTK_LABEL( child ) ) );
+}
+
+// --------------------------------------------------------------------------
 // text_grid_click
 //
 // Entry point for clicks on the text grid
+//    Single click updates the highlight location
 //    Double clicks are passed to the text editing functions
 //    Right clicks are passed to the grid editing functions
 //    Everything else is ignored
@@ -257,32 +305,34 @@ void text_grid_click( GtkWidget *source, GdkEventButton *event, app_widgets *app
   gint column;
 
   g_info( "grid.c / text_grid_click");
-  if( ( event->type == GDK_DOUBLE_BUTTON_PRESS ) && ( event->button == 1 ) )
+  find_grid_coordinates( source, app_wdgts->w_text_grid, &row, &column );
+  if( ( event->type == GDK_BUTTON_PRESS ) && ( event->button == 1 ) )
+  {
+    // Single click
+    g_info( "  Single click: Row: %d, Column: %d", row, column );
+    // Move the highlight if this is a different cell
+    if( ( row != app_wdgts->edit_grid_row ) || ( column != app_wdgts->edit_grid_column ) )
+    {
+      highlight_cell( app_wdgts->edit_grid_row, app_wdgts->edit_grid_column,
+                      row, column,
+                      FALSE, app_wdgts );
+      // Update the coordinates
+      app_wdgts->edit_grid_row = row;
+      app_wdgts->edit_grid_column = column;
+    }
+  }
+  else if( ( event->type == GDK_DOUBLE_BUTTON_PRESS ) && ( event->button == 1 ) )
   {
     // Double click
-    find_grid_coordinates( source, app_wdgts->w_text_grid, &row, &column );
-    // Set up temporary editing coordinates
+    // Update editing coordinates
     app_wdgts->edit_grid_row = row;
     app_wdgts->edit_grid_column = column;
     g_info( "  Double click: Row: %d, Column: %d", row, column );
-    GtkWidget *child = gtk_grid_get_child_at( GTK_GRID( app_wdgts->w_text_grid ),
-                                column, row ); // GtkEventBox
-    child = gtk_bin_get_child( GTK_BIN( child ) ); // GtkFrame
-    app_wdgts->w_current_edit_text_element = gtk_bin_get_child( GTK_BIN( child ) ); // GtkTextView
-    // Copy current text to edit window
-    gtk_text_buffer_set_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_summary_view ) ),
-                          gtk_label_get_text( GTK_LABEL( app_wdgts->w_current_edit_text_element ) ),
-                          -1 );
-    // Show the Edit window
-    gtk_widget_show( app_wdgts->w_editor_window );
-    // Put the keyboard focus in the text window
-    gtk_window_present( GTK_WINDOW( app_wdgts->w_editor_window ) );
-    gtk_widget_grab_focus( app_wdgts->w_edit_summary_view );
+    edit_cell( row, column, app_wdgts );
   }
   else if( ( event->type == GDK_BUTTON_PRESS ) && ( event->button == 3 ) )
   {
     // Right click
-    find_grid_coordinates( source, app_wdgts->w_text_grid, &row, &column );
     g_info( "  Right click: Row: %d, Column: %d", row, column );
     // Set up temporary editing coordinates
     app_wdgts->edit_grid_row = row;
@@ -336,6 +386,195 @@ void text_grid_click( GtkWidget *source, GdkEventButton *event, app_widgets *app
   }
   g_info( "grid.c / ~text_grid_click");
 }
+// --------------------------------------------------------------------------
+// highlight_cell
+//
+// Moves the highlight from the current cell to the new cell
+// Move the scroll bars to match
+//
+// --------------------------------------------------------------------------
+
+void highlight_cell( gint current_r, gint current_c, gint new_r, gint new_c, gboolean scroll, app_widgets *app_wdgts )
+{
+  GtkStyleContext *context;
+
+  // Remove the current highlight - get the event box
+  GtkWidget *child = gtk_grid_get_child_at( GTK_GRID( app_wdgts->w_text_grid ), current_c, current_r );
+  // Now get the frame
+  child = gtk_bin_get_child( GTK_BIN( child ) );
+  context = gtk_widget_get_style_context( child );
+  gtk_style_context_remove_class( context, "highlight" );
+
+  // Add the new highlight, source is the event box
+  // so find the child to find the frame
+  child = gtk_grid_get_child_at( GTK_GRID( app_wdgts->w_text_grid ), new_c, new_r );
+  // Set focus to the event box
+  gtk_widget_grab_focus( child );
+  child = gtk_bin_get_child( GTK_BIN( child ) );
+  context = gtk_widget_get_style_context( child );
+  gtk_style_context_add_class( context, "highlight" );
+  // If required scroll to show the focus - move the scroll bars in the same proportion as
+  // the current cell is to the grid
+  if( scroll == TRUE )
+  {
+    // Horizontal
+    GtkAdjustment *adjustment = gtk_scrolled_window_get_hadjustment( GTK_SCROLLED_WINDOW( app_wdgts->w_grid_container ) );
+    gdouble lower = gtk_adjustment_get_lower( adjustment );
+    gdouble upper = gtk_adjustment_get_upper( adjustment );
+    gdouble page_size = gtk_adjustment_get_page_size( adjustment );
+    gdouble range = upper - page_size - lower;
+    gdouble value = ( ( (gdouble)new_c / ( (gdouble)app_wdgts->current_grid_columns - 1 ) ) * range ) + lower;
+    gtk_adjustment_set_value( adjustment, value );
+    // Vertical
+    adjustment = gtk_scrolled_window_get_vadjustment( GTK_SCROLLED_WINDOW( app_wdgts->w_grid_container ) );
+    lower = gtk_adjustment_get_lower( adjustment );
+    upper = gtk_adjustment_get_upper( adjustment );
+    page_size = gtk_adjustment_get_page_size( adjustment );
+    range = upper - page_size - lower;
+    value = ( ( (gdouble)new_r / ( (gdouble)app_wdgts->current_grid_rows - 1 ) ) * range ) + lower;
+    gtk_adjustment_set_value( adjustment, value );
+  }
+
+  // Update the coordinate labels
+  gtk_label_set_text( GTK_LABEL( app_wdgts->l_row_id_label ), get_cell_text( new_r, 0, app_wdgts ) );
+  gtk_label_set_text( GTK_LABEL( app_wdgts->l_column_id_label ), get_cell_text( 0, new_c, app_wdgts ) );
+}
+
+// --------------------------------------------------------------------------
+// text_grid_keypress
+//
+// Processes the keyboard presses on the text grid
+//
+// --------------------------------------------------------------------------
+
+void text_grid_keypress( GtkWidget *source, GdkEventKey *event, app_widgets *app_wdgts )
+{
+  gint row;
+  gint column;
+
+  find_grid_coordinates( source, app_wdgts->w_text_grid, &row, &column );
+  g_print( "text_grid_click, row: %d, column: %d, current_row: %d, current_column: %d\n",
+            row, column, app_wdgts->edit_grid_row, app_wdgts->edit_grid_column );
+  switch( event->keyval )
+  {
+    case GDK_KEY_Return:
+      g_print( "Open editor on row: %d, column: %d\n", app_wdgts->edit_grid_row, app_wdgts->edit_grid_column );
+      // Show the Edit window
+      edit_cell( row, column, app_wdgts );
+      break;
+
+    case GDK_KEY_Left:
+      if( app_wdgts->edit_grid_column > 0 )
+      {
+        if( ( event->state & GDK_SHIFT_MASK ) == 0 )
+        {
+          // No shift key so just move left
+          g_print( "Left\n" );
+          highlight_cell( app_wdgts->edit_grid_row, app_wdgts->edit_grid_column,
+                          app_wdgts->edit_grid_row, app_wdgts->edit_grid_column-1,
+                          TRUE, app_wdgts );
+          app_wdgts->edit_grid_column--;
+        }
+        else
+        {
+          // Shift key so move to column 0
+          g_print( "Shift Left\n" );
+          highlight_cell( app_wdgts->edit_grid_row, app_wdgts->edit_grid_column,
+                          app_wdgts->edit_grid_row, 0,
+                          TRUE, app_wdgts );
+          app_wdgts->edit_grid_column = 0;
+        }
+      }
+      break;
+    case GDK_KEY_Up:
+      if( app_wdgts->edit_grid_row > 0 )
+      {
+        if( ( event->state & GDK_SHIFT_MASK ) == 0 )
+        {
+          // No shift key so just move up
+          g_print( "Up\n" );
+          highlight_cell( app_wdgts->edit_grid_row, app_wdgts->edit_grid_column,
+                          app_wdgts->edit_grid_row-1, app_wdgts->edit_grid_column,
+                          TRUE, app_wdgts );
+          app_wdgts->edit_grid_row--;
+        }
+        else
+        {
+          // Shift key so move to row 0
+          g_print( "Shift Up\n" );
+          highlight_cell( app_wdgts->edit_grid_row, app_wdgts->edit_grid_column,
+                          0, app_wdgts->edit_grid_column,
+                          TRUE, app_wdgts );
+          app_wdgts->edit_grid_row = 0;
+        }
+      }
+      break;
+    case GDK_KEY_Right:
+      if( app_wdgts->edit_grid_column < app_wdgts->current_grid_columns-1 )
+      {
+        if( ( event->state & GDK_SHIFT_MASK ) == 0 )
+        {
+          // No shift key so just move right
+          g_print( "Right\n" );
+          highlight_cell( app_wdgts->edit_grid_row, app_wdgts->edit_grid_column,
+                          app_wdgts->edit_grid_row, app_wdgts->edit_grid_column+1,
+                          TRUE, app_wdgts );
+          app_wdgts->edit_grid_column++;
+        }
+        else
+        {
+          // Shift key so move to last column
+          g_print( "Shift Right\n" );
+          highlight_cell( app_wdgts->edit_grid_row, app_wdgts->edit_grid_column,
+                          app_wdgts->edit_grid_row, app_wdgts->current_grid_columns - 1,
+                          TRUE, app_wdgts );
+          app_wdgts->edit_grid_column = app_wdgts->current_grid_columns - 1;
+        }
+      }
+      break;
+    case GDK_KEY_Down:
+      if( app_wdgts->edit_grid_row < app_wdgts->current_grid_rows-1 )
+      {
+        if( ( event->state & GDK_SHIFT_MASK ) == 0 )
+        {
+          // No shift key so just move down
+          g_print( "Down\n" );
+          highlight_cell( app_wdgts->edit_grid_row, app_wdgts->edit_grid_column,
+                          app_wdgts->edit_grid_row+1, app_wdgts->edit_grid_column,
+                          TRUE, app_wdgts );
+          app_wdgts->edit_grid_row++;
+        }
+        else
+        {
+          // Shift key so move to bottom row
+          g_print( "Shift Down\n" );
+          highlight_cell( app_wdgts->edit_grid_row, app_wdgts->edit_grid_column,
+                          app_wdgts->current_grid_rows-1, app_wdgts->edit_grid_column,
+                          TRUE, app_wdgts );
+          app_wdgts->edit_grid_row = app_wdgts->current_grid_rows - 1;
+        }
+      }
+      break;
+    case GDK_KEY_Home:
+      g_print( "Home\n" );
+      highlight_cell( app_wdgts->edit_grid_row, app_wdgts->edit_grid_column,
+                      0, 0,
+                      TRUE, app_wdgts );
+      app_wdgts->edit_grid_row = 0;
+      app_wdgts->edit_grid_column = 0;
+      break;
+    case GDK_KEY_End:
+      g_print( "End\n" );
+      highlight_cell( app_wdgts->edit_grid_row, app_wdgts->edit_grid_column,
+                      app_wdgts->current_grid_rows - 1, app_wdgts->current_grid_columns - 1,
+                      TRUE, app_wdgts );
+      app_wdgts->edit_grid_row = app_wdgts->current_grid_rows - 1;
+      app_wdgts->edit_grid_column = app_wdgts->current_grid_columns - 1;
+      break;
+    default:
+      break;
+  }
+}
 
 // --------------------------------------------------------------------------
 // fill_grid
@@ -382,9 +621,6 @@ void fill_grid( gint new_rows, gint new_columns, app_widgets *app_wdgts )
             // Widgets for hierarchy of each cell
             GtkWidget *e_box = gtk_event_box_new();
             GtkWidget *w_frame = gtk_frame_new( NULL );
-            //gchar temp_str[256];
-            //sprintf( temp_str, "This is label: %d", ( r * new_columns ) + c );
-            //GtkWidget *w_text = gtk_label_new( temp_str );
             GtkWidget *w_text = gtk_label_new( NULL );
 
             gtk_label_set_line_wrap( GTK_LABEL( w_text ), TRUE );
@@ -392,7 +628,21 @@ void fill_grid( gint new_rows, gint new_columns, app_widgets *app_wdgts )
             gtk_container_add ( GTK_CONTAINER( w_frame ), w_text );
             gtk_container_add ( GTK_CONTAINER( e_box ), w_frame );
             g_signal_connect( e_box, "button-press-event", G_CALLBACK( text_grid_click ), app_wdgts );
+            g_signal_connect( e_box, "key-press-event", G_CALLBACK( text_grid_keypress ), app_wdgts );
+            // Make the event box focussable for the navigation highlight
+            gtk_widget_set_can_focus( e_box, TRUE );
 
+            GtkStyleContext *context;
+            context = gtk_widget_get_style_context( w_frame );
+            // Set the initial highlight to the top left hand corner
+            if( ( r == INITIAL_ROW_HIGHLIGHT ) && ( c == INITIAL_COLUMN_HIGHLIGHT ) )
+            {
+              gtk_style_context_add_class( context, "highlight" );
+              gtk_widget_grab_focus( e_box );
+              app_wdgts->edit_grid_row = INITIAL_ROW_HIGHLIGHT;
+              app_wdgts->edit_grid_column = INITIAL_COLUMN_HIGHLIGHT;
+            }
+            // And add to the grid
             gtk_grid_attach( GTK_GRID( app_wdgts->w_text_grid ), e_box, c, r, 1, 1 );
           }
         }
