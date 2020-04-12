@@ -34,7 +34,7 @@ void edit_cell( gint, gint, app_widgets * );
 const gchar *get_cell_text( gint, gint, app_widgets * );
 void text_grid_click( GtkWidget *, GdkEventButton *, app_widgets * );
 void highlight_cell( gint, gint, gint, gint, gboolean, app_widgets * );
-void text_grid_keypress( GtkWidget *, GdkEventKey *, app_widgets * );
+gboolean text_grid_keypress( GtkWidget *, GdkEventKey *, app_widgets * );
 
 void fill_grid( gint, gint, app_widgets * );
 
