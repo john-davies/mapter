@@ -449,8 +449,30 @@ void highlight_cell( gint current_r, gint current_c, gint new_r, gint new_c, gbo
   }
 
   // Update the coordinate labels
-  gtk_label_set_text( GTK_LABEL( app_wdgts->l_row_id_label ), get_cell_text( new_r, 0, app_wdgts ) );
-  gtk_label_set_text( GTK_LABEL( app_wdgts->l_column_id_label ), get_cell_text( 0, new_c, app_wdgts ) );
+  if( ( new_r == 0 ) && ( new_c == 0 ) )
+  {
+    // If it's the top left hand cell then don't show anything
+    gtk_label_set_text( GTK_LABEL( app_wdgts->l_row_id_label ), "" );
+    gtk_label_set_text( GTK_LABEL( app_wdgts->l_column_id_label ), "" );
+  }
+  else if( new_r == 0 )
+  {
+    // Top row so just show the series name
+    gtk_label_set_text( GTK_LABEL( app_wdgts->l_row_id_label ), "" );
+    gtk_label_set_text( GTK_LABEL( app_wdgts->l_column_id_label ), get_cell_text( 0, new_c, app_wdgts ) );
+  }
+  else if( new_c == 0 )
+  {
+    // Left column so just show the chapter
+    gtk_label_set_text( GTK_LABEL( app_wdgts->l_row_id_label ), get_cell_text( new_r, 0, app_wdgts ) );
+    gtk_label_set_text( GTK_LABEL( app_wdgts->l_column_id_label ), "" );
+  }
+  else
+  {
+    // Otherwise show the row and column headers
+    gtk_label_set_text( GTK_LABEL( app_wdgts->l_row_id_label ), get_cell_text( new_r, 0, app_wdgts ) );
+    gtk_label_set_text( GTK_LABEL( app_wdgts->l_column_id_label ), get_cell_text( 0, new_c, app_wdgts ) );
+  }
   g_info( "grid.c / ~highlight_cell");
 }
 
