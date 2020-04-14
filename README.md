@@ -49,6 +49,8 @@ The grid tab has four main sections as described below. Double click on any of t
 1. The column headings are used to describe the series or themes that flow through the work.
 1. The row headings are used to define the chapter headings
 1. The rest of the grid is for each of the sections mapping the theme/series to the chapter.
+1. The currently selected cell is shown with a highlight. The selection can be moved with the arrow keys or by clicking with the mouse. ( "Home", "End", shift up-arrow and shift down-arrow also work ). Hitting Return will bring up the editor for the selected cell.
+1. The "Chapter" and "Series" of the selected cell are shown at the bottom. This makes navigation easier when the row and column headers are scrolled off the screen.
 
 _For the export it is possible to swap the order such that the column headings are the chapter titles etc. see below_
 
@@ -60,7 +62,7 @@ The notes tab is a simple free format text window.
 
 ### Edit Window
 
-Double clicking on any of the cells brings up the edit window:
+Double clicking on any of the cells or pressing Return on the highlighted cell brings up the edit window:
 
 ![Edit Window](/doc-images/edit.png)
 
