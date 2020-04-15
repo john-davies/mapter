@@ -68,6 +68,8 @@ void add_row_above( GtkWidget *source, app_widgets *app_wdgts )
   g_info( "grid.c / add_row_above");
   add_row( app_wdgts, app_wdgts->edit_grid_row );
   g_info( "  Add row at: %d", app_wdgts->edit_grid_row );
+  // Update the position of the highlighted cell
+  app_wdgts->edit_grid_row++;
   g_info( "grid.c / ~add_row_above");
 }
 
@@ -97,10 +99,27 @@ void add_row_below( GtkWidget *source, app_widgets *app_wdgts )
 void delete_row( GtkWidget *source, app_widgets *app_wdgts )
 {
   g_info( "grid.c / delete_row");
+  gint delete_row = app_wdgts->edit_grid_row;
   if( app_wdgts->current_grid_rows > 1 )
   {
-    gtk_grid_remove_row( GTK_GRID( app_wdgts->w_text_grid ), app_wdgts->edit_grid_row );
     g_info( "  Delete row: %d", app_wdgts->edit_grid_row );
+    // Move the highlight. If this is row 0 then move down
+    // otherwise move up
+    if( app_wdgts->edit_grid_row == 0 )
+    {
+      highlight_cell( app_wdgts->edit_grid_row, app_wdgts->edit_grid_column,
+                      app_wdgts->edit_grid_row + 1, app_wdgts->edit_grid_column,
+                      TRUE, app_wdgts );
+    }
+    else
+    {
+      highlight_cell( app_wdgts->edit_grid_row, app_wdgts->edit_grid_column,
+                      app_wdgts->edit_grid_row - 1, app_wdgts->edit_grid_column,
+                      TRUE, app_wdgts );
+      // Correct the highlight location
+      app_wdgts->edit_grid_row--;
+    }
+    gtk_grid_remove_row( GTK_GRID( app_wdgts->w_text_grid ), delete_row );
     app_wdgts->current_grid_rows--;
     g_info( "  New row count: %d", app_wdgts->current_grid_rows );
   }
@@ -160,6 +179,8 @@ void add_column_left( GtkWidget *source, app_widgets *app_wdgts )
   g_info( "grid.c / add_column_left");
   add_column( app_wdgts, app_wdgts->edit_grid_column );
   g_info( "  Add column at: %d", app_wdgts->edit_grid_column );
+  // Update the position of the highlighted cell
+  app_wdgts->edit_grid_column++;
   g_info( "grid.c / ~add_column_left");
 }
 
@@ -189,10 +210,27 @@ void add_column_right( GtkWidget *source, app_widgets *app_wdgts )
 void delete_column( GtkWidget *source, app_widgets *app_wdgts )
 {
   g_info( "grid.c / delete_column");
+  gint delete_column = app_wdgts->edit_grid_column;
   if( app_wdgts->current_grid_columns > 1 )
   {
     g_info( "  Delete column: %d", app_wdgts->edit_grid_column );
-    gtk_grid_remove_column( GTK_GRID( app_wdgts->w_text_grid ), app_wdgts->edit_grid_column );
+    // Move the highlight. If this is column 0 then move to the right
+    // otherwise move to the left
+    if( app_wdgts->edit_grid_column == 0 )
+    {
+      highlight_cell( app_wdgts->edit_grid_row, app_wdgts->edit_grid_column,
+                      app_wdgts->edit_grid_row, app_wdgts->edit_grid_column + 1,
+                      TRUE, app_wdgts );
+    }
+    else
+    {
+      highlight_cell( app_wdgts->edit_grid_row, app_wdgts->edit_grid_column,
+                      app_wdgts->edit_grid_row, app_wdgts->edit_grid_column - 1,
+                      TRUE, app_wdgts );
+      // Correct the highlight location
+      app_wdgts->edit_grid_column--;
+    }
+    gtk_grid_remove_column( GTK_GRID( app_wdgts->w_text_grid ), delete_column );
     app_wdgts->current_grid_columns--;
     g_info( "  New column count: %d", app_wdgts->current_grid_columns );
   }
@@ -334,9 +372,16 @@ void text_grid_click( GtkWidget *source, GdkEventButton *event, app_widgets *app
   {
     // Right click
     g_info( "  Right click: Row: %d, Column: %d", row, column );
-    // Set up temporary editing coordinates
-    app_wdgts->edit_grid_row = row;
-    app_wdgts->edit_grid_column = column;
+    // Move the highlight if this is a different cell
+    if( ( row != app_wdgts->edit_grid_row ) || ( column != app_wdgts->edit_grid_column ) )
+    {
+      highlight_cell( app_wdgts->edit_grid_row, app_wdgts->edit_grid_column,
+                      row, column,
+                      TRUE, app_wdgts );
+      // Update the coordinates
+      app_wdgts->edit_grid_row = row;
+      app_wdgts->edit_grid_column = column;
+    }
     // Show popup menu
     // For now this is built manually because of problems with the Glade version
     GtkWidget *option;
