@@ -69,7 +69,9 @@ int main( int argc, char *argv[] )
     widgets->w_spin_columns = GTK_WIDGET(gtk_builder_get_object(builder, "spin_columns"));
     widgets->w_grid_right_click_menu = GTK_WIDGET(gtk_builder_get_object(builder, "grid_right_click_menu"));
     widgets->w_editor_window = GTK_WIDGET(gtk_builder_get_object(builder, "editor_window"));
-    widgets->w_edit_summary_view = GTK_WIDGET(gtk_builder_get_object(builder, "edit_summary_view"));
+    widgets->w_edit_summary = GTK_WIDGET(gtk_builder_get_object(builder, "edit_summary"));
+    widgets->w_edit_heading = GTK_WIDGET(gtk_builder_get_object(builder, "edit_heading"));
+    widgets->w_edit_body = GTK_WIDGET(gtk_builder_get_object(builder, "edit_body"));
     widgets->w_notes_textview = GTK_WIDGET(gtk_builder_get_object(builder, "notes_textview"));
     widgets->w_dlg_export_options = GTK_WIDGET(gtk_builder_get_object(builder, "dlg_export_options"));
     widgets->b_chkbtn_export_title = GTK_WIDGET(gtk_builder_get_object(builder, "chkbtn_export_title"));

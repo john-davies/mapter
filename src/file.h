@@ -24,6 +24,8 @@
 #define COLUMNS "columns"
 #define TEXT_GRID "text grid"
 #define TEXT_SUMMARY "summary"
+#define TEXT_HEADING "heading"
+#define TEXT_BODY "body"
 #define GENERAL_NOTES "general notes"
 
 void on_about_activate( GtkMenuItem *, app_widgets * );

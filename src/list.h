@@ -1,5 +1,5 @@
-// css.c - CSS for mapter
-// Copyright (C) 2020 John Davies
+// list.h - header file for list.c
+//          part of the mapter program
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -14,28 +14,20 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#include <gtk/gtk.h>
+#ifndef LIST_H
+#define LIST_H
 
-const gchar *mapter_CSS = R""""(
-.highlight{
-    border: 3px solid black;
-}
-.red_background {
-  background-color: #FF8080;
-}
-.yellow_background {
-  background-color: #FFFF80;
-}
-.green_background {
-  background-color: #C0FF80;
-}
-.blue_background {
-  background-color: #80FFC0;
-}
-.grey_background {
-  background-color: grey;
-}
-.no_background {
-  background-color: white;
-}
-)"""";
+// Index into array of linked lists
+#define MAX_LIST 2      // Number of lists
+#define HEADER_LIST 0
+#define BODY_LIST 1
+
+void list_init( guint, gint, gint );
+void list_insert_row( guint, gint, app_widgets * );
+void list_insert_column( guint, gint, app_widgets * );
+void list_delete_row( guint, gint, app_widgets * );
+void list_delete_column( guint, gint, app_widgets * );
+gchar *list_get_text( guint, gint, gint, app_widgets * );
+gchar *list_put_text( guint, gint, gint, gchar *, app_widgets * );
+
+#endif

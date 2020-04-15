@@ -22,6 +22,7 @@
 #include "main.h"
 #include "file.h"
 #include "grid.h"
+#include "list.h"
 #include "util.h"
 #include "json.h"
 
@@ -552,6 +553,7 @@ result_return save_file( app_widgets *app_wdgts )
         }
         first = FALSE;
         fprintf( output_file, "\t\t{\n" );
+        // Summary
         fprintf( output_file, "\t\t\t\"%s\": \"", TEXT_SUMMARY );
         // Fetch the text contents of this cell
         child = gtk_grid_get_child_at( GTK_GRID( app_wdgts->w_text_grid ), c, r ); // GtkEventBox
@@ -559,7 +561,16 @@ result_return save_file( app_widgets *app_wdgts )
         child = gtk_bin_get_child( GTK_BIN( child ) ); // GtkTextView
         // And output it
         json_encode( output_file, gtk_label_get_text( GTK_LABEL( child ) ) );
+        fprintf( output_file, "\",\n" );
+        // Heading
+        fprintf( output_file, "\t\t\t\"%s\": \"", TEXT_HEADING );
+        json_encode( output_file, list_get_text( HEADER_LIST, r, c, app_wdgts ) );
+        fprintf( output_file, "\",\n" );
+        // Body
+        fprintf( output_file, "\t\t\t\"%s\": \"", TEXT_BODY );
+        json_encode( output_file, list_get_text( BODY_LIST, r, c, app_wdgts ) );
         fprintf( output_file, "\"\n\t\t}" );
+
       }
     }
     fprintf( output_file, "\n\t],\n" );  // Close text_grid

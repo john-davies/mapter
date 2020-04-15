@@ -18,6 +18,7 @@
 #include <gtk/gtk.h>
 #include "main.h"
 #include "grid.h"
+#include "list.h"
 #include "util.h"
 #include "css.h"
 
@@ -49,6 +50,10 @@ void add_row( app_widgets *app_wdgts, gint row )
 
     gtk_grid_attach( GTK_GRID( app_wdgts->w_text_grid ), e_box, c, row, 1, 1 );
   }
+  // Add a row in the linked lists
+  list_insert_row( HEADER_LIST, row, app_wdgts );
+  list_insert_row( BODY_LIST, row, app_wdgts );
+  // Update the setting
   app_wdgts->current_grid_rows++;
   g_info( "  New row count: %d", app_wdgts->current_grid_rows );
   gtk_widget_show_all( app_wdgts->w_text_grid );
@@ -120,6 +125,10 @@ void delete_row( GtkWidget *source, app_widgets *app_wdgts )
       app_wdgts->edit_grid_row--;
     }
     gtk_grid_remove_row( GTK_GRID( app_wdgts->w_text_grid ), delete_row );
+    // Delete a row from the linked lists
+    list_delete_row( HEADER_LIST, delete_row, app_wdgts );
+    list_delete_row( BODY_LIST, delete_row, app_wdgts );
+    // Update settings
     app_wdgts->current_grid_rows--;
     g_info( "  New row count: %d", app_wdgts->current_grid_rows );
   }
@@ -160,6 +169,9 @@ void add_column( app_widgets *app_wdgts, gint column )
 
     gtk_grid_attach( GTK_GRID( app_wdgts->w_text_grid ), e_box, column, r, 1, 1 );
   }
+  // Add a row in the linked lists
+  list_insert_column( HEADER_LIST, column, app_wdgts );
+  list_insert_column( BODY_LIST, column, app_wdgts );
   app_wdgts->current_grid_columns++;
   g_info( "  New column count: %d", app_wdgts->current_grid_columns );
   gtk_widget_show_all( app_wdgts->w_text_grid );
@@ -231,6 +243,10 @@ void delete_column( GtkWidget *source, app_widgets *app_wdgts )
       app_wdgts->edit_grid_column--;
     }
     gtk_grid_remove_column( GTK_GRID( app_wdgts->w_text_grid ), delete_column );
+    // Delete a column from the linked lists
+    list_delete_column( HEADER_LIST, delete_column, app_wdgts );
+    list_delete_column( BODY_LIST, delete_column, app_wdgts );
+
     app_wdgts->current_grid_columns--;
     g_info( "  New column count: %d", app_wdgts->current_grid_columns );
   }
@@ -255,14 +271,32 @@ void on_btn_edit_save_clicked( GtkButton *button, app_widgets *app_wdgts )
   GtkTextIter start;
   GtkTextIter end;
   g_info( "grid.c / on_btn_edit_save_clicked");
-  // Copy text from editor to text grid
-  gtk_text_buffer_get_start_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_summary_view ) ), &start );
-  gtk_text_buffer_get_end_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_summary_view ) ), &end );
+  // Copy text from editor to save destinations
+  // Summary
+  gtk_text_buffer_get_start_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_summary ) ), &start );
+  gtk_text_buffer_get_end_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_summary ) ), &end );
   gtk_label_set_text( GTK_LABEL( app_wdgts->w_current_edit_text_element ),
-                      gtk_text_buffer_get_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_summary_view ) ),
+                      gtk_text_buffer_get_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_summary ) ),
                             &start,
                             &end,
                             FALSE ) );
+  // Header
+  gtk_text_buffer_get_start_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_heading ) ), &start );
+  gtk_text_buffer_get_end_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_heading ) ), &end );
+  list_put_text( HEADER_LIST,
+                 app_wdgts->edit_grid_row,
+                 app_wdgts->edit_grid_column,
+                 gtk_text_buffer_get_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_heading ) ), &start, &end, FALSE ),
+                 app_wdgts );
+  // Body
+  gtk_text_buffer_get_start_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_body ) ), &start );
+  gtk_text_buffer_get_end_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_body ) ), &end );
+  list_put_text( BODY_LIST,
+                 app_wdgts->edit_grid_row,
+                 app_wdgts->edit_grid_column,
+                 gtk_text_buffer_get_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_body ) ), &start, &end, FALSE ),
+                 app_wdgts );
+
   g_info( "grid.c / ~on_btn_edit_save_clicked");
 }
 
@@ -294,15 +328,23 @@ void edit_cell( gint row, gint column, app_widgets *app_wdgts )
                               column, row ); // GtkEventBox
   child = gtk_bin_get_child( GTK_BIN( child ) ); // GtkFrame
   app_wdgts->w_current_edit_text_element = gtk_bin_get_child( GTK_BIN( child ) ); // GtkTextView
-  // Copy current text to edit window
-  gtk_text_buffer_set_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_summary_view ) ),
+  // Copy current summary text
+  gtk_text_buffer_set_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_summary ) ),
                         gtk_label_get_text( GTK_LABEL( app_wdgts->w_current_edit_text_element ) ),
+                        -1 );
+  // Read Heading from the linked list
+  gtk_text_buffer_set_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_heading ) ),
+                        list_get_text( HEADER_LIST, row, column, app_wdgts ),
+                        -1 );
+  // Read Body Text from the linked list
+  gtk_text_buffer_set_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_body ) ),
+                        list_get_text( BODY_LIST, row, column, app_wdgts ),
                         -1 );
   // Show the Edit window
   gtk_widget_show( app_wdgts->w_editor_window );
   // Put the keyboard focus in the text window
   gtk_window_present( GTK_WINDOW( app_wdgts->w_editor_window ) );
-  gtk_widget_grab_focus( app_wdgts->w_edit_summary_view );
+  gtk_widget_grab_focus( app_wdgts->w_edit_summary );
   g_info( "grid.c / ~edit_cell");
 }
 
@@ -535,7 +577,7 @@ gboolean text_grid_keypress( GtkWidget *source, GdkEventKey *event, app_widgets 
   switch( event->keyval )
   {
     case GDK_KEY_Return:
-      g_info( "  Open editor on row: %d, column: %d\n", app_wdgts->edit_grid_row, app_wdgts->edit_grid_column );
+      g_info( "  Open editor on row: %d, column: %d", app_wdgts->edit_grid_row, app_wdgts->edit_grid_column );
       // Show the Edit window
       edit_cell( app_wdgts->edit_grid_row, app_wdgts->edit_grid_column, app_wdgts );
       inhibit = TRUE;
@@ -748,6 +790,10 @@ void fill_grid( gint new_rows, gint new_columns, app_widgets *app_wdgts )
   }
   app_wdgts->current_grid_rows = new_rows;
   app_wdgts->current_grid_columns = new_columns;
+
+  // Set up the linked lists
+  list_init( HEADER_LIST, new_rows, new_columns );
+  list_init( BODY_LIST, new_rows, new_columns );
 
   // Now set the focus to the correct cell
   gtk_widget_grab_focus( focus_widget );

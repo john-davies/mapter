@@ -21,7 +21,7 @@
 #include <gtk/gtk.h>
 
 // Version number
-#define SAVE_FILE_VERSION_NUMBER 1
+#define SAVE_FILE_VERSION_NUMBER 2
 
 // Grid definitions
 #define MIN_GRID_ROWS 1
@@ -71,7 +71,9 @@ typedef struct {
     GtkWidget *w_spin_columns;
     GtkWidget *w_grid_right_click_menu;
     GtkWidget *w_editor_window;
-    GtkWidget *w_edit_summary_view;
+    GtkWidget *w_edit_summary;
+    GtkWidget *w_edit_heading;
+    GtkWidget *w_edit_body;
     GtkWidget *w_notes_textview;
     GtkWidget *w_dlg_export_options;
     GtkWidget *b_chkbtn_export_title;
