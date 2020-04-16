@@ -24,6 +24,19 @@
 GSList *lists[ MAX_LIST ];
 
 // --------------------------------------------------------------------------
+// delete_element
+//
+// Frees the memory used by the GString that's passed in
+// Used by list_init
+//
+// --------------------------------------------------------------------------
+
+void delete_element( gpointer element )
+{
+  g_string_free( (GString *) element, TRUE );
+}
+
+// --------------------------------------------------------------------------
 // list_init
 //
 // Initialises the specified list to hold the specified row and columns
@@ -38,7 +51,7 @@ void list_init( guint index, gint rows, gint columns )
   {
     g_info( "  Initialising - Rows: %d, Columns: %d", rows, columns );
     // Clear and existing data and free any memory
-    g_slist_free_full( g_steal_pointer( &lists[index] ), g_object_unref );
+    g_slist_free_full( g_steal_pointer( &lists[index] ), delete_element );
     // Create new blank strings, prepend the strings to make it more
     // efficient then reverse the string later
     for( gint r=0; r<rows; r++ )

@@ -1,436 +1,722 @@
 {
-	"version": 1,
+	"version": 2,
 	"rows": 13,
 	"columns": 11,
 	"text grid": [
 		{
-			"summary": "Timeline of World War 1 - 1916"
+			"summary": "Timeline of World War 1 - 1916",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Western Front"
+			"summary": "Western Front",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Eastern Front"
+			"summary": "Eastern Front",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Italian Front"
+			"summary": "Italian Front",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Caucasian Front"
+			"summary": "Caucasian Front",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Middle Eastern Theatre"
+			"summary": "Middle Eastern Theatre",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Balkan Theatre"
+			"summary": "Balkan Theatre",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "African Theatre"
+			"summary": "African Theatre",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Naval"
+			"summary": "Naval",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Air"
+			"summary": "Air",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Politics"
+			"summary": "Politics",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "January"
+			"summary": "January",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Battles of Wadi and Hanna, a phase of the First Siege of Kut. "
+			"summary": "Battles of Wadi and Hanna, a phase of the First Siege of Kut. ",
+			"heading": "Battles of Wadi and Hanna",
+			"body": "Battle of Wadi\n\nThe Battle of Wadi, occurring on 13 January 1916, was an unsuccessful attempt by British forces fighting in Mesopotamia (present-day Iraq) during World War I to relieve beleaguered forces under Sir Charles Townshend then under siege by the Ottoman Sixth Army at Kut-al-Amara.\n\nPushed by regional British Commander-in-Chief Sir John Nixon, General Fenton Aylmer launched an attack against Ottoman defensive positions on the banks of the Wadi River. The Wadi was a steep valley of a stream that ran from the north into the River Tigris, some 6 miles (9.7 km) upstream towards Kut-al-Amara from Sheikh Sa'ad. The attack is generally considered as a failure, as although Aylmer managed to capture the Wadi, it cost him 1,600 men. The British failure led to Townshend's surrender, along with 10,000 of his men, in the largest single surrender of British troops up to that time. However, the British recaptured Kut in February 1917, on their way to the capture of Baghdad sixteen days later on 11 March 1917. \n\nBattle of Hanna\n\nAfter the Ottoman Empire's entry into the First World War, Britain dispatched Indian Expeditionary Force D to seize control of the Shatt al Arab and the port of Basra in order to safeguard British oil interests in the Persian Gulf. Eventually, the Anglo-Indian force's mission evolved into the capture of Baghdad. However, despite victories at Qurna, Nasiryeh, and Es Sinn, the primary offensive component of I.E.F. \"D\", the 6th (Poona) Division withdrew southwards after the Battle of Ctesiphon. The Ottoman forces in the region, reinforced and emboldened by the withdrawal from the gates of Baghdad, pursued the Anglo-Indian force to the town of Kut-al-Amara. Strategically situated at the confluence of the Shatt al-Hayy and the Tigris River, the commander of the Poona Division decided to defend the town.\n\nOn 15 December 1915, Ottoman troops had surrounded the Anglo-Indian force of about 10,000 men at the town of Kut-al-Amara. The British commander Major General Charles Townshend called for help, and the commander of the Mesopotamian theatre General Sir John Nixon began assembling a force of 19,000 men to relieve the besieged forces. This relief force, designated as the Tigris Corps, initially consisted of 2 divisions: 3rd (Lahore) Division and 7th (Meerut) Division, as well other units available in the region.\n\nThis relief force, commanded by Lieutenant General Fenton Aylmer, suffered two setbacks during its initial January 1916 offensive (see the Battle of Wadi). After these defeats, the relief force (now reduced to around 10,000 men) was ordered once again to attempt to break through the Ottoman lines and continued its movement up the Tigris until it encountered 30,000 men of the Ottoman Sixth Army, under the command of Khalil Pasha, at the Hanna defile, 30 miles downriver of Kut-al-Amara."
 		},
 		{
-			"summary": "Austro-Hungarian offensive against Montenegro, which capitulates. "
+			"summary": "Austro-Hungarian offensive against Montenegro, which capitulates. ",
+			"heading": "Austro-Hungarian offensive against Montenegro",
+			"body": "The Montenegrin Campaign of World War I, in January 1916, was a part of the Serbian Campaign, in which Austria-Hungary defeated and occupied the Kingdom of Montenegro, an ally of Serbia.\n\nBy January 1916, the Serbian Army had been defeated by an Austrian-Hungarian, German and Bulgarian invasion. The remnants of the Serbian army had withdrawn through Montenegro and Albania, and were being evacuated by allied ships from 12 December first to Italy and later to Corfu.\n\nThe Austro-Hungarian High Command, then at Teschen, decided to use the success in Serbia to knock Montenegro out of the war. The army of Montenegro that had fought alongside their Serbian allies, had now withdrawn into their own territory, but were still resisting against the Central Powers. Furthermore, the Austrian Commander-in-Chief Franz Conrad von Hötzendorf wanted to take the Italian-held Albanian ports of Durazzo and Valona.\n\nTwo Austrian army corps for this task were formed in December 1915. One in the west under command of Stjepan Sarkotić between Trebinje and Cattaro, composed of the XIX Armeekorps, reinforced with troops from Bosnia-Hercegovina and Dalmatia. They were to attack the main body of the Montenegrin army, gathered around Mount Lovcen, supported by French artillery, and a second attack was planned from Trebinje towards the east. In the east and north, the VIII Armeekorps under command of Hermann Kövess von Kövessháza was to attack the Montenegrin troops there. "
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Reinhard Scheer is appointed commander of Germany's Hochseeflotte."
+			"summary": "Reinhard Scheer is appointed commander of Germany's Hochseeflotte.",
+			"heading": "Reinhard Scheer is appointed commander of Germany's Hochseeflotte",
+			"body": "Carl Friedrich Heinrich Reinhard Scheer (30 September 1863 – 26 November 1928) was an Admiral in the Imperial German Navy (Kaiserliche Marine). Scheer joined the navy in 1879 as an officer cadet; he progressed through the ranks, commanding cruisers and battleships, as well as major staff positions on land. At the outbreak of World War I, Scheer was the commander of the II Battle Squadron of the High Seas Fleet. He then took command of the III Battle Squadron, which consisted of the newest and most powerful battleships in the navy. In January 1916, he was promoted to Admiral and given control of the High Seas Fleet. Scheer led the German fleet at the Battle of Jutland on 31 May–1 June 1916, one of the largest naval battles in history.\n\nFollowing the battle, Scheer joined those calling for unrestricted submarine warfare against the Allies, a move the Kaiser eventually permitted. In August 1918, Scheer was promoted to the Chief of Naval Staff; Admiral Franz von Hipper replaced him as commander of the fleet. Together they planned a final battle against the British Grand Fleet, but war-weary sailors mutinied at the news and the operation was abandoned. Scheer retired after the end of the war.\n\nA strict disciplinarian, Scheer was popularly known in the Navy as the \"man with the iron mask\" due to his severe appearance.[1] In 1919, Scheer wrote his memoirs; a year later they were translated and published in English. He wrote his autobiography in 1925. Scheer died at Marktredwitz. He is buried in the municipal cemetery at Weimar. The admiral was commemorated in the renascent Kriegsmarine by the heavy cruiser Admiral Scheer, built in the 1930s. "
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Conscription introduced in the United Kingdom by the Military Service Act 1916."
+			"summary": "Conscription introduced in the United Kingdom by the Military Service Act 1916.",
+			"heading": "Conscription introduced in the United Kingdom",
+			"body": "The Military Service Act 1916 was an Act passed by the Parliament of the United Kingdom during the First World War.\n\nThe Bill which became the Act was introduced by Prime Minister H. H. Asquith in January 1916. It came into force on 2 March 1916. Previously the British Government had relied on voluntary enlistment, and latterly a kind of moral conscription called the Derby Scheme.\n\nThe conscription issue divided the Liberal Party including the Cabinet. Sir John Simon resigned as Home Secretary and attacked the government in his resignation speech in the House of Commons, where 35 Liberals voted against the bill, alongside 13 Labour MPs and 59 Irish Nationalists.\n\nThe Act specified that men from 18 to 41 years old were liable to be called up for service in the army unless they were eligible for exemptions listed under this Act, including men who were married, widowed with children, serving in the Royal Navy, a minister of religion, or working in one of a number of reserved occupations, or for conscientious objection. A second Act in May 1916 extended liability for military service to married men, and a third Act in 1918 extended the upper age limit to 51.\n\nMen or employers who objected to an individual's call-up could apply to a local Military Service Tribunal. These tribunals had powers to grant exemption from service, usually conditional or temporary, under the eligibility criteria which for the first time in history included conscientious objection There was right of appeal to a County Appeal Tribunal, a central military tribunal. "
 		},
 		{
-			"summary": "February"
+			"summary": "February",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "The battle of Verdun begins"
+			"summary": "The battle of Verdun begins",
+			"heading": "The Battle of Verdun Begins",
+			"body": "The Battle of Verdun was fought from 21 February to 18 December 1916 on the Western Front in France. The battle was the longest of the First World War and took place on the hills north of Verdun-sur-Meuse. The German 5th Army attacked the defences of the Fortified Region of Verdun (RFV, Région Fortifiée de Verdun) and those of the French Second Army on the right (east) bank of the Meuse. Using the experience of the Second Battle of Champagne in 1915, the Germans planned to capture the Meuse Heights, an excellent defensive position with good observation for artillery-fire on Verdun. The Germans hoped that the French would commit their strategic reserve to recapture the position and suffer catastrophic losses at little cost to the Germans.\n\nPoor weather delayed the beginning of the attack until 21 February but the Germans captured Fort Douaumont in the first three days. The advance then slowed for several days, despite inflicting many French casualties. By 6 March, ​20 1⁄2 French divisions were in the RFV and a more extensive defence in depth had been constructed. Philippe Pétain ordered no retreat and that German attacks were to be counter-attacked, despite this exposing French infantry to German artillery-fire. By 29 March, French guns on the west bank had begun a constant bombardment of Germans on the east bank, causing many infantry casualties. The German offensive was extended to the left (west) bank of the Meuse, to gain observation and eliminate the French artillery firing over the river but the attacks failed to reach their objectives.\n\nIn early May, the Germans changed tactics again and made local attacks and counter-attacks; the French recaptured part of Fort Douaumont but then the Germans ejected them and took many prisoners. The Germans tried alternating their attacks on either side of the Meuse and in June captured Fort Vaux. The Germans advanced towards the last geographical objectives of the original plan, at Fleury-devant-Douaumont and Fort Souville, driving a salient into the French defences. Fleury was captured and the Germans came within 4 km (2 mi) of the Verdun citadel but in July the offensive was cut back to provide troops, artillery and ammunition for the Battle of the Somme. From 23 June to 17 August, Fleury changed hands sixteen times and a German attack on Fort Souville failed. The offensive was reduced further but to keep French troops in the RFV, away from the Somme, ruses were used to disguise the change. In August and December French counter-offensives recaptured much ground on the east bank and recovered Fort Douaumont and Fort Vaux.\n\nThe battle lasted for 302 days, the longest and one of the most costly in human history. In 2000, Hannes Heer and Klaus Naumann calculated that the French suffered 377,231 casualties and the Germans 337,000, a total of 714,231, an average of 70,000 a month. In 2014, William Philpott wrote of 976,000 casualties in 1916 and 1,250,000 in the vicinity during the war. In France, the battle came to symbolise the determination of the French Army and the destructiveness of the war. "
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Trebizond Campaign."
+			"summary": "Trebizond Campaign.",
+			"heading": "Trebizond Campaign.",
+			"body": "The Trebizond Campaign, also known as the Battle of Trebizond, was a series of successful Russian naval and land operations that resulted in the capture of Trabzon. It was the logistical step after the Erzerum Campaign. Operations began on February 5 and concluded when the Ottoman troops abandoned Trabzon on the night of April 15, 1916."
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Battle of Salaita Hill. "
+			"summary": "Battle of Salaita Hill. ",
+			"heading": "Battle of Salaita Hill",
+			"body": "The Battle of Salaita Hill (German: Battle of Oldoboro Hill) was the first large-scale engagement of the East African Campaign of the First World War to involve British, Indian, Rhodesian, and South African troops. The battle took place on February 12, 1916, as part of the three-pronged offensive into German East Africa launched by General Jan Smuts, who had been given overall command of the Allied forces in the region. "
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "March"
+			"summary": "March",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Battle of Dujaila: a British attempt to relieve Kut failed. "
+			"summary": "Battle of Dujaila: a British attempt to relieve Kut failed. ",
+			"heading": "Battle of Dujaila",
+			"body": "The Battle of Dujaila (Turkish: Sâbis Muharebesi) was fought on 8 March 1916, between British and Ottoman forces during the First World War. The Ottoman forces, led by Colmar Freiherr von der Goltz were besieging Kut, when the Anglo-Indian relief force, led by Lieutenant-General Fenton Aylmer, attempted to relieve the city. The attempt failed, and Aylmer lost 4,000 men. "
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Battle of Kahe. "
+			"summary": "Battle of Kahe. ",
+			"heading": "Battle of Kahe",
+			"body": "The Battle of Kahe was fought during the East African Campaign of World War I. It was the last action between German and Entente forces before the German retreat from the Kilimanjaro area. British and South African forces surrounded German positions at Kahe, south of Mount Kilimanjaro. Entente forces inflicted heavy casualties and captured large German artillery pieces while receiving comparably little casualties. German forces retreated from there, further into the interior of the colony. "
 		},
 		{
-			"summary": "Germany resumes unrestricted submarine warfare. "
+			"summary": "Germany resumes unrestricted submarine warfare. ",
+			"heading": "Germany resumes unrestricted submarine warfare",
+			"body": "The Atlantic U-boat campaign of World War I (sometimes called the \"First Battle of the Atlantic\", in reference to the World War II campaign of that name) was the prolonged naval conflict between German submarines and the Allied navies in Atlantic waters—the seas around the British Isles, the North Sea and the coast of France.\n\nInitially the U-boat campaign was directed against the British Grand Fleet. Later U-boat fleet action was extended to include action against the trade routes of the Allied powers. This campaign was highly destructive, and resulted in the loss of nearly half of Britain's merchant marine fleet during the course of the war. To counter the German submarines, the Allies moved shipping into convoys guarded by destroyers, blockades such as the Dover Barrage and minefields were laid, and aircraft patrols monitored the U-boat bases.\n\nThe U-boat campaign was not able to cut off supplies before the US entered the war in 1917 and in later 1918, the U-boat bases were abandoned in the face of the Allied advance.\n\nThe tactical successes and failures of the Atlantic U-boat Campaign would later be used as a set of available tactics in World War II in a similar U-boat war against the British Empire. "
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Germany and Austria-Hungary declare war on Portugal. Portugal officially enters the war. "
+			"summary": "Germany and Austria-Hungary declare war on Portugal. Portugal officially enters the war. ",
+			"heading": "Germany and Austria-Hungary declare war on Portugal",
+			"body": "Portugal did not initially form part of the system of alliances involved in World War I and thus remained neutral at the start of the conflict in 1914. But even though Portugal and Germany remained officially at peace for over a year and a half after the outbreak of World War I, there were many hostile engagements between the two countries. Portugal wanted to comply with British requests for aid and protect its colonies in Africa, thus clashes occurred with German troops in the south of Portuguese Angola, which bordered German South-West Africa, in 1914 and 1915 (see German campaign in Angola). Tensions between Germany and Portugal also arose as a result of German U-boat warfare, which sought to blockade the United Kingdom, at the time the most important market for Portuguese products. Ultimately, tensions resulted in declarations of war, first by Germany against Portugal in March 1916.\n\nApproximately 12,000 Portuguese troops died during the course of World War I, including Africans who served in its armed forces in the colonial front. Civilian deaths in Portugal exceeded 220,000: 82,000 caused by food shortages and 138,000 by the Spanish flu."
 		},
 		{
-			"summary": "April"
+			"summary": "April",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Gas attacks at Hulluch. "
+			"summary": "Gas attacks at Hulluch. ",
+			"heading": "Gas attacks at Hulluch. ",
+			"body": "The Gas Attacks at Hulluch were two German cloud gas attacks on British troops during World War I, from 27–29 April 1916, near the village of Hulluch, 1 mi (1.6 km) north of Loos in northern France. The gas attacks were part of an engagement between divisions of the II Bavarian Corps and divisions of the British I Corps.\n\nJust before dawn on 27 April, the 16th (Irish) Division and part of the 15th (Scottish) Division were subjected to a cloud gas attack near Hulluch. The gas cloud and artillery bombardment were followed by raiding parties, which made temporary lodgements in the British lines. Two days later the Germans began another gas attack but the wind turned and blew the gas back over the German lines. A large number of German casualties were caused by the change in the wind direction and the decision to go ahead against protests by local officers, which were increased by British troops, who fired on German soldiers as they fled in the open.\n\nThe gas used by the German troops at Hulluch was a mixture of chlorine and phosgene, which had first been used on 19 December 1915 at Wieltje, near Ypres. The German gas was of sufficient concentration to penetrate the British PH gas helmets and the 16th Division was unjustly blamed for poor gas discipline. It was put out that the gas helmets of the division were of inferior manufacture, to allay doubts as to the effectiveness of the helmet. Production of the Small Box Respirator, which had worked well during the attack, was accelerated. "
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "The British forces under siege at Kut surrender to the Ottomans, first siege of Kut ends. "
+			"summary": "The British forces under siege at Kut surrender to the Ottomans, first siege of Kut ends. ",
+			"heading": "First siege of Kut ends",
+			"body": "The siege of Kut Al Amara (7 December 1915 – 29 April 1916), also known as the First Battle of Kut, was the besieging of an 8,000 strong British Army garrison in the town of Kut, 160 kilometres (100 mi) south of Baghdad, by the Ottoman Army. In 1915 its population was around 6,500. Following the surrender of the garrison on 29 April 1916, the survivors of the siege were marched to imprisonment at Aleppo, during which many died. Historian Christopher Catherwood has called the siege \"the worst defeat of the Allies in World War I\". Ten months later, the British Indian Army, consisting almost entirely of newly recruited troops from the Western India, conquered Kut, Baghdad and other regions in between in the Fall of Baghdad. \n\nJan Morris, a British historian, described the loss of Kut as \"the most abject capitulation in Britain's military history.\" After this humiliating loss, General Lake and General Gorringe were removed from command. The new commander was General Maude, who trained and organized his army and then launched a successful campaign.\n\nTen months after the Siege of Kut, the British Indian Army conquered the whole region from Kut to Baghdad in the war called the Fall of Baghdad (1917) on 11 March 1917. With Baghdad captured, the British administration undertook vital reconstruction of the war-torn country and Kut was slowly rebuilt.\n\nSome of the Indian prisoners of war from Kut later came to join the Ottoman Indian Volunteer Corps under the influence of Deobandis of Tehrek e Reshmi Rumal and with the encouragement of the German High Command. These soldiers, along with those recruited from the prisoners from the European battlefields, fought alongside Ottoman forces on a number of fronts. The Indians were led by Amba Prasad Sufi, who during the war was joined by Kedar Nath Sondhi, Rishikesh Letha, and Amin Chaudhry. These Indian troops were involved in the capture of the frontier city of Karman and the detention of the British consul there, and they also successfully harassed Sir Percy Sykes' Persian campaign against the Baluchi and Persian tribal chiefs who were aided by the Germans."
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Easter Rising by Irish rebels for independence from the United Kingdom. "
+			"summary": "Easter Rising by Irish rebels for independence from the United Kingdom. ",
+			"heading": "Easter Rising by Irish rebels",
+			"body": "The Easter Rising (Irish: Éirí Amach na Cásca),[1] also known as the Easter Rebellion, was an armed insurrection in Ireland during Easter Week, April 1916. The Rising was launched by Irish republicans to end British rule in Ireland and establish an independent Irish Republic while the United Kingdom was fighting the First World War. It was the most significant uprising in Ireland since the rebellion of 1798 and the first armed action of the Irish revolutionary period. Sixteen of the Rising's leaders were executed in May 1916, but the insurrection, the nature of the executions, and subsequent political developments ultimately contributed to an increase in popular support for Irish independence.\n\nOrganised by a seven-man Military Council of the Irish Republican Brotherhood, the Rising began on Easter Monday, 24 April 1916 and lasted for six days. Members of the Irish Volunteers, led by schoolmaster and Irish language activist Patrick Pearse, joined by the smaller Irish Citizen Army of James Connolly and 200 women of Cumann na mBan, seized strategically important buildings in Dublin and proclaimed an Irish Republic. The British Army brought in thousands of reinforcements as well as artillery and a gunboat. There was street fighting on the routes into the city centre, where the rebels slowed the British advance and inflicted many casualties. Elsewhere in Dublin, the fighting mainly consisted of sniping and long-range gun battles. The main rebel positions were gradually surrounded and bombarded with artillery. There were isolated actions in other parts of Ireland; Volunteer leader Eoin MacNeill had issued a countermand in a bid to halt the Rising, which greatly reduced the number of rebels who mobilised.\n\nWith much greater numbers and heavier weapons, the British Army suppressed the Rising. Pearse agreed to an unconditional surrender on Saturday 29 April, although sporadic fighting continued briefly. After the surrender the country remained under martial law. About 3,500 people were taken prisoner by the British and 1,800 of them were sent to internment camps or prisons in Britain. Most of the leaders of the Rising were executed following courts-martial. The Rising brought physical force republicanism back to the forefront of Irish politics, which for nearly fifty years had been dominated by constitutional nationalism. Opposition to the British reaction to the Rising contributed to changes in public opinion and the move toward independence, as shown in the December 1918 election which was won by the Sinn Féin party, which convened the First Dáil and declared independence.\n\nOf the 485 people killed in the Easter Rising: 54 percent were civilians, 30 percent were British military and police and 16 percent were Irish rebels. More than 2,600 were wounded. Many of the civilians were killed or wounded by British artillery and machine guns or were mistaken for rebels. Others were caught in the crossfire in the crowded city. The shelling and resulting fires left parts of central Dublin in ruins. "
 		},
 		{
-			"summary": "May"
+			"summary": "May",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Austro-Hungarian Strafexpedition in Trentino."
+			"summary": "Austro-Hungarian Strafexpedition in Trentino.",
+			"heading": "Austro-Hungarian Strafexpedition in Trentino",
+			"body": "The Battle of Asiago (Battle of the Plateaux) or the Trentino Offensive (in Italian: Battaglia degli Altipiani), nicknamed Strafexpedition (\"Punitive expedition\") by the Italians, was a major counteroffensive launched by the Austro-Hungarians on the Italian Front on 15 May 1916, during World War I. It was an unexpected attack that took place near Asiago in the province of Vicenza (now in northeast Italy, then on the Italian side of the border between the Kingdom of Italy and Austria-Hungary) after the Fifth Battle of the Isonzo (March 1916).\n\nCommemorating this battle and the soldiers killed in World War I is the Asiago War Memorial."
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Russian forces in Persia link up with the British in Mesopotamia, but it is too late. "
+			"summary": "Russian forces in Persia link up with the British in Mesopotamia, but it is too late. ",
+			"heading": "Persian Campaign in 1916",
+			"body": "In January 1916, Baratov drove the Turks and Persian tribesman and occupied Hamedan. On February 26, Baratov's forces captured Kermanshah. On March 12, Baratov's forces captured Kharind. Baratov reached the Ottoman frontier, 150 miles from Baghdad in the Mesopotamia campaign, by the middle of May. It was expected that this unit would eventually effect a juncture with the British army in Mesopotamia. In fact, a Cossack company of five officers and 110 men left the Baratov's Russian division on May 8, rode southward a distance of about 180 miles through the territory of disaffected tribesmen, crossing several mountain passes at an altitude of 8,000 feet, and reached the British front on the Tigris on May 18.\n\nOn February 26, 1916, the Russians advanced and defeated the gendarmes who then retreated to Qasr-i-Shirin and managed to hold the region until May 1916, when Qasr-i-Shirin was captured by the Russians. This time, many gendarmes went to live in exile in Istanbul, Mosul and Baghdad. In the spring of 1916, Ibrahim Khan Qavam-ul-Mulk and his Khamseh tribesmen defeated the gendarmes under Ali Quli Khan Pesyan and Ghulam Riza Khan Pesyan who shot and killed each other. Other gendarmes, the German Consul Roever and the Swedish Captain Angman were arrested and tortured.\n\nIn early May 1916, due to Enver Pasha's insistence, the Ottomans launched a second invasion of Persia. This was undertaken by the XIII Corps commanding roughly 25,000 troops; the Germans promised to contribute some artillery batteries, but this aid never came. On June 3, the Russians attacked the 6th Infantry Division in an attempt to encircle them at the town of Hankin. However, they were too thinly spread, and their infantry were held in check while their encircling cavalry were crushed. Ottoman casualties were light compared to the Russians: 85 killed, 276 wounded, and 68 missing. This gave the Turks valuable time to strengthen their defenses. On June 8, they crossed the border back into Persia.\n\nIn late May, facing Baratov was assigned to the XIII Corps commanded by colonel Ali İhsan Bey, who began his advance. Meanwhile, on the Russian side, Baratov was hoping to capture Khanaqin and move down to Baghdad, which could have been taken by the Russians as the Turks and the British were busy with fighting each other. On June 3, he forced Khanaqin once again, but this time the balance had changed. The Ottoman XIII Corps successful repulsed Baratov's forces, and did not leave it there; soon the counter-offensive that was planned launched. Ali İhsan Bey captured Kermanshah on 2 July and took Hamadan on 10 August. Having lost half of his men, Baratov was forced to retreat north. Baratov stopped at the Sultan Bulak range. In August 1916, the gendarmes return to Kermanshah.\n\nOn June 12, 1916, the British advance in southern Persia which was undertaken by Percy Sykes column under reached the Kerman. From this point, he supported the Russians operations against the Ottoman Empire until June 1917, when he was withdrawn with the new Persian government.\n\nIn 1916, General Chernozubov sent a Russo-Assyrian military exhibition into Hakkari. The squads within the expedition were led by the Assyrian Patriarch's brother David; Ismail, Malka of the Upper Tyari; and Andreus, the Jilu Malik.\n\nIn December 1916, Baratov began to move on Qoms and Hamadan for clearing Persian forces and Ottoman troops. Both cities fell in the same month.\n\nCount Kaunitz disappeared without a trace, either killing himself or being a victim of assassination by disenchanted coup members. The premature coup was crushed in Tehran as Ahmad Shah Qajar took refuge in the Russian legation, and a sizable Russian force arrived to Tehran under Baratov after they landed in Bandar-e Pahlavi in November of that year. The pro-German coup members of the Majles fled to Kirmanshah and Qom without fighting. "
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Battle of Kondoa Irangi."
+			"summary": "Battle of Kondoa Irangi.",
+			"heading": "Battle of Kondoa Irangi",
+			"body": "Background\n\nFollowing successes at the battles of Latema Nek and Kahe, Entente forces under the overall command of General Jan Smuts continued their advance southwards into German East Africa. By 17 April 1916, General Van Deventer's 2nd Division had reached the vicinity of the town of Kondoa Irangi - where they made contact with a unit of German Schutztruppe. The 2nd Division succeeded in pushing the enemy back, and captured the town on 19 April. Entente casualties were minimal, whilst 20 Askari and 4 Germans were killed and 30 Askaris captured. Also found were 80 modern rifles with ammunition and a large herd of cattle. Despite low casualties, Van Deventer told the high command that the 2nd Division was exhausted and would be unable to continue the advance for some time. During its advance from Moshi, the division had lost more than 2,000 horses, mostly due to the Tsetse fly. Smuts then ordered van Deventer to consolidate his position at Kondoa Irangi, and reinforcements were brought up to aid this process.\n\nDuring this period, the rainy season began. This caused huge supply problems for the Entente force, as railway bridges were washed away by swollen rivers and roads became impassable. The 2nd Division was completely cut off, and was forced to scavenge for supplies around Kondoa. The result was a fall in health and morale. \n\nThe German Attack\n\nWhile Van Deventer was stuck in Kondoa, German commander Paul von Lettow-Vorbeck used the delay to hurriedly reinforce his positions around the town - bringing a large proportion of his total force in from Tjsambara. By early May, around 4,000 German troops had reached the area. The 2nd Division had by this point been weakened by illness and malnutrition and was reduced to just 3,000 men at Kondoa Irangi.\n\nThe enemy assault began on 7 May as Lettow-Vorbeck's companies advanced to within 6 miles of Kondoa. Van Deventer withdrew his outlying positions and prepared to defend the centre of the town itself.\n\nOn 9 May the German attack commenced once again, starting with an assault on the south-east of the town which began at 7:30 pm. Four separate waves attacked, but all were repulsed with casualties by the 12 South African Regiment. In some places Germans reached the trenches themselves before being forced back by machine gun fire. The attack stopped in the early hours of 10 May having failed to dislodge Van Deventer from the town. The South Africans finally had to withdraw due to heavy German pressure and occupied the town only after the Germans had already left. \n\nAftermath\n\nAfter the battle, Lettow-Vorbeck continued to occupy positions in Kondoa for two months, launching sporadic raids on Van Deventer's supply columns and communications, and shelling the South Africans with artillery - including two heavy guns salvaged from SMS Königsberg. Van Deventer was unable to attempt an advance due to a lack of horses and the exhaustion of his whole division. General Smuts sent three further South African Regiments - the 10th, 7th and 8th, to secure the position. These men arrived on 23 May but were too late to save the initial positions and the town. In any case, their superior numbers forced von Lettow-Vorbeck to withdraw.\n"
 		},
 		{
-			"summary": "Battle of Jutland between Britain's Grand Fleet and Germany's Hochseeflotte. "
+			"summary": "Battle of Jutland between Britain's Grand Fleet and Germany's Hochseeflotte. ",
+			"heading": "Battle of Jutland",
+			"body": "The Battle of Jutland (German: Skagerrakschlacht, the Battle of Skagerrak) was a naval battle fought between Britain's Royal Navy Grand Fleet, under Admiral Sir John Jellicoe, and the Imperial German Navy's High Seas Fleet, under Vice-Admiral Reinhard Scheer, during the First World War. The battle unfolded in extensive manoeuvring and three main engagements (the battlecruiser action, the fleet action and the night action), from 31 May to 1 June 1916, off the North Sea coast of Denmark's Jutland Peninsula. It was the largest naval battle and the only full-scale clash of battleships in that war. Jutland was the third fleet action between steel battleships, following the Battle of the Yellow Sea in 1904 and the decisive Battle of Tsushima in 1905, during the Russo-Japanese War. Jutland was the last major battle in world history fought primarily by battleships.\n\nGermany's High Seas Fleet intended to lure out, trap, and destroy a portion of the Grand Fleet, as the German naval force was insufficient to openly engage the entire British fleet. This formed part of a larger strategy to break the British blockade of Germany and to allow German naval vessels access to the Atlantic. Meanwhile, Great Britain's Royal Navy pursued a strategy of engaging and destroying the High Seas Fleet, thereby keeping German naval forces contained and away from Britain and her shipping lanes.\n\nThe Germans planned to use Vice-Admiral Franz Hipper's fast scouting group of five modern battlecruisers to lure Vice-Admiral Sir David Beatty's battlecruiser squadrons into the path of the main German fleet. They stationed submarines in advance across the likely routes of the British ships. However, the British learned from signal intercepts that a major fleet operation was likely, so on 30 May Jellicoe sailed with the Grand Fleet to rendezvous with Beatty, passing over the locations of the German submarine picket lines while they were unprepared. The German plan had been delayed, causing further problems for their submarines, which had reached the limit of their endurance at sea.\n\nOn the afternoon of 31 May, Beatty encountered Hipper's battlecruiser force long before the Germans had expected. In a running battle, Hipper successfully drew the British vanguard into the path of the High Seas Fleet. By the time Beatty sighted the larger force and turned back towards the British main fleet, he had lost two battlecruisers from a force of six battlecruisers and four powerful battleships—though he had sped ahead of his battleships of 5th Battle Squadron earlier in the day, effectively losing them as an integral component for much of this opening action against the five ships commanded by Hipper. Beatty's withdrawal at the sight of the High Seas Fleet, which the British had not known were in the open sea, would reverse the course of the battle by drawing the German fleet in pursuit towards the British Grand Fleet. Between 18:30, when the sun was lowering on the western horizon, back-lighting the German forces, and nightfall at about 20:30, the two fleets—totalling 250 ships between them—directly engaged twice.\n\nFourteen British and eleven German ships sank, with a total of 9,823 casualties. After sunset, and throughout the night, Jellicoe manoeuvred to cut the Germans off from their base, hoping to continue the battle the next morning, but under the cover of darkness Scheer broke through the British light forces forming the rearguard of the Grand Fleet and returned to port.\n\nBoth sides claimed victory. The British lost more ships and twice as many sailors but succeeded in containing the German fleet. The British press criticised the Grand Fleet's failure to force a decisive outcome, while Scheer's plan of destroying a substantial portion of the British fleet also failed. The British strategy of denying Germany access to both the United Kingdom and the Atlantic did succeed, which was the British long-term goal. The Germans' \"fleet in being\" continued to pose a threat, requiring the British to keep their battleships concentrated in the North Sea, but the battle reinforced the German policy of avoiding all fleet-to-fleet contact. At the end of 1916, after further unsuccessful attempts to reduce the Royal Navy's numerical advantage, the German Navy accepted that its surface ships had been successfully contained, subsequently turning its efforts and resources to unrestricted submarine warfare and the destruction of Allied and neutral shipping, which—along with the Zimmermann Telegram—by April 1917 triggered the United States of America's declaration of war on Germany.\n\nSubsequent reviews commissioned by the Royal Navy generated strong disagreement between supporters of Jellicoe and Beatty concerning the two admirals' performance in the battle. Debate over their performance and the significance of the battle continues to this day. "
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Signing of the Sykes-Picot Agreement between Britain and France defining their proposed spheres in the Middle East. "
+			"summary": "Signing of the Sykes-Picot Agreement between Britain and France defining their proposed spheres in the Middle East. ",
+			"heading": "Signing of the Sykes-Picot Agreement",
+			"body": "The Sykes–Picot Agreement was a 1916 secret treaty between the United Kingdom and France, with assent from the Russian Empire and Italy, to define their mutually agreed spheres of influence and control in an eventual partition of the Ottoman Empire. The agreement was based on the premise that the Triple Entente would succeed in defeating the Ottoman Empire during World War I and formed part of a series of secret agreements contemplating its partition. The primary negotiations leading to the agreement occurred between 23 November 1915 and 3 January 1916, on which date the British and French diplomats, Mark Sykes and François Georges-Picot, initialled an agreed memorandum. The agreement was ratified by their respective governments on 9 and 16 May 1916.\n\nThe agreement effectively divided the Ottoman provinces outside the Arabian Peninsula into areas of British and French control and influence. The British- and French-controlled countries were divided by the Sykes–Picot line. The agreement allocated to Britain control of what is today southern Israel and Palestine, Jordan and southern Iraq, and an additional small area that included the ports of Haifa and Acre to allow access to the Mediterranean. France got control of southeastern Turkey, northern Iraq, Syria and Lebanon. As a result of the included Sazonov–Paléologue Agreement, Russia was to get Western Armenia in addition to Constantinople and the Turkish Straits already promised under the 1915 Constantinople Agreement. Italy assented to the agreement in 1917 via the Agreement of Saint-Jean-de-Maurienne and received southern Anatolia. The Palestine region, with smaller boundaries than the later Mandatory Palestine, was to fall under an \"international administration\".\n\nThe agreement was initially used directly as the basis for the 1918 Anglo–French Modus Vivendi, which was an agreement for a framework for the Occupied Enemy Territory Administration in the Levant. More broadly it was to lead, indirectly, to the subsequent partitioning of the Ottoman Empire following Ottoman defeat in 1918. Shortly after the war, the French ceded Palestine and Mosul to the British. Mandates in the Levant and Mesopotamia were assigned at the April 1920 San Remo conference following the Sykes–Picot framework; the British Mandate for Palestine ran until 1948, the British Mandate for Mesopotamia was to be replaced by a similar treaty with Mandatory Iraq, and the French Mandate for Syria and the Lebanon lasted until 1946. The Anatolian parts of the agreement were assigned by the August 1920 Treaty of Sèvres; however, these ambitions were thwarted by the 1919–23 Turkish War of Independence.\n\nThe agreement is seen by many as a turning point in Western and Arab relations. It negated the UK's promises to Arabs[8] regarding a national Arab homeland in the area of Greater Syria in exchange for supporting the British against the Ottoman Empire. The agreement, along with others, was exposed to the public by the Bolsheviks[9] in Moscow on 23 November 1917 and repeated in the British Guardian on November 26, 1917, such that \"the British were embarrassed, the Arabs dismayed and the Turks delighted\". The agreement's legacy has continued to bolster mistrust among Arabs over present-day conflicts in the region."
 		},
 		{
-			"summary": "June"
+			"summary": "June",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Battle of Mont Sorrel. Battle of the Boar's Head, diversion from the Battle of the Somme which began the next day. "
+			"summary": "Battle of Mont Sorrel & Battle of Boar's Head, diversion from the Battle of the Somme which began the next day. ",
+			"heading": "Battles of Mont Sorrel and Boar's Head",
+			"body": "Mont Sorrel\n\nThe Battle of Mont Sorrel (Battle of Mount Sorrel, Battle of Hill 62) was a local operation in World War I by three divisions of the British Second Army and three divisions of the German 4th Army in the Ypres Salient, near Ypres, Belgium, from 2 to 13 June 1916.\n\nTo divert British resources from the build-up being observed on the Somme, the XIII (Royal Württemberg) Corps and the 117th Infantry Division attacked an arc of high ground defended by the Canadian Corps. The German forces captured the heights at Mount Sorrel and Tor Top, before entrenching on the far slope of the ridge. Following a number of attacks and counterattacks, two divisions of the Canadian Corps, supported by the 20th Light Division and Second Army siege and howitzer battery groups, recaptured the majority of their former positions. \n\nBoar's Head\n\nThe Battle of the Boar's Head was an attack on 30 June 1916 at Richebourg-l'Avoué in France, during the First World War. Troops of the 39th Division, XI Corps in the First Army of the British Expeditionary Force (BEF), advanced to capture the Boar's Head, a salient held by the German 6th Army. Two battalions of the 116th Brigade, with one battalion forming carrying parties, attacked the German front position before dawn on 30 June. The British took and held the German front line trench and the second trench for several hours, before retiring to their lines having lost 850–1,366 casualties.\n\nThe operation was conducted when the British armies on the Western Front north of the Somme, supported the Fourth Army during the Battle of the Somme (1 July to 18 November). The British Third, First and Second armies conducted 310 raids against the Germans up to November 1916, harassing the Germans opposite to give novice divisions experience of fighting on the Western Front, to inflict casualties and to prevent German troops from being transferred to the Somme. From 19 to 20 July, XI Corps conducted the much bigger Battle of Fromelles, where British and Australian troops suffered an even greater number of casualties.\n"
 		},
 		{
-			"summary": "The Brusilov Offensive begins. "
+			"summary": "The Brusilov Offensive begins. ",
+			"heading": "The Brusilov Offensive Begins",
+			"body": "The Brusilov Offensive, (Russian: Брусиловский прорыв Brusilovskiĭ proryv, literally: \"Brusilov's breakthrough\"), also known as the \"June Advance\", of June to September 1916 was the Russian Empire's greatest feat of arms during World War I, and among the most lethal offensives in world history. Historian Graydon Tunstall called the Brusilov Offensive the worst crisis of World War I for Austria-Hungary and the Triple Entente's greatest victory, but it came at a tremendous loss of life.\n\nThe offensive involved a major Russian attack against the armies of the Central Powers on the Eastern Front. Launched on 4 June 1916, it lasted until late September. It took place in an area of present-day western Ukraine, in the general vicinity of the towns of Lviv, Kovel, and Lutsk. The offensive takes its name after the commander in charge of the Southwestern Front of the Imperial Russian Army, General Aleksei Brusilov. "
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "The Arab Revolt in Hejaz begins. "
+			"summary": "The Arab Revolt in Hejaz begins. ",
+			"heading": "The Arab Revolt in Hejaz Begins",
+			"body": "The Arab Revolt (Arabic: الثورة العربية‎, al-Thawra al-‘Arabiyya; Turkish: Arap İsyanı) or the Great Arab Revolt (Arabic: الثورة العربية الكبرى‎, al-Thawra al-‘Arabiyya al-Kubrā) ‎was a military uprising of Arab forces against the Ottoman Empire in the Middle Eastern theatre of World War I. On the basis of the McMahon–Hussein Correspondence, an agreement between the British government and Hussein bin Ali, Sharif of Mecca, the revolt was officially initiated at Mecca on June 10, 1916. The aim of the revolt was to create a single unified and independent Arab state stretching from Aleppo in Syria to Aden in Yemen, which the British had promised to recognize.\n\nThe Sharifian Army led by Hussein and the Hashemites, with military backing from the British Egyptian Expeditionary Force, successfully fought and expelled the Ottoman military presence from much of the Hejaz and Transjordan. The rebellion eventually took Damascus and set up a short-lived monarchy led by Faisal, a son of Hussein.\n\nFollowing the Sykes-Picot Agreement, the Middle East was later partitioned by the British and French into mandate territories rather than a unified Arab state, and the British reneged on their promise to support a unified independent Arab state. "
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Italy: Paolo Boselli succeeds Antonio Salandra as Prime Minister. "
+			"summary": "Paolo Boselli succeeds Antonio Salandra as Prime Minister. ",
+			"heading": "Paolo Boselli succeeds Antonio Salandra as Prime Minister",
+			"body": "Boselli was born in Savona, Liguria on 8 June 1838.\n\nBoselli was the first professor of science at the University of Rome prior to entering politics. He served for 51 years as a liberal rightist parliamentary deputy, and as a senator from 1921.\n\nAppointed Minister of Education in 1888, Boselli reorganised the Bank of Italy with his next portfolio, as Minister of the Treasury in 1899. He also served in Sidney Sonnino's 1906 government.\n\nIn June 1916 he was a relatively undistinguished center-right politician and one of the oldest members of the Italian parliament, when he was appointed Prime Minister, following the collapse of the Salandra government as a result of military defeats.\n\nHis government fell in October 1917 as a result of the Italian military defeat in the Battle of Caporetto.\n\nDuring Boselli's time as prime minister, a decree of August 1917 extended the principle of compulsory insurance against accidents to agricultural workers generally.\n\nHe died in Rome on 10 March 1932, and was buried in Turin. "
 		},
 		{
-			"summary": "July"
+			"summary": "July",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "The Battle of the Somme begins. "
+			"summary": "The Battle of the Somme begins. ",
+			"heading": "The Battle of the Somme Begins",
+			"body": "The Battle of the Somme, also known as the Somme Offensive, was a battle of the First World War fought by the armies of the British Empire and French Third Republic against the German Empire. It took place between 1 July and 18 November 1916 on both sides of the upper reaches of the River Somme in France. The battle was intended to hasten a victory for the Allies and was the largest battle of the war's Western Front. More than three million men fought in the battle and one million men were wounded or killed, making it one of the bloodiest battles in human history.\n\nThe French and British had committed themselves to an offensive on the Somme during Allied discussions at Chantilly, Oise, in December 1915. The Allies agreed upon a strategy of combined offensives against the Central Powers in 1916, by the French, Russian, British and Italian armies, with the Somme offensive as the Franco-British contribution. Initial plans called for the French army to undertake the main part of the Somme offensive, supported on the northern flank by the Fourth Army of the British Expeditionary Force (BEF). When the Imperial German Army began the Battle of Verdun on the Meuse on 21 February 1916, French commanders diverted many of the divisions intended for the Somme and the \"supporting\" attack by the British became the principal effort. The British troops on the Somme comprised a mixture of the remains of the pre-war regular army; the Territorial Force; and Kitchener's Army, a force of volunteer recruits.\n\nThe first day on the Somme (1 July) saw a serious defeat for the German Second Army, which was forced out of its first position by the French Sixth Army, from Foucaucourt-en-Santerre south of the Somme to Maricourt on the north bank, and by the Fourth Army from Maricourt to the vicinity of the Albert–Bapaume road. This first day was, in terms of casualties, also the worst day in the history of the British Army, which suffered 57,470 casualties, including 19,240 killed in action. These occurred mainly on the front between the Albert–Bapaume road and Gommecourt, where the attack was defeated and few British troops reached the German front line. The battle became notable for the importance of air power, and the first use of the tank in September. Tanks were still being developed and were prone to breaking down.\n\nAt the end of the battle, British and French forces had penetrated 10 km (6 mi) into German-occupied territory. This was their largest territorial gain since the Battle of the Marne in 1914. However, key objectives of the Anglo-French armies were unfulfilled, as they failed to capture Péronne and halted 5 km (3 mi) from Bapaume, where the German armies maintained their positions over the winter. British attacks in the Ancre valley resumed in January 1917 and forced the Germans into local withdrawals to reserve lines in February, and ultimately into the scheduled retirement by about 25 mi (40 km) in Operation Alberich to the Siegfriedstellung (Hindenburg Line) in March 1917. Debate continues over the necessity, significance and effect of the battle. "
 		},
 		{
-			"summary": "Battle of Kostiuchnowka. \n\nBattle of Kowel. "
+			"summary": "Battle of Kostiuchnowka. \n\nBattle of Kowel. ",
+			"heading": "Battles of Kostiuchnowka and Kowel",
+			"body": "Battle of Kostiuchnowka\n\nThe Battle of Kostiuchnówka was a World War I battle that took place July 4–6, 1916, near the village of Kostiuchnówka (Kostyukhnivka) and the Styr River in the Volhynia region of modern Ukraine, then part of the Russian Empire. It was a major clash between the Russian Army and the Polish Legions (part of the Austro-Hungarian Army) during the opening phase of the Brusilov Offensive.\n\nPolish forces, numbering 5,500–7,300, faced Russian forces numbering over half of the 46th Corps of 26,000. The Polish forces were eventually forced to retreat, but delayed the Russians long enough for the other Austro-Hungarian units in the area to retreat in an organized manner. Polish casualties were approximately 2,000 fatalities and wounded. The battle is considered one of the largest and most vicious of those involving the Polish Legions in World War I.\n\nBattle of Kowel\n\nThe Battle of Kowel (also known as the Battle of Kovel or the Battle of Kovel-Stanislav) took place during World War I, from 24 July to 8 August 1916. It began with an Austrian counter-attack by Alexander von Linsingen south of Kowel, a city located in the Volyn Oblast (province), in north-western Ukraine. Linsingen intended to halt the Russian offensive under the command of General Aleksei Alekseevich Brusilov.\n"
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Battle of Erzincan. "
+			"summary": "Battle of Erzincan. ",
+			"heading": "Battle of Erzincan",
+			"body": "The Battle of Erzincan was a Russian victory over the Ottoman Empire during the First World War.\n\nIn February 1916, Nikolai Yudenich had taken the cities of Erzurum and Trabzon. Trabzon had provided the Russians with a port to receive reinforcements in the Caucasus. Enver Pasha ordered the Third Army, now under Vehip Pasha, to retake Trabzon. Vehip's attack failed and General Yudenich counterattacked on July 2. The Russian attack hit the Turkish communications center of Erzincan forcing Vehip's troops to retreat as well as losing 34,000 men, half taken as POWs. As a result, the Third Army was rendered ineffective for the rest of the year."
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "The Social Democratic Party wins a majority in the parliament of the Russian-ruled Grand Duchy of Finland. "
+			"summary": "The Social Democratic Party wins a majority in the parliament of the Russian-ruled Grand Duchy of Finland. ",
+			"heading": "The Social Democratic Party wins a majority in the parliament of Finland",
+			"body": "Parliamentary elections were held in the Grand Duchy of Finland on 1 and 3 July 1916. \n\nThe Finnish Parliament had not been in session during the early years of World War I. The Russian army's severe losses to the German army started to awaken among the Finns the hope that they could get regain self-government. The Russian government's plan to totally Russify Finland had been leaked to several Finnish newspapers in 1914, and had been heavily criticized. Its implementation had been suspended for the duration of the war. \n\nThe workers' and tenant farmers' discontent with their social and economic problems was growing; workers still had to work an average of ten hours per day, and the tenant farmers still rented their lands from the landowning peasants, and they could be expelled from those lands if they did not fulfill their contracts' quite strict conditions. The Social Democrats managed to win their first and so far only parliamentary majority in the Finnish elections by promising more effectively than the bourgeois parties to help the poor and underprivileged people among the Finns.\n"
 		},
 		{
-			"summary": "August"
+			"summary": "August",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Sixth Battle of the Isonzo. The Italians capture Gorizia"
+			"summary": "Sixth Battle of the Isonzo. The Italians capture Gorizia",
+			"heading": "Sixth Battle of the Isonzo",
+			"body": "The Sixth Battle of the Isonzo also known as the Battle of Gorizia was the most successful Italian offensive along the Soča (Isonzo) River during World War I. \n\nFranz Conrad von Hötzendorf had reduced the Austro-Hungarian forces along the Soča (Isonzo) front to reinforce his Trentino Offensive and also to assist with the defense of the Russian Brusilov Offensive then taking place on the eastern front. Italian Chief-of-Staff Luigi Cadorna turned his attention (along with that of Prince Emanuele Filiberto, Duke of Aosta – Commander of the Italian Third Army) to the Isonzo front and particularly, the city of Gorizia. They planned a heavy bombardment in a very restricted zone between Monte Calvario and Monte San Michele – two heights overlooking the city. The bombardment would be followed by ground action to obtain control of the left bank of the Isonzo. Moreover, this battle would start with an advantage because the Italians had already succeeded in advancing towards the top of Monte Sabotino another height (which overlooks the Isonzo valley and is key to the control of the city) above Gorizia and Italian sappers had built several tunnels behind the emplacements of the Austro-Hungarian troops there.\n\nCardona also made good use of railroads to quickly shift troops from Trentino back to the Isonzo line for this offensive against the weakened Austro-Hungarian defenses. "
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Conquest of Romania by Central Powers. "
+			"summary": "Conquest of Romania by Central Powers. ",
+			"heading": "Conquest of Romania by Central Powers",
+			"body": "The Kingdom of Romania was neutral for the first two years of World War I, entering on the side of the Allied powers from 27 August 1916 until Central Power occupation led to the Treaty of Bucharest in May 1918, before reentering the war on 10 November 1918. It had the most significant oil fields in Europe, and Germany eagerly bought its petroleum, as well as food exports.\n\nKing Carol favored Germany but after his death in 1914, King Ferdinand and the nation's political elite favored the Entente. For Romania, the highest priority was taking Transylvania from Hungary, with around 2,800,000 Romanians out of 5,000,000 people. The Allies wanted Romania to join its side in order to cut the rail communications between Germany and Turkey, and to cut off Germany's oil supplies.\n\nBritain made loans, France sent a military training mission, and Russia promised modern munitions. The Allies promised at least 200,000 soldiers to defend Romania against Bulgaria to the south, and help it invade Austria.\n\nThe Romanian campaign was part of the Eastern Front of World War I, with Romania and Russia allied with Britain and France against the Central Powers of Germany, Austria-Hungary, the Ottoman Empire, and Bulgaria. Fighting took place from August 1916 to December 1917 across most of present-day Romania, including Transylvania, which was part of the Austro-Hungarian Empire at the time, as well as in Southern Dobruja, which is currently part of Bulgaria.\n\nThe Romanian Campaign Plan (The \"Z\" Hypothesis) consisted in attacking Austria-Hungary in Transylvania, while defending Southern Dobruja and Giurgiu from Bulgaria in the south. Despite initial successes in Transylvania, after German divisions started aiding Austria-Hungary and Bulgaria, the Romanian forces (aided by Russia) suffered massive setbacks, and by the end of 1916 out of the territory of the Romanian Old Kingdom only Western Moldavia remained under the control of the Romanian and Russian armies.\n\nAfter several defensive victories in 1917 at Mărăști, Mărășești and Oituz, with Russia's withdrawal from the war following the October Revolution, Romania, almost completely surrounded by the Central Powers, was also forced to drop out of the war, it signed the Treaty of Bucharest with the Central Powers in May 1918. The parliament signed the treaty, however King Ferdinand refused to sign it hoping for an Allied victory on the western front. On 10 November 1918, just one day before the German armistice and after all the other Central Powers had already capitulated, Romania re-entered the war after the successful Allied advances on the Macedonian front. "
 		},
 		{
-			"summary": "Battle of Mlali. "
+			"summary": "Battle of Mlali. ",
+			"heading": "Battle of Mlali",
+			"body": "The Battle of Mlali was fought during the East African Campaign of World War I. In mid-August 1916, the British General Jan Christiaan Smuts led three divisions from Kenya south into the Imperial German colony of Tanganyika in order to seize and disrupt their vital railway. The German commander Paul von Lettow-Vorbeck was informed by his scouts of the British movement and sent Captain Otto to investigate.\n\nThe Germans were forced to withdraw in the face of greater British numbers. Despite several skirmishes, the British never succeeded in drawing out the main body of the German force to face their superior numbers. However, despite this the Germans lost several important supply locations when they were captured by the British.\n\nThe British objective was primarily to destroy German troops, which they failed to achieve. However, despite this failure the battle was considered as a victory by the British High Command, since they had Germans forced into a retreat.\n\nCaptain William Bloomfield of the 2nd South African Mounted Brigade received the Victoria Cross for rescuing a wounded corporal during the battle at great personal risk. "
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Italy declares war on Germany."
+			"summary": "Italy declares war on Germany.",
+			"heading": "Italy declares war on Germany",
+			"body": "Although a member of the Triple Alliance, Italy did not join the Central Powers – Germany and Austria-Hungary – when the war started on 28 July 1914. In fact, those two countries had taken the offensive while the Triple Alliance was supposed to be a defensive alliance. Moreover the Triple Alliance recognized that both Italy and Austria-Hungary were interested in the Balkans and required both to consult each other before changing the status quo and to provide compensation for whatever advantage in that area: Austria-Hungary did consult Germany but not Italy before issuing the ultimatum to Serbia, and refused any compensation before the end of the war.\n\nAlmost a year after the war's commencement, after secret parallel negotiations with both sides (with the Allies in which Italy negotiated for territory if victorious, and with the Central Powers to gain territory if neutral) Italy entered the war on the side of the Allied Powers. Italy began to fight against Austria-Hungary along the northern border, including high up in the now-Italian Alps with very cold winters and along the Isonzo river. The Italian army repeatedly attacked and, despite winning a majority of the battles, suffered heavy losses and made little progress as the mountainous terrain favoured the defender. Italy was then forced to retreat in 1917 by a German-Austrian counteroffensive at the Battle of Caporetto after Russia left the war allowing the Central Powers to move reinforcements to the Italian Front from the Eastern Front.\n\nThe offensive of the Central powers was stopped by Italy at the Battle of Monte Grappa in November 1917 and the Battle of the Piave River in May 1918. Italy took part in the Second Battle of the Marne and the subsequent Hundred Days Offensive in the Western Front. On 24 October 1918 the Italians, despite being outnumbered, breached the Austrian line in Vittorio Veneto and caused the collapse of the centuries-old Habsburg Empire. Italy recovered the territory lost after the fighting at Caporetto in November the previous year and moved into Trento and South Tyrol. Fighting ended on 4 November 1918. Italian armed forces were also involved in the African theatre, the Balkan theatre, the Middle Eastern theatre and then took part in the Occupation of Constantinople. At the end of World War I, Italy was recognized with a permanent seat in the League of Nations' executive council along with Britain, France and Japan. "
 		},
 		{
-			"summary": "September"
+			"summary": "September",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Battles of Guillemont, Ginchy, Flers-Courcelette, Morval and Thiepval Ridge (parts of the Battle of the Somme) "
+			"summary": "Battles of Guillemont, Ginchy, Flers-Courcelette, Morval and Thiepval Ridge (parts of the Battle of the Somme) ",
+			"heading": "Battles of Guillemont, Ginchy, Flers-Courcelette, Morval and Thiepval Ridge",
+			"body": "Battle of Guillemont\n\nThe Battle of Guillemont (3–6 September 1916) was an attack by the British Fourth Army on the village of Guillemont. The village is on the D 20 running east to Combles and the D 64 south-west to Montauban. Longueval and Delville Wood lie to the north-west and Ginchy to the north-east. The village was on the right flank of the British sector, near the boundary with the French Sixth Army. The Fourth Army had advanced close to Guillemont during the Battle of Bazentin Ridge (14–17 July) and the capture of the village was the culmination of British attacks which began on the night of 22/23 July. The attacks were intended to advance the right flank of the Fourth Army and eliminate a salient further north at Delville Wood. German defences ringed the wood and had observation over the French Sixth Army area to the south, towards the Somme river.\n\nPreparatory to a general attack intended for mid-September, from the Somme north to Courcelette (beyond the Albert–Bapaume road), the French Sixth Army, the Fourth Army and the Reserve Army conducted numerous attacks to capture the rest of the German second line and to gain observation over the German third line. The German defences around Guillemont were based on the remaining parts of the second line and fortified villages and farms northwards from Hem, Maurepas and Combles, to Falfemont Farm, Guillemont, Ginchy, Delville Wood and High Wood, which commanded the ground in between.[a]\n\nNumerous attempts were made by Joseph Joffre, Sir Douglas Haig, Ferdinand Foch and the army commanders Henry Rawlinson and Émile Fayolle to co-ordinate joint attacks, which failed due to the recovery of the German 2nd Army from the disorganisation caused by the defeats in early July, disagreements over tactics by Haig and Joffre in July and August and organisational constraints caused by congestion behind the front, roads and tracks obliterated by Anglo-French artillery-fire becoming swamps when it rained and increasing German artillery-fire on targets behind the front line. Inexperience, unreliable machinery, guns, ammunition and an unpredictable flow of supplies from Britain, reduced the effectiveness of the British armies. Difficulty in co-ordinating attacks by the Entente armies and the large number of piecemeal attacks resorted to by the British, have been criticised as costly failures and evidence of muddle and incompetence by the generals. The French Sixth and Tenth Army armies had similar difficulties and severe strain had been put on the German 2nd and 1st Army (formed on 19 July), forcing them into a similar piecemeal defence.\n\nThe official historian, Wilfrid Miles, wrote in the History of the Great War volume Military Operations France and Belgium, 1916: 2nd July 1916 to the End of the Battles of the Somme (1938), that the defence of Guillemont was judged by some observers to be the best performance of the war by the German army on the Western Front. A pause at the end of August in Anglo-French attacks, to organise bigger combined attacks and postponements for bad weather, coincided with the largest German counter-attack yet. Joffre, Foch and Haig abandoned attempts to organise large combined attacks, in favour of sequenced army attacks. The capture of the German defences from Cléry north of the Somme to Guillemont from 3 to 6 September brought the Sixth and Fourth armies onto ground which overlooked the German third position. Rain, congestion and relief of tired divisions, then forced a pause in French attacks until 12 September. At the Battle of Ginchy (9 September) the Fourth Army captured the village, ready to begin the Battle of Flers–Courcelette, (15–22 September). \n\nBattle of Ginchy\n\nThe Battle of Ginchy took place on 9 September 1916 during the Battle of the Somme, when the 16th (Irish) Division captured the German-held village. Ginchy is 0.93 mi (1.5 km) north-east of Guillemont, at the junction of six roads, on a rise overlooking Combles, 2.5 mi (4 km) to the south-east. After the conclusion of the Battle of Guillemont on 6 September, XIV Corps and XV Corps were required to complete the advance to positions which would give observation over the German third position, to be ready for a general attack in mid-September, for which the Anglo-French armies had been preparing since early August.\n\nBritish attacks northwards from the boundary between the Fourth Army and the French Sixth Army, from Leuze Wood north to Ginchy, had begun on 3 September when the 7th Division captured the village, before being forced out by a German counter-attack. Attacks on Leuze Wood and attempts to re-take Ginchy on 4 and 5 September were also defeated by German counter-attacks. The 7th Division was relieved by the 16th (Irish) Division and 55th (West Lancashire) Division on the evening of 7 September and the 5th Division was replaced by the 56th (1/1st London) Division on the right at the army boundary.\n\nOn 9 September the British began a bombardment early in the morning but waited until late afternoon to advance, to deny the Germans time to counter-attack before dark. The British assault in the south by the 56th (1/1st London) Division and the 16th (Irish) Division reached Bouleaux Wood but the attack in the centre was repulsed. On the northern flank, Ginchy was captured by the 16th (Irish) Division and several German counter-attacks were defeated. The loss of Ginchy deprived the Germans of observation posts from which they could observe the battlefield. The success eliminated the salient at Delville Wood, which had been costly to defend, due to observed German artillery-fire from three sides and the many counter-attacks by German infantry in July and August; the attack on 31 August, being the largest mounted by the Germans against the British during the battle.\n\nThe success of the attack by the French Sixth Army on 12 September, in its biggest operation of the battle and the advance of the right flank of the British Fourth Army from 3 to 9 September, enabled both armies to make much bigger attacks. The assaults were sequenced with attacks by the Tenth and Reserve armies in September, which captured much more ground and inflicted approximately 130,000 casualties on the German defenders. Anglo-French attempts to co-ordinate their attacks had failed from July to early September, due to a combination of disagreements between Haig, Joffre and Foch over tactics, supply difficulties, devastated terrain, inclement weather and the increasing defensive power of the German armies. In September, the Allies managed to co-ordinate their attacks; advances on each army front made adjacent German positions vulnerable, which were attacked promptly by the neighbouring army before the Germans recovered from their disorganisation.\n\nBattle of Flers-Courcelette\n\nThe Battle of Flers–Courcelette (15–22 September 1916) was fought during the Battle of the Somme in France, by the French Sixth Army and the British Fourth Army and Reserve Army, against the German 1st Army, during the First World War. The Anglo-French attack of 15 September began the third period of the Battle of the Somme but by its conclusion on 22 September, the strategic objective of a decisive victory had not been achieved. The infliction of many casualties on the German front divisions and the capture of the villages of Courcelette, Martinpuich and Flers had been a considerable tactical victory but the German defensive success on the British right flank, made exploitation and the use of cavalry impossible. Tanks were used in battle for the first time in history and the Canadian Corps and the New Zealand Division fought for the first time on the Somme. On 16 September, Jagdstaffel 2, a specialist fighter squadron, began operations with five new Albatros D.I fighters, which were capable of challenging British air supremacy for the first time since the beginning of the battle.\n\nThe attempt to advance deeply on the right and pivot on the left failed but the British gained about 2,500 yd (2,300 m) in general and captured High Wood, moving forward about 3,500 yd (3,200 m) in the centre, beyond Flers and Courcelette. The Fourth Army crossed Bazentin Ridge, which exposed the German rear-slope defences beyond to ground observation and on 18 September, the Quadrilateral, where the British advance had been frustrated on the right flank, was captured. Arrangements were begun immediately to follow up the tactical success which, after supply and weather delays, began on 25 September at the Battle of Morval; continued by the Reserve Army next day at the Battle of Thiepval Ridge. September was the most costly month of the battle for the German armies which suffered about 130,000 casualties. Combined with the losses at Verdun and on the Eastern Front, the German Empire was brought closer to military collapse than at any time before the autumn of 1918. \n\nBattle of Morval\n\nThe Battle of Morval, 25–28 September 1916, was an attack during the Battle of the Somme by the British Fourth Army on the villages of Morval, Gueudecourt and Lesbœufs held by the German 1st Army, which had been the final objectives of the Battle of Flers–Courcelette (15–22 September). The main British attack was postponed, to combine with attacks by the French Sixth Army on the village of Combles south of Morval, to close up to the German defences between Moislains and Le Transloy, near the Péronne–Bapaume road (N 17). The combined attack from the Somme river northwards to Martinpuich on the Albert–Bapaume road, was also intended to deprive the German defenders further west near Thiepval of reinforcements, before an attack by the Reserve Army, due on 26 September. The postponement was extended from 21–25 September because of rain, which affected operations more frequently during September.\n\nCombles, Morval, Lesbœufs and Gueudecourt were captured and many casualties inflicted on the Germans. The French made slower progress near the inter-army boundary, due to the obstruction of St Pierre Vaast Wood to the French attack north towards Sailly and Sailly-Saillisel. The inter-army boundary was moved north from 27–28 September, to allow the French more room to deploy their forces but the great quantity of German artillery-fire limited the French advance. The Fourth Army advance on 25 September was its deepest since 14 July and left the Germans in severe difficulties, particularly in a salient which developed to the north-east of Combles. Tiredness and lack of reserves prevented the Fourth Army exploiting its success beyond patrolling and cavalry probes. The Reserve Army attack began on 26 September, at the Battle of Thiepval Ridge. Deteriorating weather and the shorter days, greatly increased British and French transport difficulties; rain and fog grounded aircraft and impeded artillery observation. Mud reduced the blast effect of shells and immobilised infantry, which was an advantage to the defenders. A small number of tanks joined in the battle later in the afternoon, after having been held back because of the later start and reduced a number of German strong points which had withstood earlier attacks. \n\nBattle of Thiepval Ridge\n\nThe Battle of Thiepval Ridge was the first large offensive mounted by the Reserve Army (Lieutenant General Hubert Gough), during the Battle of the Somme on the Western Front during the First World War. The attack was intended to benefit from the Fourth Army attack in the Battle of Morval, by starting 24 hours afterwards.[a] The battle was fought on a front from Courcelette in the east, near the Albert–Bapaume road to Thiepval and the Schwaben Redoubt (Schwaben-Feste) in the west, which overlooked the German defences further north in the Ancre valley, the rising ground towards Beaumont-Hamel and Serre beyond. Thiepval Ridge was well fortified and the German defenders fought with great determination, while the British co-ordination of infantry and artillery declined after the first day, due to the confused nature of the fighting in the mazes of trenches, dugouts and shell-craters. The final British objectives were not reached until a reorganisation of the Reserve Army and the Battle of the Ancre Heights (1 October – 11 November).\n\nOrganisational difficulties and deteriorating weather frustrated General Joseph Joffre's intention to proceed with vigorous co-ordinated attacks by the Anglo-French armies, which became disjointed and declined in effectiveness during late September, at the same time as a revival occurred in the German defence. The British experimented with new techniques in gas warfare, machine-gun bombardment and tank–infantry co-operation, as the German defenders on the Somme front struggled to withstand the preponderance of men and material fielded by the Anglo–French, despite reorganisation and substantial reinforcement of troops, artillery and aircraft from Verdun. September became the month most costly in casualties for the German armies on the Somme. "
 		},
 		{
-			"summary": "The Brusilov Offensive ends with a substantial Russian success. "
+			"summary": "The Brusilov Offensive ends with a substantial Russian success. ",
+			"heading": "The Brusilov Offensive Ends",
+			"body": "Brusilov's operation achieved its original goal of forcing Germany to halt its attack on Verdun and transfer considerable forces to the East. It also broke the back of the Austro-Hungarian Army, which suffered the majority of the casualties. Afterward, the Austro-Hungarian army increasingly had to rely on the support of the German army for its military successes. On the other hand, the German army did not suffer much from the operation and retained most of its offensive power afterward.\n\nThe early success of the offensive convinced Romania to enter the war on the side of the Entente, though that turned out to be a bad decision since it led to the failure of the 1916 campaign. Russian casualties were considerable, numbering between 500,000 and 1,000,000.[16] Austria-Hungary and Germany lost 616,000 and 148,000, respectively, making a total of 764,000 casualties. The Brusilov Offensive is considered as one of the most lethal offensives in world history.\n\nThe Brusilov Offensive was the high point of the Russian effort during World War I, and was a manifestation of good leadership and planning on the part of the Imperial Russian Army coupled with great skill of the lower ranks. According to John Keegan, \"the Brusilov Offensive was, on the scale by which success was measured in the foot-by-foot fighting of the First World War, the greatest victory seen on any front since the trench lines had been dug on the Aisne two years before\".\n\nThe Brusilov offensive commanded by Brusilov himself went very well, but the overall campaign, for which Brusilov's part was only supposed to be a distraction, because of Evert's failures, became tremendously costly for the Imperial army, and after the offensive, it was no longer able to launch another on the same scale. Many historians contend that the casualties that the Russian army suffered in this campaign contributed significantly to its collapse the following year.\n\nThe operation was marked by a considerable improvement in the quality of Russian tactics. Brusilov used smaller, specialized units to attack weak points in the Austro-Hungarian trench lines and blow open holes for the rest of the army to advance into. These were a remarkable departure from the human wave attacks that had dominated the strategy of all the major armies until that point during World War I. Evert used conventional tactics that were to prove costly and indecisive, thereby costing Russia its chance for a victory in 1916.\n\nThe irony was that other Russian commanders did not realize the potential of the tactics that Brusilov had devised. Similar tactics were proposed separately by French, Germans, and British on the Western Front, and employed at the Battle of Verdun earlier in the year, and would henceforth be used to an even greater degree by the Germans, who utilized stormtroopers and infiltration tactics to great effect in the 1918 Spring Offensive.\n\nBreakthrough tactics were later to play a large role in the early German blitzkrieg offensives of World War II and the later attacks by the Soviet Union and the Western Allies to defeat Germany, and evolved into modern armoured warfare."
 		},
 		{
-			"summary": "Seventh Battle of the Isonzo"
+			"summary": "Seventh Battle of the Isonzo",
+			"heading": "Seventh Battle of the Isonzo",
+			"body": "The Seventh Battle of the Isonzo was fought from September 14-17, 1916 between the armies of the Kingdom of Italy and those of Austria-Hungary. It followed the Italian successes during the Trentino Offensive and the Sixth Battle of the Isonzo in the spring of 1916.\n\nA short, sharp encounter fought from 14-17 September 1916, the Seventh Battle of the Isonzo saw Italian Chief of Staff Luigi Cadorna shift his focus from broad-based diversionary attacks to tightly focused initiatives directed at single targets.[3] This latest Isonzo battle saw the Italian Third Army, with a large amount of artillery, attack on the Carso toward Nova Vas. Following a successful first day, Nova Vas was assaulted on the second day with substantial artillery bombardments on German bunkers. Within minutes of the Italians ceasing fire, the Austro-Hungarian forces surrendered.\n\nNevertheless Cadorna's continued offensives along the Soča (Isonzo) did succeed in wearing away at Austro-Hungarian resources, both in terms of manpower and in crucial artillery availability. As each battle proceeded the Italians' war of attrition seemed ever more likely to wear the Austro-Hungarians into defeat, short of assistance from their German allies.\n\n"
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Battles of Kisaki, Tabora and Dutumi"
+			"summary": "Battles of Kisaki andTabora",
+			"heading": "Battles of Kisaki and Tabora",
+			"body": "Battle of Kisaki\n\nThe Battle of Kisaki was a confrontation between German and South Africa forces near the town of Kisaki, German East Africa, on 7–11 September 1916. \n\nThe German Schutztruppen prepared defensive positions outside the town of Kisaki. 200 troops were stationed around the town, 1,000 were kept as a mobile reserve to the west while another 1,000 were kept in reserve on the other side of a mountain.\n\nOn 7 September 1916, the 3rd Infantry Division conducted a frontal assault on the defensive positions of the Schutztruppen. German Field Artillery and 4.1 inch (100 mm) guns, salvaged from the SMS Koenigsberg, blasted the South African formations.\n\nThe 1st Mounted Brigade attempted to maneuver around the flank and prepared to assault on the German positions. However, the treacherous terrain, and loss of the radio linking them to 3rd Infantry Division, caused them to arrive on 8 September. Lettow-Vorbecks reserve was positioned in a good position to strike the cavalry with guns and rifles and the South Africans were routed.\n\nSmuts called off the attack on 11 September and withdrew his forces to the Central Railway. Lettow-Vorbeck had gained some breathing space from the British forces pursuing him, and on 14 September he abandoned Kisaki and marched his forces south to establish a new base at Beho-Beho.\n\nBattle of Tabora \n\nThe Battle of Tabora (French: Bataille de Tabora; 8–19 September 1916[1]) was a military action which occurred around the town of Tabora in the north-west of German East Africa (modern-day Tanzania) during World War I. The engagement was part of the East Africa Campaign and was the culmination of the Tabora Offensive in which a Belgian force from the Belgian Congo crossed the border and captured the settlement of Kigoma and Tabora (the largest town in the interior of the German colony), pushing the German colonial army back. The victory not only left much of the Ruanda-Urundi territory under Belgian military occupation but gave the Allies control of the important Tanganjikabahn railway.\n\n"
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "October"
+			"summary": "October",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Battles of Le Transloy and Ancre Heights (parts of the Battle of the Somme). The French recapture Fort Douaumont near Verdun. "
+			"summary": "Battles of Le Transloy and Ancre Heights (parts of the Battle of the Somme). The French recapture Fort Douaumont near Verdun. ",
+			"heading": "Battles of Le Transloy and Ancre Heights",
+			"body": "Battle of Le Transloy\n\nThe Battle of Le Transloy was the last big attack by the Fourth Army of the British Expeditionary Force (BEF) in the 1916 Battle of the Somme in France, during the First World War. The battle was fought in conjunction with attacks by the French Tenth and Sixth armies on the southern flank and the Reserve/5th Army on the northern flank, against Heeresgruppe Rupprecht (Field Marshal Rupprecht of Bavaria) created on 28 August, from the 1st and 2nd armies of the dissolved armeegruppe Gallwitz-Somme and the 6th and 7th armies. General Ferdinand Foch, commander of groupe des armées du nord (Northern Army Group) and co-ordinator of the armies on the Somme, was unable to continue the sequential attacks by the Anglo-French armies achieved in September, because persistent rain, mist and fog grounded aircraft, turned the battlefield into a swamp and greatly increased the difficulty of transporting supplies to the front over the few roads in the area and the land that had been devastated since 1 July.\n\nThe German 2nd and 1st armies on the Somme managed a recovery after the string of defeats in September, with fresh divisions to replace exhausted troops and more aircraft, artillery and ammunition diverted from the battle at Verdun and stripped from other parts of the Western Front. Command of the German Air Service (Die Fliegertruppen) was centralised and the new Luftstreitkräfte (German Air Force) was able to challenge Anglo-French air superiority with the reinforcements and new, superior, fighter aircraft. The German flyers further reduced the ability of the Anglo-French airmen to support the armies with artillery-observation and contact patrols in the rare periods of clear weather. The German armies lost much less ground and had fewer casualties in October than in September (the costliest month of the battle) but the proportion of casualties increased from 78.9–82.3 per cent of the Anglo-French total. The reinforcement of the Somme front with troops and equipment from Verdun also contributed to the German defeat in the First Offensive Battle of Verdun (1ère Bataille Offensive de Verdun) 20 October – 2 November) and the loss of forts Douaumont and Vaux.\n\nRain, fog and mud were a lesser problem for the Germans, who had to carry supplies forward over a much narrower beaten zone and were being forced back onto undamaged ground. German bombardments on the few roads between the original front line and the line established by October, increased the difficulties of the Fourth and Sixth armies and during October the size and ambition of Anglo-French attacks was reduced progressively to local operations. The soldiers of the British, French and German armies endured miserable conditions, in which the Germans were able to keep going in the knowledge that the onset of winter would end the Somme offensive, despite the many extra casualties caused by illness. The British and French benefited from superior numbers, which enabled the Allied commanders to relieve divisions after shorter periods in the line. Severe criticism of General Sir Douglas Haig and General Henry Rawlinson during and since the war for persisting with attacks on October, was challenged in 2009 by William Philpott, who put the British share of the battle into the context of strategic subordination to French wishes, the concept of a general Allied offensive established by Joffre and the continuation of French attacks south of Le Transloy, which had to be supported by British operations. In a 2017 publication, Jack Sheldon translated overlooked German material on the ordeal endured on the German armies. \n\nBattle of Ancre Heights\n\nThe Battle of the Ancre Heights (1 October – 11 November 1916), is the name given to the continuation of British attacks after the Battle of Thiepval Ridge from 26–28 September during the Battle of the Somme. The battle was conducted by the Reserve Army (renamed Fifth Army on 29 October) from Courcelette near the Albert–Bapaume road, west to Thiepval on Bazentin Ridge.[a] British possession of the heights would deprive the German 1st Army of observation towards Albert to the south-west and give the British observation north over the Ancre valley to the German positions around Beaumont-Hamel, Serre and Beaucourt. The Reserve Army conducted large attacks on 1, 8, 21, 25 October and from 10–11 November.\n\nMany smaller attacks were made in the intervening periods, amid interruptions caused by frequent heavy rain, which turned the ground and roads into rivers of mud and grounded aircraft. German forces in footholds on the ridge, at the east end of Staufen Riegel (Regina Trench) and in the remaining parts of Schwaben-Feste (Schwaben Redoubt) to the north and Stuff Redoubt (Staufen-Feste) north-east of Thiepval, fought a costly defensive battle with numerous counter-attacks and attacks, which delayed the British capture of the heights for more than a month.\n\nStuff Redoubt fell on 9 October and the last German position in Schwaben Redoubt fell on 14 October, exposing the positions of the 28th Reserve Division in the Ancre valley, to British ground observation. A German retreat from the salient that had formed around St. Pierre Divion and Beaumont Hamel either side of the Ancre, was considered by Generalquartiermeister Erich Ludendorff and the new army group commander Field Marshal Rupprecht, Crown Prince of Bavaria and rejected, due to the lack of better defensive positions further back, in favour of counter-attacks desired by General Fritz von Below the 1st Army commander. General Max von Gallwitz the 2nd Army commander, noted in early October that so many of his units had been moved to the 1st Army north of the Somme, that he had only one fresh regiment in reserve.\n\nThe German counter-attacks were costly failures and by 21 October, the British had managed to advance 500 yd (460 m) and take all but the last German foothold in the eastern part of Staufen Riegel (Regina Trench). A French offensive during the Battle of Verdun on 24 October, forced the Germans to suspend the movement of troops to the Somme front. From 29 October – 9 November, British attacks were postponed due to more poor weather, before the capture of 1,000 yd (910 m) of the eastern end of Regina Trench by the 4th Canadian Division on 11 November. Fifth Army operations resumed in the Battle of the Ancre (13–18 November). "
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Eighth Battle of the Isonzo. "
+			"summary": "Eighth Battle of the Isonzo. ",
+			"heading": "Eighth Battle of the Isonzo. ",
+			"body": "The Eighth Battle of the Isonzo was fought from October 10–12, 1916 between Italy and Austria-Hungary. \n\nThe Eighth Battle of the Isonzo, fought briefly from 10–12 October 1916, was essentially a continuation of attempts made during the Seventh Battle of the Isonzo (14–17 September 1916) to extend the bridgehead established at Gorizia during the Sixth Battle of the Isonzo in August 1916.\n\nItalian Chief of Staff Luigi Cadorna was determined to continue Italian attacks to the left of the town, a policy that continued during the following (ninth) battle - with an equal lack of success.\n\nAs with the earlier, Seventh, attack, heavy Italian casualties required that the short, sharp concentrated initiative be called off pending the army's recuperation.\n\nThe seemingly interminable Isonzo onslaught was next renewed with the Ninth Battle of the Isonzo on 1 November 1916, the fifth and final attack of the year.\n\nItalian architect Antonio Sant'Elia, a key member of the Futurist movement in architecture, was killed during the battle. "
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "November"
+			"summary": "November",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "The Battle of the Somme ends with enormous casualties and an Anglo-French advantage. "
+			"summary": "The Battle of the Somme ends with enormous casualties and an Anglo-French advantage. ",
+			"heading": "The Battle of the Somme Ends",
+			"body": "At the start of 1916, most of the British Army was an inexperienced and patchily trained mass of volunteers. The Somme was a great test for Kitchener's Army, created by Kitchener's call for recruits at the start of the war. The British volunteers were often the fittest, most enthusiastic and best educated citizens but were inexperienced and it has been claimed that their loss was of lesser military significance than the losses of the remaining peacetime-trained officers and men of the Imperial German Army. British casualties on the first day were the worst in the history of the British Army, with 57,470 casualties, 19,240 of whom were killed.\n\nBritish survivors of the battle had gained experience and the BEF learned how to conduct the mass industrial warfare which the continental armies had been fighting since 1914. The European powers had begun the war with trained armies of regulars and reservists, which were wasting assets. Crown Prince Rupprecht of Bavaria wrote, \"What remained of the old first-class peace-trained German infantry had been expended on the battlefield\". A war of attrition was a logical strategy for Britain against Germany, which was also at war with France and Russia. A school of thought holds that the Battle of the Somme placed unprecedented strain on the German army and that after the battle it was unable to replace casualties like-for-like, which reduced it to a militia. Philpott argues that the German army was exhausted by the end of 1916, with loss of morale and the cumulative effects of attrition and frequent defeats causing it to collapse in 1918, a process which began on the Somme, echoing Churchill's argument that the German soldiery was never the same again.\n\nThe destruction of German units in battle was made worse by lack of rest. British and French aircraft and long-range guns reached well behind the front-line, where trench-digging and other work meant that troops returned to the line exhausted. Despite the strategic predicament of the German army, it survived the battle, withstood the pressure of the Brusilov Offensive and conquered almost all of Romania. In 1917, the German army in the west survived the large British and French offensives of the Nivelle Offensive and the Third Battle of Ypres, though at great cost.\n\nThe British and French had advanced about 6 mi (9.7 km) on the Somme, on a front of 16 mi (26 km) at a cost of 419,654 to 432,000 British and about 200,000 French casualties, against 465,181 to 500,000 or perhaps 600,000 German casualties. Until the 1930s the dominant view of the battle in English-language writing was that the battle was a hard-fought victory against a brave, experienced and well-led opponent. Winston Churchill had objected to the way the battle was being fought in August 1916, David Lloyd George when Prime Minister criticised attrition warfare frequently and condemned the battle in his post-war memoirs. In the 1930s a new orthodoxy of \"mud, blood and futility\" emerged and gained more emphasis in the 1960s when the 50th anniversaries of the Great War battles were commemorated."
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Ninth Battle of the Isonzo."
+			"summary": "Ninth Battle of the Isonzo.",
+			"heading": "Ninth Battle of the Isonzo",
+			"body": "The Ninth Battle of the Isonzo was an Italian offensive against Austria-Hungary in the course World War I. Including a triumvirate of battles launched after the Italians' successful seizure of Gorizia in August 1916 to extend their bridgehead to the left of the town, it ended in further failure for the Italian Chief of Staff Luigi Cadorna.\n\nThe battle started with an attack on Vrtojba and the northern and central areas of the Karst Plateau. With the ninth battle fought from 1–4 November 1916 the combined casualty total from the three linked battles proved sufficiently heavy to ensure that each attack was of short duration (each less than a week). The Italians suffered 75,000 casualties and the Austro-Hungarians 63,000.\n\nAs always along the Soča (Isonzo), the Austro-Hungarian Army's command of the mountainous terrain provided a formidable natural barrier to the Italians' attempts to achieve a breakthrough. Cadorna had intended to ensure such a breakthrough in the wake of the capture of Gorizia during the Sixth Battle of the Isonzo, but instead the war of attrition gathered pace.\n\nNeither side could particularly afford the casualties suffered but the Austro-Hungarians in particular were finding their defensive lines increasingly stretched. Realising this they continued to call upon their German ally to provide military assistance within the sector. When the Germans finally assented (sensing the potential collapse of the Austro-Hungarian position) and constructed a combined force in time for the Twelfth Battle of Isonzo, the results were dramatic.\n\nHowever, with the ninth battle called off in failure on 4 November 1916 and the Italians undeniably weakened by continual offensive operations throughout the year - 1916 had seen five Isonzo operations on top of four undertaken the year before - a lengthy break was taken for the winter.\n\nOperations renewed afresh with the Tenth Battle of the Isonzo on 12 May 1917. "
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Battle of Matamondo. "
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "David Beatty replaces John Jellicoe as commander of the Grand Fleet. Jellicoe becomes First Lord of the Sea. "
+			"summary": "David Beatty replaces John Jellicoe as commander of the Grand Fleet. Jellicoe becomes First Lord of the Sea. ",
+			"heading": "David Beatty replaces John Jellicoe as commander of the Grand Fleet",
+			"body": "David Richard Beatty, 1st Earl Beatty, GCB, OM, GCVO, DSO, PC (17 January 1871 – 11 March 1936) was a Royal Navy officer. After serving in the Mahdist War and then the response to the Boxer Rebellion, he commanded the 1st Battlecruiser Squadron at the Battle of Jutland in 1916, a tactically indecisive engagement after which his aggressive approach was contrasted with the caution of his commander Admiral Sir John Jellicoe. He is remembered for his comment at Jutland that \"There seems to be something wrong with our bloody ships today\", after two of his ships exploded. Later in the war he succeeded Jellicoe as Commander in Chief of the Grand Fleet, in which capacity he received the surrender of the German High Seas Fleet at the end of the war. He then followed Jellicoe's path a second time, serving as First Sea Lord—a position that Beatty held longer (7 years 9 months) than any other First Sea Lord. While First Sea Lord, he was involved in negotiating the Washington Naval Treaty of 1922 in which it was agreed that the United States, Britain and Japan should set their navies in a ratio of 5:5:3, with France and Italy maintaining smaller ratio fleets of 1.75 each. "
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Francis Joseph I, Emperor of Austria and King of Hungary, dies and is succeeded by Charles I. "
+			"summary": "Francis Joseph I, Emperor of Austria and King of Hungary, dies and is succeeded by Charles I. ",
+			"heading": "Francis Joseph I dies",
+			"body": "Franz Joseph died in the Schönbrunn Palace on the evening of 21 November 1916, at the age of 86. His death was a result of developing pneumonia of the right lung several days after catching a cold while walking in Schönbrunn Park with the King of Bavaria. He was succeeded by his grandnephew Charles I, who reigned until the collapse of the Empire following its defeat in 1918.\n\nHe is buried in the Imperial Crypt in Vienna, where flowers are still left by monarchists."
 		},
 		{
-			"summary": "December"
+			"summary": "December",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Robert Nivelle replaces Joseph Joffre as Commander-in-Chief of the French Army. "
+			"summary": "Robert Nivelle replaces Joseph Joffre as Commander-in-Chief of the French Army. ",
+			"heading": "Robert Nivelle",
+			"body": "Robert Georges Nivelle  was a French artillery officer who served in the Boxer Rebellion, and the First World War. Nivelle was a very capable commander and organizer of field artillery at the regimental and divisional levels. In May 1916, he succeeded Philippe Pétain as commander of the French Second Army in the Battle of Verdun, leading counter-offensives that rolled back the German forces in late 1916. During these actions he and General Charles Mangin were already accused of wasting French lives.\n\nFollowing the successes at Verdun, Nivelle was promoted to commander-in-chief of the French armies on the Western Front in December 1916, largely because of his persuasiveness with French and British political leaders, aided by his fluency in English. He was responsible for the Nivelle Offensive at the Chemin des Dames, which had aroused skepticism already in its planning stages. When the costly offensive failed to achieve a breakthrough on the Western Front, a major mutiny occurred, affecting roughly half the French Army, which conducted no further major offensive action for several months. Nivelle was replaced as commander-in-chief by Philippe Pétain in May 1917. "
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Allies capture Yanbu. "
+			"summary": "Allies capture Yanbu. ",
+			"heading": "Capture of Yanbu",
+			"body": "The Battle on Yanbu began on December 1, 1916, when Fakhri Pasha, when two brigades invaded the outskirts of the city. The Ottomans initially had repelled the Arabs from strategic points in the city. Within a couple of days Pasha controlled all routes in and out of the city. The Arab soldiers in the city began constructing a makeshift airstrip for use by British aircraft. More Arab and British reinforcements arrived and strengthened defenses in the city.\n\nFive British Navy ships also arrived to help in the defense of the city, including Dufferin, HMS M31 and HMS Suva. T.E. Lawrence stated, \"Afterwards, old Dakhil Allah told me he had guided the Turks down to rush Yenbo in the dark that they might stamp out Faisal's army once for all; but their hearts had failed them at the silence and the blaze of lighted ships from end to end of the harbour, with the eerie beams of the searchlights revealing the bleakness of the glacis they would have to cross. So they turned back: and that night, I believe, the Turks lost their war.\"\n\nBy December 9, Arab counter-attacks opened up the routes to the city, and flights from HMS Raven II severely attacked the Ottoman columns. Because of the Navy's presence in the ocean off of Yanbu, Pasha called off all advances on the night of December 11/12. Due to logistical errors, and counterattacks from the Arabs, the Ottomans started the retreat to Medina on January 18, 1917, thus ending the recapture of Yanbu. "
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "Kaocen Revolt: The Tuareg besiege the French garrison at Agadez. "
+			"summary": "Kaocen Revolt: The Tuareg besiege the French garrison at Agadez. ",
+			"heading": "Kaocen Revolt",
+			"body": "The Kaocen revolt was a Tuareg rebellion against French colonial rule of the area around the Aïr Mountains of northern Niger during 1916–17. \n\nAg Mohammed Wau Teguidda Kaocen (1880–1919) was the Tuareg leader of the rising against the French. An adherent to the militantly anti-French Sanusiya Sufi religious order, Kaocen was the Amenokal (chief) of the Ikazkazan Tuareg confederation. Kaocen had engaged in numerous, mostly indecisive, attacks on French colonial forces from at least 1909. When the Sanusiya leadership in the Fezzan oasis town of Kufra (in modern Libya) declared a Jihad against the French colonialists in October 1914, Kaocen rallied his forces. Tagama, the Sultan of Agadez had convinced the French military that the Tuareg confederations remained loyal, and with his help, Kaocen's forces placed the garrison under siege on 17 December 1916. Tuareg raiders, numbering over 1,000, led by Kaocen and his brother Mokhtar Kodogo, and armed with repeating rifles and one cannon seized from the Italians in Libya, defeated several French relief columns. They seized all the major towns of the Aïr, including Ingall, Assodé, and Aouderas, placing what is today northern Niger under rebel control for over three months."
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": ""
+			"summary": "",
+			"heading": "",
+			"body": ""
 		},
 		{
-			"summary": "David Lloyd George becomes Prime Minister"
+			"summary": "David Lloyd George becomes Prime Minister",
+			"heading": "David Lloyd George becomes Prime Minister",
+			"body": "The fall of Asquith as Prime Minister split the Liberal Party into two factions: those who supported him and those who supported the coalition government. In his War Memoirs, Lloyd George compared himself with Asquith:\n\n\"There are certain indispensable qualities essential to the Chief Minister of the Crown in a great war. . . . Such a minister must have courage, composure, and judgment. All this Mr. Asquith possessed in a superlative degree. . . . But a war minister must also have vision, imagination and initiative—he must show untiring assiduity, must exercise constant oversight and supervision of every sphere of war activity, must possess driving force to energize this activity, must be in continuous consultation with experts, official and unofficial, as to the best means of utilising the resources of the country in conjunction with the Allies for the achievement of victory. If to this can be added a flair for conducting a great fight, then you have an ideal War Minister.\"\n\nAfter December 1916 Lloyd George relied on the support of Conservatives and of the press baron Lord Northcliffe (who owned both The Times and the Daily Mail). Besides the Prime Minister, the five-member War Cabinet contained three Conservatives (Lord President of the Council and Leader of the House of Lords Lord Curzon, Chancellor of the Exchequer and Leader of the House of Commons Bonar Law, and Minister without Portfolio Lord Milner) and Arthur Henderson, unofficially representing Labour. Edward Carson was appointed First Lord of the Admiralty, as had been widely touted during the intrigues of the previous month, but excluded from the War Cabinet. Amongst the few Liberal frontbenchers to support Lloyd George were Christopher Addison (who had played an important role in drumming up some backbench Liberal support for Lloyd George), H. A. L. Fisher, Lord Rhondda and Sir Albert Stanley. Edwin Montagu and Churchill joined the government in the summer of 1917.\n\nLloyd George's Secretariat, popularly known as Downing Street's \"Garden Suburb\", assisted him in discharging his responsibilities within the constraints of the war cabinet system. Its function was to maintain contact with the numerous departments of government, to collect information, and to report on matters of special concern. Its leading members were George Adams and Philip Kerr, and the other secretaries included David Davies, Joseph Davies, Waldorf Astor and, later, Cecil Harmsworth.\n\nLloyd George wanted to make the destruction of Ottoman Empire a major British war aim, and two days after taking office told Robertson that he wanted a major victory, preferably the capture of Jerusalem, to impress British public opinion.\n\nAt the Rome Conference (5–6 January 1917) Lloyd George was discreetly quiet about plans to take Jerusalem, an object which advanced British interests rather than doing much to win the war. Lloyd George proposed sending heavy guns to Italy with a view to defeating Austria-Hungary, possibly to be balanced by a transfer of Italian troops to Salonika, but was unable to obtain the support of the French or Italians, and Robertson talked of resigning.g."
 		}
 	],
 	"general notes": "This data is taken from Wikipedia - https://en.wikipedia.org/wiki/Timeline_of_World_War_I#1916\n\n\"This is a summary of the events of World War one in chronological order. It has been color coded by theatres/fronts to provide a clearer understanding of what events were happening in what places during World War One. \"\n\nNot all of the events from that Wiki page have been used here\n\nNote the licence of this information:\n\nText is available under the Creative Commons Attribution-ShareAlike License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.\n\n( https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License )"

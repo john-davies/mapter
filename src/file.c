@@ -361,15 +361,33 @@ result_return open_file( gchar* file_path, app_widgets *app_wdgts )
         GtkWidget *dest = gtk_grid_get_child_at( GTK_GRID( app_wdgts->w_text_grid ), col_idx, row_idx ); // event box
         while( text_array_element_object_current != NULL )
         {
-          //struct json_string_s* name = text_array_element_object_current->name;
-          //struct json_string_s* value = json_value_as_string( text_array_element_object_current->value );
-          dest = gtk_bin_get_child( GTK_BIN( dest ) ); // frame
-          dest = gtk_bin_get_child( GTK_BIN( dest ) ); // label
+          const gchar *name = ( text_array_element_object_current->name )->string;
+          if( strcmp( name, TEXT_SUMMARY ) == 0 )
+          {
+            dest = gtk_bin_get_child( GTK_BIN( dest ) ); // frame
+            dest = gtk_bin_get_child( GTK_BIN( dest ) ); // label
 
-          // Update text element
-          gtk_label_set_text( GTK_LABEL( dest ),
-                          json_value_as_string( text_array_element_object_current->value )->string );
-          // Step on, should only be one for now.
+            // Update text element
+            gtk_label_set_text( GTK_LABEL( dest ),
+                            json_value_as_string( text_array_element_object_current->value )->string );
+          }
+          else if( strcmp( name, TEXT_HEADING ) == 0 )
+          {
+            list_put_text( HEADER_LIST, row_idx, col_idx,
+                    (gchar *)json_value_as_string( text_array_element_object_current->value )->string,
+                    app_wdgts );
+          }
+          else if( strcmp( name, TEXT_BODY ) == 0 )
+          {
+            list_put_text( BODY_LIST, row_idx, col_idx,
+                    (gchar *)json_value_as_string( text_array_element_object_current->value )->string,
+                    app_wdgts );
+          }
+          else
+          {
+            g_info( "ERROR - ignoring entry: %s", name );
+          }
+          // Step on
           text_array_element_object_current = text_array_element_object_current->next;
         }
         col_idx++;
