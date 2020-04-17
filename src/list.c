@@ -239,7 +239,10 @@ gchar *list_get_text( guint index, gint row, gint column, app_widgets *app_wdgts
     g_info( "  List length: %d", length );
 
     GString *element = g_slist_nth_data( lists[index], ( row * app_wdgts->current_grid_columns ) + column );
-    text = element->str;
+    if( element != NULL )
+    {
+      text = element->str;
+    }
   }
   else
   {

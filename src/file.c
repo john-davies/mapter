@@ -102,7 +102,11 @@ void on_export_activate( GtkMenuItem *menuitem, app_widgets *app_wdgts )
           // Title
           if( use_cell_0_0 == TRUE )
           {
-            fprintf( output_file, "%s\n\n", fetch_cell_contents( app_wdgts->w_text_grid, 0, 0  ) );
+            gchar *title = list_get_text( HEADER_LIST, 0, 0, app_wdgts );
+            if( title != NULL )
+            {
+              fprintf( output_file, "%s\n\n", title );
+            }
           }
 
           if( row_chapters == TRUE )
@@ -112,20 +116,29 @@ void on_export_activate( GtkMenuItem *menuitem, app_widgets *app_wdgts )
             for( gint r=1; r<app_wdgts->current_grid_rows; r++ )
             {
               // Chapter title is in column 0
-              fprintf( output_file, "%s\n", fetch_cell_contents( app_wdgts->w_text_grid, r, 0  ) );
+              gchar *chapter = list_get_text( HEADER_LIST, r, 0, app_wdgts );
+              if( ( chapter != NULL ) && ( strlen( chapter ) > 0 ) )
+              {
+                fprintf( output_file, "%s\n\n", chapter );
+              }
               // Now the sections
               for( gint c=1; c<app_wdgts->current_grid_columns; c++ )
               {
-                const gchar *cell = fetch_cell_contents( app_wdgts->w_text_grid, r, c  );
-                // Skip the blank cells
-                if( strlen( cell ) > 0 )
+                gchar *header = list_get_text( HEADER_LIST, r, c, app_wdgts );
+                gchar *body = list_get_text( BODY_LIST, r, c, app_wdgts );
+                // Header
+                if( ( header != NULL ) && ( strlen( header ) > 0 ) )
                 {
-                  fprintf( output_file, "  " );
                   if( add_series == TRUE )
                   {
                     fprintf( output_file, "%s - ", fetch_cell_contents( app_wdgts->w_text_grid, 0, c  ) );
                   }
-                  fprintf( output_file, "%s\n", cell );
+                  fprintf( output_file, "%s\n\n", header );
+                }
+                // Body
+                if( ( body != NULL ) && ( strlen( body ) > 0 ) )
+                {
+                  fprintf( output_file, "%s\n\n", body );
                 }
               }
               fprintf( output_file, "\n" );
@@ -137,21 +150,30 @@ void on_export_activate( GtkMenuItem *menuitem, app_widgets *app_wdgts )
             g_info( "  Use columns as chapters" );
             for( gint c=1; c<app_wdgts->current_grid_columns; c++ )
             {
-              // Chapter title is in column 0
-              fprintf( output_file, "%s\n", fetch_cell_contents( app_wdgts->w_text_grid, 0, c  ) );
+              // Chapter title is in row 0
+              gchar *chapter = list_get_text( HEADER_LIST, 0, c, app_wdgts );
+              if( ( chapter != NULL ) && ( strlen( chapter ) > 0 ) )
+              {
+                fprintf( output_file, "%s\n\n", chapter );
+              }
               // Now the sections
               for( gint r=1; r<app_wdgts->current_grid_rows; r++ )
               {
-                const gchar *cell = fetch_cell_contents( app_wdgts->w_text_grid, r, c  );
-                // Skip the blank cells
-                if( strlen( cell ) > 0 )
+                gchar *header = list_get_text( HEADER_LIST, r, c, app_wdgts );
+                gchar *body = list_get_text( BODY_LIST, r, c, app_wdgts );
+                // Header
+                if( ( header != NULL ) && ( strlen( header ) > 0 ) )
                 {
-                  fprintf( output_file, "  " );
                   if( add_series == TRUE )
                   {
                     fprintf( output_file, "%s - ", fetch_cell_contents( app_wdgts->w_text_grid, r, 0  ) );
                   }
-                  fprintf( output_file, "%s\n", cell );
+                  fprintf( output_file, "%s\n\n", header );
+                }
+                // Body
+                if( ( body != NULL ) && ( strlen( body ) > 0 ) )
+                {
+                  fprintf( output_file, "%s\n\n", body );
                 }
               }
               fprintf( output_file, "\n" );
