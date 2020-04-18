@@ -103,9 +103,14 @@ void on_export_activate( GtkMenuItem *menuitem, app_widgets *app_wdgts )
           if( use_cell_0_0 == TRUE )
           {
             gchar *title = list_get_text( HEADER_LIST, 0, 0, app_wdgts );
+            gchar *body = list_get_text( BODY_LIST, 0, 0, app_wdgts );
             if( title != NULL )
             {
               fprintf( output_file, "%s\n\n", title );
+            }
+            if( ( body != NULL ) && ( strlen( body ) > 0 ) )
+            {
+              fprintf( output_file, "%s\n\n", body );
             }
           }
 

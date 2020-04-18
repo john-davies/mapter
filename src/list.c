@@ -272,6 +272,7 @@ gchar *list_put_text( guint index, gint row, gint column, gchar *text, app_widge
     g_info( "  List length: %d", length );
 
     GString *element = g_slist_nth_data( lists[index], ( row * app_wdgts->current_grid_columns ) + column );
+    g_string_erase( element, 0, -1 );
     g_string_overwrite( element, 0, text );
   }
   else
