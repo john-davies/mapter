@@ -18,6 +18,10 @@
 #ifndef GRID_H
 #define GRID_H
 
+// Extra pixels added to scrolling, calculated by experiment
+#define XOVERSCROLL 32
+#define YOVERSCROLL 20
+
 void add_row( app_widgets *, gint );
 void add_row_above( GtkWidget *, app_widgets * );
 void add_row_below( GtkWidget *, app_widgets * );

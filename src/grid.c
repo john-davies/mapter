@@ -507,32 +507,71 @@ void highlight_cell( gint current_r, gint current_c, gint new_r, gint new_c, gbo
   context = gtk_widget_get_style_context( child );
   gtk_style_context_add_class( context, "highlight" );
 
-  // The following auto-scrolling should work but it doesn't seem to
-  //GtkAdjustment *adjustment = gtk_scrolled_window_get_hadjustment( GTK_SCROLLED_WINDOW( app_wdgts->w_grid_container ) );
-  //gtk_container_set_focus_hadjustment( GTK_CONTAINER( app_wdgts->w_grid_container ), adjustment );
-  //adjustment = gtk_scrolled_window_get_vadjustment( GTK_SCROLLED_WINDOW( app_wdgts->w_grid_container ) );
-  //gtk_container_set_focus_vadjustment( GTK_CONTAINER( app_wdgts->w_grid_container ), adjustment );
-
   // If required scroll to show the focus - move the scroll bars in the same proportion as
   // the current cell is to the grid. This is not ideal but the best compromise for now
   if( scroll == TRUE )
   {
-    // Horizontal
-    GtkAdjustment *adjustment = gtk_scrolled_window_get_hadjustment( GTK_SCROLLED_WINDOW( app_wdgts->w_grid_container ) );
-    gdouble lower = gtk_adjustment_get_lower( adjustment );
-    gdouble upper = gtk_adjustment_get_upper( adjustment );
-    gdouble page_size = gtk_adjustment_get_page_size( adjustment );
-    gdouble range = upper - page_size - lower;
-    gdouble value = ( ( (gdouble)new_c / ( (gdouble)app_wdgts->current_grid_columns - 1 ) ) * range ) + lower;
-    gtk_adjustment_set_value( adjustment, value );
-    // Vertical
-    adjustment = gtk_scrolled_window_get_vadjustment( GTK_SCROLLED_WINDOW( app_wdgts->w_grid_container ) );
-    lower = gtk_adjustment_get_lower( adjustment );
-    upper = gtk_adjustment_get_upper( adjustment );
-    page_size = gtk_adjustment_get_page_size( adjustment );
-    range = upper - page_size - lower;
-    value = ( ( (gdouble)new_r / ( (gdouble)app_wdgts->current_grid_rows - 1 ) ) * range ) + lower;
-    gtk_adjustment_set_value( adjustment, value );
+    // Find the current size of the focussed element and its position on screen
+    GtkAllocation alloc_ebox, alloc_scroll, alloc_grid;
+    GtkAdjustment *hadjustment, *vadjustment;
+    gtk_widget_get_allocation( app_wdgts->w_grid_container, &alloc_scroll );
+    gtk_widget_get_allocation( app_wdgts->w_text_grid, &alloc_grid );
+    gtk_widget_get_allocation( e_box, &alloc_ebox );
+    // Calculate the current horizontal scroll bar position
+    hadjustment = gtk_scrolled_window_get_hadjustment( GTK_SCROLLED_WINDOW( app_wdgts->w_grid_container ) );
+    gdouble xlower = gtk_adjustment_get_lower( hadjustment );
+    gdouble xupper = gtk_adjustment_get_upper( hadjustment );
+    gdouble xpage_size = gtk_adjustment_get_page_size( hadjustment );
+    gdouble xrange = xupper - xpage_size - xlower;
+    gdouble xvalue = gtk_adjustment_get_value( hadjustment );
+    gint max_xoffset = alloc_grid.width - alloc_scroll.width;
+    gint xoffset = max_xoffset * ( xvalue / xrange );
+    gdouble xcount_per_pixel = xrange / max_xoffset;
+    // Work out if any scroll adjustment is needed
+    if( ( alloc_ebox.x + alloc_ebox.width ) > ( alloc_scroll.width + xoffset ) )
+    {
+      // Right scroll
+      gint scroll_right = ( alloc_ebox.x + alloc_ebox.width ) - ( alloc_scroll.width + xoffset ) + XOVERSCROLL;
+      g_info( "  Scroll right %d pixels", scroll_right );
+      gdouble xnew_value = xvalue + ( scroll_right * xcount_per_pixel );
+      gtk_adjustment_set_value( hadjustment, xnew_value );
+    }
+    else if ( alloc_ebox.x < xoffset )
+    {
+      // Left scroll
+      gint scroll_left = xoffset - alloc_ebox.x + XOVERSCROLL;
+      g_info( "  Scroll left %d pixels", scroll_left );
+      gdouble xnew_value = xvalue - ( scroll_left * xcount_per_pixel );
+      gtk_adjustment_set_value( hadjustment, xnew_value );
+    }
+
+    // Calculate the current vertical scroll bar position
+    vadjustment = gtk_scrolled_window_get_vadjustment( GTK_SCROLLED_WINDOW( app_wdgts->w_grid_container ) );
+    gdouble ylower = gtk_adjustment_get_lower( vadjustment );
+    gdouble yupper = gtk_adjustment_get_upper( vadjustment );
+    gdouble ypage_size = gtk_adjustment_get_page_size( vadjustment );
+    gdouble yrange = yupper - ypage_size - ylower;
+    gdouble yvalue = gtk_adjustment_get_value( vadjustment );
+    gint max_yoffset = alloc_grid.height - alloc_scroll.height;
+    gint yoffset = max_yoffset * ( yvalue / yrange );
+    gdouble ycount_per_pixel = yrange / max_yoffset;
+    // Work out if any scroll adjustment is needed
+    if( ( alloc_ebox.y + alloc_ebox.height ) > ( alloc_scroll.height + yoffset ) )
+    {
+      // Scroll down
+      gint scroll_down = ( alloc_ebox.y + alloc_ebox.height ) - ( alloc_scroll.height + yoffset ) + YOVERSCROLL;
+      g_info( "  Scroll down %d pixels", scroll_down );
+      gdouble ynew_value = yvalue + ( scroll_down * ycount_per_pixel );
+      gtk_adjustment_set_value( vadjustment, ynew_value );
+    }
+    else if ( alloc_ebox.y < yoffset )
+    {
+      // Scroll up
+      gint scroll_up = yoffset - alloc_ebox.y + YOVERSCROLL;
+      g_info( "  Scroll up %d pixels", scroll_up );
+      gdouble ynew_value = yvalue - ( scroll_up * ycount_per_pixel );
+      gtk_adjustment_set_value( vadjustment, ynew_value );
+    }
   }
 
   // Update the coordinate labels

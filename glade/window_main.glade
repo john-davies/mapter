@@ -79,11 +79,10 @@
     <property name="stock">gtk-file</property>
   </object>
   <object class="GtkWindow" id="window_main">
-    <property name="width_request">640</property>
-    <property name="height_request">480</property>
+    <property name="width_request">1000</property>
+    <property name="height_request">800</property>
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Mapter</property>
-    <property name="window_position">center</property>
     <signal name="destroy" handler="on_window_main_destroy" swapped="no"/>
     <child>
       <object class="GtkBox" id="box1">
@@ -715,12 +714,12 @@
     </action-widgets>
   </object>
   <object class="GtkWindow" id="editor_window">
-    <property name="width_request">400</property>
-    <property name="height_request">400</property>
+    <property name="width_request">800</property>
+    <property name="height_request">800</property>
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">mapter Editor</property>
     <property name="modal">True</property>
-    <property name="window_position">center</property>
+    <property name="window_position">center-on-parent</property>
     <property name="type_hint">utility</property>
     <property name="deletable">False</property>
     <property name="transient_for">window_main</property>
