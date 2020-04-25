@@ -79,11 +79,12 @@
     <property name="stock">gtk-file</property>
   </object>
   <object class="GtkWindow" id="window_main">
-    <property name="width_request">1000</property>
-    <property name="height_request">800</property>
+    <property name="width_request">600</property>
+    <property name="height_request">400</property>
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Mapter</property>
     <signal name="destroy" handler="on_window_main_destroy" swapped="no"/>
+    <signal name="size-allocate" handler="on_window_main_size_allocate" swapped="no"/>
     <child>
       <object class="GtkBox" id="box1">
         <property name="visible">True</property>
@@ -361,7 +362,7 @@
     <property name="deletable">False</property>
     <property name="transient_for">window_main</property>
     <property name="program_name">mapter</property>
-    <property name="version">version 0.2.1</property>
+    <property name="version">Version 0.3</property>
     <property name="copyright" translatable="yes">Copyright John Davies 2020</property>
     <property name="website">https://github.com/john-davies/mapter</property>
     <property name="website_label" translatable="yes">GitHub repository</property>
@@ -714,15 +715,15 @@
     </action-widgets>
   </object>
   <object class="GtkWindow" id="editor_window">
-    <property name="width_request">800</property>
-    <property name="height_request">800</property>
+    <property name="width_request">600</property>
+    <property name="height_request">400</property>
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">mapter Editor</property>
     <property name="modal">True</property>
     <property name="window_position">center-on-parent</property>
-    <property name="type_hint">utility</property>
     <property name="deletable">False</property>
     <property name="transient_for">window_main</property>
+    <signal name="size-allocate" handler="on_editor_window_size_allocate" swapped="no"/>
     <child>
       <object class="GtkBox" id="box2">
         <property name="visible">True</property>

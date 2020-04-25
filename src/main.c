@@ -25,18 +25,7 @@
 #include "grid.h"
 #include "util.h"
 #include "css.h"
-
-// --------------------------------------------------------------------------
-// on_window_main_destroy
-//
-// Called on "Quit" command from menu
-//
-// --------------------------------------------------------------------------
-
-void on_window_main_destroy()
-{
-    gtk_main_quit();
-}
+#include "config.h"
 
 // --------------------------------------------------------------------------
 // main
@@ -93,6 +82,9 @@ int main( int argc, char *argv[] )
     widgets->app_name[APP_NAME_SIZE] = '\0';
     widgets->current_file_path[0] = '\0';
     widgets->current_file_name[0] = '\0';
+
+    // Load cached file ( if any )
+    load_config( widgets );
 
     // Set up default grid if no input file was specified
     if( argc == 1 )
