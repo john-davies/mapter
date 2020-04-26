@@ -38,12 +38,12 @@ GTKLIB=`pkg-config --cflags --libs gtk+-3.0`
 LD=gcc
 LDFLAGS=$(PTHREAD) $(GTKLIB) -export-dynamic
 
-OBJS= main.o util.o grid.o file.o css.o list.o config.o
+OBJS= main.o util.o grid.o file.o css.o list.o config.o gui.o
 
 all: $(OBJS)
 		$(LD) -o $(TARGET) $(OBJS) $(LDFLAGS)
 
-main.o: src/main.c src/main.h 
+main.o: src/main.c src/main.h src/file.h src/grid.h src/util.h src/css.h src/config.h src/gui.h
 		$(CC) -c $(CCFLAGS) src/main.c $(GTKLIB) -o main.o
 
 file.o: src/file.c src/file.h src/main.h src/util.h src/json.h
@@ -59,10 +59,14 @@ css.o: src/css.c src/css.h src/main.h
 		$(CC) -c $(CCFLAGS) src/css.c $(GTKLIB) -o css.o
 
 list.o: src/list.c src/list.h src/main.h
-				$(CC) -c $(CCFLAGS) src/list.c $(GTKLIB) -o list.o
+		$(CC) -c $(CCFLAGS) src/list.c $(GTKLIB) -o list.o
 
 config.o: src/config.c src/config.h src/main.h
-				$(CC) -c $(CCFLAGS) src/config.c $(GTKLIB) -o config.o
+		$(CC) -c $(CCFLAGS) src/config.c $(GTKLIB) -o config.o
+
+gui.o: src/gui.c src/gui.h glade/window_main.glade
+		./make_gui.sh
+		$(CC) -c $(CCFLAGS) src/gui.c $(GTKLIB) -o gui.o
 
 clean:
 		rm -f *.o $(TARGET)

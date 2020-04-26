@@ -26,6 +26,7 @@
 #include "util.h"
 #include "css.h"
 #include "config.h"
+#include "gui.h"
 
 // --------------------------------------------------------------------------
 // main
@@ -43,7 +44,8 @@ int main( int argc, char *argv[] )
 
     gtk_init(&argc, &argv);
 
-    builder = gtk_builder_new_from_file("glade/window_main.glade");
+    //builder = gtk_builder_new_from_file("glade/window_main.glade");
+    builder = gtk_builder_new_from_string( glade_definition, -1 );
 
     window = GTK_WIDGET(gtk_builder_get_object(builder, "window_main"));
     // Pointers to widgets here

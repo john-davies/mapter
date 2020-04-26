@@ -344,7 +344,12 @@ void edit_cell( gint row, gint column, app_widgets *app_wdgts )
   gtk_widget_show( app_wdgts->w_editor_window );
   // Put the keyboard focus in the text window
   gtk_window_present( GTK_WINDOW( app_wdgts->w_editor_window ) );
-  gtk_widget_grab_focus( app_wdgts->w_edit_summary );
+  gtk_widget_grab_focus( app_wdgts->w_edit_body );
+  // Move cursor to the beginning of the buffer
+  GtkTextIter iter;
+  gtk_text_buffer_get_start_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW(app_wdgts->w_edit_body ) ), &iter );
+  gtk_text_buffer_place_cursor( gtk_text_view_get_buffer( GTK_TEXT_VIEW(app_wdgts->w_edit_body ) ), &iter );
+
   g_info( "grid.c / ~edit_cell");
 }
 

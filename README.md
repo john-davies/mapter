@@ -16,20 +16,21 @@ _( The name comes from a portmanteau of "mapping" and "chapter" and was created 
 
 ## Current Status
 
-This is an initial alpha version with limited functionality:
+The current version ( 0.3 ) could generously be called a minimum viable product ( MVP ) and allows the creation and editing of a full work. The main limitation is that the editor is extremely basic and lacks common features like "search/replace".
 
-* Create a grid and add headings
-* Edit the size of the grid
-* Add some general notes
-* Load, save and export the created designs
+The build now comprises of a single executable with no other external file dependencies.
 
-Currently the Glade file defining the GUI is loaded from the hard coded path `glade/window_main.glade`. In future it is my intention to include this definition into the build to make just a single executable.
+The example file has been expanded to include the full body text. Two extra versions of the example have been added with Markdown and LaTeX annotations to show how the output could be typeset.
 
 ## Building
 
 mapter uses the [GTK+ 3 library](https://www.gtk.org/) and can be built by simply typing `make` in the top level directory. Note that the build files and general structure follow that suggested in the rather good set of tutorials at https://prognotes.net/gtk-glade-c-programming/. That page also provides some useful hints as to which GTK related packages are needed for the build to succeed.
 
 The GUI definition is done largely using [Glade](https://glade.gnome.org/) but some parts are built dynamically within the code.
+
+It's possible to show some debugging information by setting the GTK debug level:
+
+`G_MESSAGES_DEBUG=all ./mapter`
 
 ## Operation
 
@@ -65,6 +66,12 @@ The notes tab is a simple free format text window.
 Double clicking on any of the cells or pressing Return on the highlighted cell brings up the edit window:
 
 ![Edit Window](/doc-images/edit.png)
+
+This has three sections:
+
+1. Text that appears on the front grid
+1. Header text for that section in the document export
+1. Body text for that section in the document export
 
 ### Changing the size of the grid
 
@@ -102,6 +109,15 @@ February
   African Theatre - Battle of Salaita Hill.
 ````
 
+The included Markdown and LaTeX examples give an idea as to how the output may be typeset. The LaTeX example can be built using the following commands:
+
+````
+Export the document from mapter with a .tex extension
+pdflatex export.tex
+pdflatex export.tex
+````
+_Run the second command twice to create the table of contents properly_
+
 ### File formats
 
 #### mapter File
@@ -122,8 +138,7 @@ Trace and debugging information can be show on the standard output by using the 
 
 Future planned developments include:
 
-* "Freeze Panes" type functionality for 1st row/column to make navigation of large projects a little clearer
-* Full Editor to allow editing of titles and body text of each section so that the entire book can be edited from within mapter.
+* Improved Editor with features like search/replace and undo. At the moment the [GTKSourceView](https://gitlab.gnome.org/GNOME/gtksourceview) component looks a likely candidate.
 * Status indication ( or %age completion ) for each cell
 * A method of moving or swapping the contents of cells without a lot of cutting & pasting
 * Tree control for the notes tab so that information can be collated hierarchically
