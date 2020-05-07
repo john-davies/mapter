@@ -84,17 +84,23 @@ void list_insert_row( guint index, gint row, app_widgets *app_wdgts  )
   if( index < MAX_LIST )
   {
     // Check if the row is in range
-    if( row < app_wdgts->current_grid_rows )
+    if( row < 0 )
     {
-      // Insert string at the relevant point
-      for( gint c=0; c<app_wdgts->current_grid_columns; c++ )
-      {
-        lists[index] = g_slist_insert( lists[index], g_string_new( NULL ), ( row * app_wdgts->current_grid_columns ) + c );
-      }
+      // Too low so set it to the first row
+      g_info( "  ERROR - row out of range: %d, setting to 0", row );
+      row = 0;
     }
-    else
+    else if( row > app_wdgts->current_grid_rows )
     {
-      g_info( "  ERROR - ignoring row out of range: %d", row );
+      // Too high so set it to the last row
+      g_info( "  ERROR - row out of range: %d, setting to %d", row, app_wdgts->current_grid_rows );
+      row = app_wdgts->current_grid_rows;
+    }
+
+    // Insert string at the relevant point
+    for( gint c=0; c<app_wdgts->current_grid_columns; c++ )
+    {
+      lists[index] = g_slist_insert( lists[index], g_string_new( NULL ), ( row * app_wdgts->current_grid_columns ) + c );
     }
   }
   else
@@ -117,20 +123,26 @@ void list_insert_column( guint index, gint column, app_widgets *app_wdgts  )
   g_info( "Inserting column at %d", column );
   if( index < MAX_LIST )
   {
-    // Check if the row is in range
-    if( column < app_wdgts->current_grid_columns )
+    // Check if the column is in range
+    if( column < 0 )
     {
-      // Insert string at the relevant point
-      // Start at the end and work back because the inserts are not contiguous
-      for( gint r=app_wdgts->current_grid_rows-1; r>=0; r-- )
-      {
-        lists[index] = g_slist_insert( lists[index], g_string_new( NULL ), ( r * app_wdgts->current_grid_columns ) + column );
-        //g_info( "  Inserting at: %d", ( r * app_wdgts->current_grid_columns ) + column );
-      }
+      // Too low so set it to the first row
+      g_info( "  ERROR - column out of range: %d, setting to 0", column );
+      column = 0;
     }
-    else
+    else if( column > app_wdgts->current_grid_columns )
     {
-      g_info( "  ERROR - ignoring column out of range: %d", column );
+      // Too high so set it to the last row
+      g_info( "  ERROR - column out of range: %d, setting to %d", column, app_wdgts->current_grid_columns );
+      column = app_wdgts->current_grid_columns;
+    }
+
+    // Insert string at the relevant point
+    // Start at the end and work back because the inserts are not contiguous
+    for( gint r=app_wdgts->current_grid_rows-1; r>=0; r-- )
+    {
+      lists[index] = g_slist_insert( lists[index], g_string_new( NULL ), ( r * app_wdgts->current_grid_columns ) + column );
+      //g_info( "  Inserting at: %d", ( r * app_wdgts->current_grid_columns ) + column );
     }
   }
   else

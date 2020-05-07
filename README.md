@@ -16,7 +16,7 @@ _( The name comes from a portmanteau of "mapping" and "chapter" and was created 
 
 ## Current Status
 
-The current version ( 0.3 ) could generously be called a minimum viable product ( MVP ) and allows the creation and editing of a full work. The main limitation is that the editor is extremely basic and lacks common features like "search/replace".
+The current version ( 0.3.1 ) could generously be called a minimum viable product ( MVP ) and allows the creation and editing of a full work. The main limitation is that the editor is extremely basic and lacks common features like "search/replace".
 
 The build now comprises of a single executable with no other external file dependencies.
 

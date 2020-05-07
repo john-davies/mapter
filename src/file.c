@@ -564,9 +564,9 @@ void json_encode( FILE* output_file, const gchar *input_str)
 result_return save_file( app_widgets *app_wdgts )
 {
   result_return file_process = { TRUE, "" };
-  g_print( "Save: %s\n", app_wdgts->current_file_path );
 
   g_info( "file.c / save_file");
+  g_info( "  Save: %s\n", app_wdgts->current_file_path );
   // Open file for writing
   FILE *output_file = fopen( app_wdgts->current_file_path, "w" );
   if( output_file != NULL )
