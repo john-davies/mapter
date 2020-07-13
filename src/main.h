@@ -21,7 +21,7 @@
 #include <gtk/gtk.h>
 
 // Version number
-#define SAVE_FILE_VERSION_NUMBER 2
+#define SAVE_FILE_VERSION_NUMBER 3
 
 // Grid definitions
 #define MIN_GRID_ROWS 1
@@ -82,6 +82,8 @@ typedef struct {
     GtkWidget *w_dlg_export;
     GtkWidget *l_row_id_label;
     GtkWidget *l_column_id_label;
+    // Accelerator group for right click menu
+    GtkAccelGroup *right_click_accel_group;
     // Current open file path
     gchar app_name[ APP_NAME_SIZE ];
     gchar current_file_path[ MAX_PATHSIZE ];
@@ -94,5 +96,9 @@ typedef struct {
   gboolean result;
   gchar *message;
 } result_return;
+
+// Colours for cell background
+// Note also the values in css.c
+typedef enum { NONE = 0, HIGH, MEDIUM, LOW, NEUTRAL } background_colour_type;
 
 #endif

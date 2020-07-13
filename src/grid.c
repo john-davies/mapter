@@ -260,6 +260,173 @@ void delete_column( GtkWidget *source, app_widgets *app_wdgts )
 }
 
 // --------------------------------------------------------------------------
+// get_cell_background
+//
+// Gets the current selected cell background colour
+//
+// --------------------------------------------------------------------------
+background_colour_type get_cell_background( app_widgets *app_wdgts )
+{
+  GtkStyleContext *context;
+  background_colour_type cell_colour;
+  g_info( "grid.c / get_cell_background");
+  GtkWidget *e_box = gtk_grid_get_child_at( GTK_GRID( app_wdgts->w_text_grid ), app_wdgts->edit_grid_column, app_wdgts->edit_grid_row );
+  // Now get the frame
+  GtkWidget *child = gtk_bin_get_child( GTK_BIN( e_box ) );
+  // Then the text view
+  child = gtk_bin_get_child( GTK_BIN( child ) );
+  context = gtk_widget_get_style_context( child );
+  // Get current background
+  if( gtk_style_context_has_class( context, "high_background" ) )
+  {
+    g_info( "  Current background: high_background" );
+    cell_colour = HIGH;
+  }
+  else if( gtk_style_context_has_class( context, "medium_background" ) )
+  {
+    g_info( "  Current background: medium_background" );
+    cell_colour = MEDIUM;
+  }
+  else if( gtk_style_context_has_class( context, "low_background" ) )
+  {
+    g_info( "  Current background: medium_background" );
+    cell_colour = LOW;
+  }
+  else if( gtk_style_context_has_class( context, "neutral_background" ) )
+  {
+    g_info( "  Current background: neutral_background" );
+    cell_colour = NEUTRAL;
+  }
+  else
+  {
+    g_info( "  Current background: no_background" );
+    cell_colour = NONE;
+  }
+  g_info( "grid.c / ~set_cell_background");
+  return cell_colour;
+}
+
+// --------------------------------------------------------------------------
+// set_cell_background
+//
+// Sets the cell background to the specified colour
+//
+// --------------------------------------------------------------------------
+void set_cell_background( background_colour_type colour, app_widgets *app_wdgts )
+{
+  GtkStyleContext *context;
+  g_info( "grid.c / set_cell_background");
+  GtkWidget *e_box = gtk_grid_get_child_at( GTK_GRID( app_wdgts->w_text_grid ), app_wdgts->edit_grid_column, app_wdgts->edit_grid_row );
+  // Now get the frame
+  GtkWidget *child = gtk_bin_get_child( GTK_BIN( e_box ) );
+  // Then the text view
+  child = gtk_bin_get_child( GTK_BIN( child ) );
+  context = gtk_widget_get_style_context( child );
+  // Clear the current CSS classes - quicker to do it this way than
+  // try to read each class
+  gtk_style_context_remove_class( context, "no_background" );
+  gtk_style_context_remove_class( context, "high_background" );
+  gtk_style_context_remove_class( context, "medium_background" );
+  gtk_style_context_remove_class( context, "low_background" );
+  gtk_style_context_remove_class( context, "neutral_background" );
+  // Set background
+  switch( colour )
+  {
+    case HIGH:
+      gtk_style_context_add_class( context, "high_background" );
+      break;
+    case MEDIUM:
+      gtk_style_context_add_class( context, "medium_background" );
+      break;
+    case LOW:
+      gtk_style_context_add_class( context, "low_background" );
+      break;
+    case NEUTRAL:
+      gtk_style_context_add_class( context, "neutral_background" );
+      break;
+    default:
+      // Everything else default to none
+      gtk_style_context_add_class( context, "no_background" );
+      break;
+  }
+  g_info( "grid.c / ~set_cell_background");
+}
+
+// --------------------------------------------------------------------------
+// set_cell_background_none
+//
+// Clears any cell background colour
+//
+// --------------------------------------------------------------------------
+void set_cell_background_none( GtkWidget *source, app_widgets *app_wdgts )
+{
+  background_colour_type colour = NONE;
+  g_info( "grid.c / set_cell_background_none");
+  set_cell_background( colour, app_wdgts );
+  g_info( "grid.c / ~set_cell_background_none");
+}
+
+// --------------------------------------------------------------------------
+// set_cell_background_high
+//
+// Sets the cell background to be high priority
+// Defined by CSS ".high_background"
+//
+// --------------------------------------------------------------------------
+void set_cell_background_high( GtkWidget *source, app_widgets *app_wdgts )
+{
+  background_colour_type colour = HIGH;
+  g_info( "grid.c / set_cell_background_high");
+  set_cell_background( colour, app_wdgts );
+  g_info( "grid.c / ~set_cell_background_high");
+}
+
+// --------------------------------------------------------------------------
+// set_cell_background_medium
+//
+// Sets the cell background to be medium priority
+// Defined by CSS ".medium_background"
+//
+// --------------------------------------------------------------------------
+void set_cell_background_medium( GtkWidget *source, app_widgets *app_wdgts )
+{
+  background_colour_type colour = MEDIUM;
+  g_info( "grid.c / set_cell_background_medium");
+  set_cell_background( colour, app_wdgts );
+  g_info( "grid.c / ~set_cell_background_medium");
+}
+
+// --------------------------------------------------------------------------
+// set_cell_background_low
+//
+// Sets the cell background to be low
+// Defined by CSS ".low_background"
+//
+// --------------------------------------------------------------------------
+void set_cell_background_low( GtkWidget *source, app_widgets *app_wdgts )
+{
+  background_colour_type colour = LOW;
+  g_info( "grid.c / set_cell_background_low");
+  set_cell_background( colour, app_wdgts );
+  g_info( "grid.c / ~set_cell_background_low");
+}
+
+// --------------------------------------------------------------------------
+// set_cell_background_neutral
+//
+// Sets the cell background to be neutral
+// Defined by CSS ".neutral_background"
+//
+// --------------------------------------------------------------------------
+void set_cell_background_neutral( GtkWidget *source, app_widgets *app_wdgts )
+{
+  background_colour_type colour = NEUTRAL;
+  g_info( "grid.c / set_cell_background_neutral");
+  set_cell_background( colour, app_wdgts );
+  g_info( "grid.c / ~set_cell_background_neutral");
+}
+
+// --------------------------------------------------------------------------
 // on_btn_edit_save_clicked
 //
 // Edited text is saved back to the grid and the window closed
@@ -433,6 +600,46 @@ void text_grid_click( GtkWidget *source, GdkEventButton *event, app_widgets *app
     // For now this is built manually because of problems with the Glade version
     GtkWidget *option;
     GtkWidget *pmenu = gtk_menu_new();
+    // Cell colouring
+    // None
+    option = gtk_menu_item_new_with_label( "Clear Priority" );
+    gtk_widget_show( option );
+    g_signal_connect( G_OBJECT( option ), "activate", G_CALLBACK( set_cell_background_none ), app_wdgts );
+    gtk_menu_shell_append( GTK_MENU_SHELL( pmenu ), option );
+    gtk_widget_add_accelerator( option, "activate", app_wdgts->right_click_accel_group,
+                                 GDK_KEY_0, GDK_CONTROL_MASK, GTK_ACCEL_VISIBLE );
+    // High
+    option = gtk_menu_item_new_with_label( "High Priority" );
+    gtk_widget_show( option );
+    g_signal_connect( G_OBJECT( option ), "activate", G_CALLBACK( set_cell_background_high ), app_wdgts );
+    gtk_menu_shell_append( GTK_MENU_SHELL( pmenu ), option );
+    gtk_widget_add_accelerator( option, "activate", app_wdgts->right_click_accel_group,
+                                 GDK_KEY_1, GDK_CONTROL_MASK, GTK_ACCEL_VISIBLE );
+    // Medium
+    option = gtk_menu_item_new_with_label( "Medium Priority" );
+    gtk_widget_show( option );
+    g_signal_connect( G_OBJECT( option ), "activate", G_CALLBACK( set_cell_background_medium ), app_wdgts );
+    gtk_menu_shell_append( GTK_MENU_SHELL( pmenu ), option );
+    gtk_widget_add_accelerator( option, "activate", app_wdgts->right_click_accel_group,
+                                 GDK_KEY_2, GDK_CONTROL_MASK, GTK_ACCEL_VISIBLE );
+    // Low
+    option = gtk_menu_item_new_with_label( "Low Priority" );
+    gtk_widget_show( option );
+    g_signal_connect( G_OBJECT( option ), "activate", G_CALLBACK( set_cell_background_low ), app_wdgts );
+    gtk_menu_shell_append( GTK_MENU_SHELL( pmenu ), option );
+    gtk_widget_add_accelerator( option, "activate", app_wdgts->right_click_accel_group,
+                                 GDK_KEY_3, GDK_CONTROL_MASK, GTK_ACCEL_VISIBLE );
+    // Neutral
+    option = gtk_menu_item_new_with_label( "Neutral Priority" );
+    gtk_widget_show( option );
+    g_signal_connect( G_OBJECT( option ), "activate", G_CALLBACK( set_cell_background_neutral ), app_wdgts );
+    gtk_menu_shell_append( GTK_MENU_SHELL( pmenu ), option );
+    gtk_widget_add_accelerator( option, "activate", app_wdgts->right_click_accel_group,
+                                 GDK_KEY_4, GDK_CONTROL_MASK, GTK_ACCEL_VISIBLE );
+    // Separator
+    option = gtk_separator_menu_item_new();
+    gtk_widget_show( option );
+    gtk_menu_shell_append( GTK_MENU_SHELL( pmenu ), option );
     // Rows
     option = gtk_menu_item_new_with_label( "Add row above" );
     gtk_widget_show( option );

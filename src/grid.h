@@ -32,6 +32,14 @@ void add_column_above( GtkWidget *, app_widgets * );
 void add_column_below( GtkWidget *, app_widgets * );
 void delete_column( GtkWidget *, app_widgets * );
 
+void set_cell_background( background_colour_type, app_widgets * );
+background_colour_type get_cell_background( app_widgets *  );
+void set_cell_background_none( GtkWidget *, app_widgets * );
+void set_cell_background_red( GtkWidget *, app_widgets * );
+void set_cell_background_yellow( GtkWidget *, app_widgets * );
+void set_cell_background_green( GtkWidget *, app_widgets * );
+void set_cell_background_blue( GtkWidget *, app_widgets * );
+
 void on_btn_edit_close_clicked( GtkButton *, app_widgets * );
 void on_btn_edit_save_clicked( GtkButton *, app_widgets * );
 void edit_cell( gint, gint, app_widgets * );

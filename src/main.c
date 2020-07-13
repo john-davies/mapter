@@ -79,6 +79,10 @@ int main( int argc, char *argv[] )
 
     g_info( "main.c / main" );
 
+    // Add an accelerator group to the main window
+    widgets->right_click_accel_group = gtk_accel_group_new();
+    gtk_window_add_accel_group( GTK_WINDOW (window), widgets->right_click_accel_group );
+
     // Update file names & titles etc
     strncpy( widgets->app_name, gtk_window_get_title( GTK_WINDOW( window ) ), APP_NAME_SIZE-1 );
     widgets->app_name[APP_NAME_SIZE] = '\0';

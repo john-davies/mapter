@@ -20,22 +20,19 @@ const gchar *mapter_CSS = R""""(
 .highlight{
     border: 3px solid black;
 }
-.red_background {
+.high_background {
   background-color: #FF8080;
 }
-.yellow_background {
+.medium_background {
   background-color: #FFFF80;
 }
-.green_background {
-  background-color: #C0FF80;
+.low_background {
+  background-color: #7cf580;
 }
-.blue_background {
-  background-color: #80FFC0;
-}
-.grey_background {
-  background-color: grey;
+.neutral_background {
+  background-color: #92d1f8;
 }
 .no_background {
-  background-color: white;
+  background-color: #FFFFFF;
 }
 )"""";

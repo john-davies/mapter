@@ -1,5 +1,9 @@
 # mapter
 
+## Update information
+
+v0.4 - Addition of cell background selector
+
 ## Introduction
 
 mapter is a free tool to assist with planning a piece of writing using [the book architecture method](http://www.betternovelproject.com/blog/series-outline/). _There's an alternative description [here](https://thefriendlyeditor.com/tag/the-book-architecture-method/)_
@@ -16,7 +20,7 @@ _( The name comes from a portmanteau of "mapping" and "chapter" and was created 
 
 ## Current Status
 
-The current version ( 0.3.1 ) could generously be called a minimum viable product ( MVP ) and allows the creation and editing of a full work. The main limitation is that the editor is extremely basic and lacks common features like "search/replace".
+The current version ( 0.4 ) could generously be called a minimum viable product ( MVP ) and allows the creation and editing of a full work. The main limitation is that the editor is extremely basic and lacks common features like "search/replace".
 
 The build now comprises of a single executable with no other external file dependencies.
 
@@ -52,6 +56,12 @@ The grid tab has four main sections as described below. Double click on any of t
 1. The rest of the grid is for each of the sections mapping the theme/series to the chapter.
 1. The currently selected cell is shown with a highlight. The selection can be moved with the arrow keys or by clicking with the mouse. ( "Home", "End", shift up-arrow and shift down-arrow also work ). Hitting Return will bring up the editor for the selected cell.
 1. The "Chapter" and "Series" of the selected cell are shown at the bottom. This makes navigation easier when the row and column headers are scrolled off the screen.
+1. The background colour of each cell can be changed by right clicking on the cell and selecting the colour.  Currently the options are:
+    * Clear - no background
+    * High - red background
+    * Medium - yellow background
+    * Low - green background
+    * Neutral - blue background
 
 _For the export it is possible to swap the order such that the column headings are the chapter titles etc. see below_
 

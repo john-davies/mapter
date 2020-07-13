@@ -389,7 +389,14 @@ result_return open_file( gchar* file_path, app_widgets *app_wdgts )
         while( text_array_element_object_current != NULL )
         {
           const gchar *name = ( text_array_element_object_current->name )->string;
-          if( strcmp( name, TEXT_SUMMARY ) == 0 )
+          if( strcmp( name, CELL_BACKGROUND_COLOUR ) == 0 )
+          {
+            // Set up destination
+            app_wdgts->edit_grid_column = col_idx;
+            app_wdgts->edit_grid_row = row_idx;
+            set_cell_background( atoi( json_value_as_number( text_array_element_object_current->value )->number ), app_wdgts );
+          }
+          else if( strcmp( name, TEXT_SUMMARY ) == 0 )
           {
             dest = gtk_bin_get_child( GTK_BIN( dest ) ); // frame
             dest = gtk_bin_get_child( GTK_BIN( dest ) ); // label
@@ -587,6 +594,7 @@ result_return save_file( app_widgets *app_wdgts )
     fprintf( output_file, "\t\"%s\": [\n", TEXT_GRID );
     gboolean first = TRUE;
     GtkWidget *child;
+    background_colour_type back;
     for( gint r=0; r<rows; r++ )
     {
       for( gint c=0; c<columns; c++ )
@@ -598,6 +606,13 @@ result_return save_file( app_widgets *app_wdgts )
         }
         first = FALSE;
         fprintf( output_file, "\t\t{\n" );
+        // Cell background colour
+        fprintf( output_file, "\t\t\t\"%s\": ", CELL_BACKGROUND_COLOUR );
+        // Set up editing data to retrieve the colour
+        app_wdgts->edit_grid_row = r;
+        app_wdgts->edit_grid_column = c;
+        back = get_cell_background( app_wdgts );
+        fprintf( output_file, "%i,\n", back );
         // Summary
         fprintf( output_file, "\t\t\t\"%s\": \"", TEXT_SUMMARY );
         // Fetch the text contents of this cell

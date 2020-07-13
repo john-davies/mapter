@@ -23,6 +23,7 @@
 #define ROWS "rows"
 #define COLUMNS "columns"
 #define TEXT_GRID "text grid"
+#define CELL_BACKGROUND_COLOUR "cell background colour"
 #define TEXT_SUMMARY "summary"
 #define TEXT_HEADING "heading"
 #define TEXT_BODY "body"
