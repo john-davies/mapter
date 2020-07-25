@@ -64,6 +64,15 @@ int main( int argc, char *argv[] )
     widgets->w_edit_heading = GTK_WIDGET(gtk_builder_get_object(builder, "edit_heading"));
     widgets->w_edit_body = GTK_WIDGET(gtk_builder_get_object(builder, "edit_body"));
     widgets->w_notes_textview = GTK_WIDGET(gtk_builder_get_object(builder, "notes_textview"));
+    widgets->w_notes_treeview = GTK_TREE_VIEW( gtk_builder_get_object( builder, "notes_treeview" ));
+    widgets->w_notes_treestore = GTK_TREE_STORE( gtk_builder_get_object( builder, "notes_treestore" ));
+    widgets->w_notes_treestore_selection = GTK_TREE_SELECTION( gtk_builder_get_object( builder, "notes_treestore_selection" ));
+    widgets->w_notes_tree_section = GTK_TREE_VIEW_COLUMN( gtk_builder_get_object( builder, "notes_tree_section" ));
+    widgets->w_notes_tree_section_r = GTK_CELL_RENDERER( gtk_builder_get_object( builder, "notes_tree_section_r" ));
+    widgets->w_notes_tree_text = GTK_TREE_VIEW_COLUMN( gtk_builder_get_object( builder, "notes_tree_text" ));
+    widgets->w_notes_tree_text_r = GTK_CELL_RENDERER( gtk_builder_get_object( builder, "notes_tree_text_r" ));
+    widgets->w_dlg_delete = GTK_WIDGET(gtk_builder_get_object( builder, "dlg_delete_warning" ) );
+    widgets->current_node_status = FALSE;
     widgets->w_dlg_export_options = GTK_WIDGET(gtk_builder_get_object(builder, "dlg_export_options"));
     widgets->b_chkbtn_export_title = GTK_WIDGET(gtk_builder_get_object(builder, "chkbtn_export_title"));
     widgets->b_rdbtn_row = GTK_WIDGET(gtk_builder_get_object(builder, "rdbtn_row"));
@@ -78,6 +87,10 @@ int main( int argc, char *argv[] )
     g_object_unref( builder );
 
     g_info( "main.c / main" );
+
+    // Attach the renderers to the tree store columns
+    gtk_tree_view_column_add_attribute( widgets->w_notes_tree_section, widgets->w_notes_tree_section_r, "text", 0);
+    gtk_tree_view_column_add_attribute( widgets->w_notes_tree_text, widgets->w_notes_tree_text_r, "text", 1);
 
     // Add an accelerator group to the main window
     widgets->right_click_accel_group = gtk_accel_group_new();

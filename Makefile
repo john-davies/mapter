@@ -38,7 +38,7 @@ GTKLIB=`pkg-config --cflags --libs gtk+-3.0`
 LD=gcc
 LDFLAGS=$(PTHREAD) $(GTKLIB) -export-dynamic
 
-OBJS= main.o util.o grid.o file.o css.o list.o config.o gui.o
+OBJS= main.o util.o grid.o file.o css.o list.o config.o gui.o tree.o
 
 all: $(OBJS)
 		$(LD) -o $(TARGET) $(OBJS) $(LDFLAGS)
@@ -67,6 +67,9 @@ config.o: src/config.c src/config.h src/main.h
 gui.o: src/gui.c src/gui.h glade/window_main.glade
 		./make_gui.sh
 		$(CC) -c $(CCFLAGS) src/gui.c $(GTKLIB) -o gui.o
+
+tree.o: src/tree.c src/tree.h src/main.h
+		$(CC) -c $(CCFLAGS) src/tree.c $(GTKLIB) -o tree.o
 
 clean:
 		rm -f *.o $(TARGET)

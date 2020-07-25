@@ -74,8 +74,19 @@ typedef struct {
     GtkWidget *w_edit_summary;
     GtkWidget *w_edit_heading;
     GtkWidget *w_edit_body;
+    // Tree View
     GtkWidget *w_notes_textview;
+    GtkTreeView *w_notes_treeview;
+    GtkTreeStore *w_notes_treestore;
+    GtkTreeSelection *w_notes_treestore_selection;
+    GtkTreeViewColumn *w_notes_tree_section;
+    GtkCellRenderer *w_notes_tree_section_r;
+    GtkTreeViewColumn *w_notes_tree_text;
+    GtkCellRenderer *w_notes_tree_text_r;
+    GtkWidget *w_dlg_delete;
     GtkWidget *w_dlg_export_options;
+    GtkTreeIter current_node;
+    gboolean current_node_status;
     GtkWidget *b_chkbtn_export_title;
     GtkWidget *b_rdbtn_row;
     GtkWidget *b_chkbtn_export_series;

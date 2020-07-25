@@ -25,6 +25,7 @@
 #include "list.h"
 #include "util.h"
 #include "json.h"
+#include "tree.h"
 
 // --------------------------------------------------------------------------
 // on_about_activate
@@ -435,11 +436,12 @@ result_return open_file( gchar* file_path, app_widgets *app_wdgts )
     }
     else if( strcmp( json_data_current_name->string, GENERAL_NOTES ) == 0 )
     {
-      // Wipe the current notes and load the new ones
-      g_info( "  Reading notes" );
-      gtk_text_buffer_set_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ),
-                            json_value_as_string( json_data_current->value )->string,
-                            -1 );
+      // Create just a single top level tree entry
+      import_single_header( (gchar *) json_value_as_string( json_data_current->value )->string, app_wdgts );
+      //g_info( "  Reading notes" );
+      //gtk_text_buffer_set_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ),
+      //                      json_value_as_string( json_data_current->value )->string,
+      //                      -1 );
     }
     else
     {
@@ -765,6 +767,9 @@ void on_new_activate( GtkMenuItem *menuitem, app_widgets *app_wdgts )
 {
   gint rows;
   gint columns;
+  GtkTreeModel *model;
+  GtkTreeIter iter;
+
   g_info( "file.c / on_new_activate" );
   // Launch dialog to get rows/columns
   gtk_widget_show(app_wdgts->w_dlg_get_row_col );
@@ -778,6 +783,15 @@ void on_new_activate( GtkMenuItem *menuitem, app_widgets *app_wdgts )
     fill_grid( rows, columns, app_wdgts );
     update_file_path( "", app_wdgts );
     update_window_title( app_wdgts );
+    // Clear the tree view and the text window
+    model = gtk_tree_view_get_model( app_wdgts->w_notes_treeview );
+    while( gtk_tree_model_get_iter_first( model, &iter) == TRUE )
+    {
+      // Delete this node
+      app_wdgts->current_node_status = FALSE;
+      gtk_tree_store_remove( app_wdgts->w_notes_treestore, &iter );
+    }
+    gtk_text_buffer_set_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ), "", -1 );
   }
 
   gtk_widget_hide(app_wdgts->w_dlg_get_row_col );
