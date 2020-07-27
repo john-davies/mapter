@@ -2,7 +2,8 @@
 
 ## Update information
 
-v0.4 - Addition of cell background selector
+* v0.5 - Tree control for notes tab
+* v0.4 - Addition of cell background selector
 
 ## Introduction
 
