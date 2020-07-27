@@ -73,6 +73,7 @@ int main( int argc, char *argv[] )
     widgets->w_notes_tree_text_r = GTK_CELL_RENDERER( gtk_builder_get_object( builder, "notes_tree_text_r" ));
     widgets->w_dlg_delete = GTK_WIDGET(gtk_builder_get_object( builder, "dlg_delete_warning" ) );
     widgets->current_node_status = FALSE;
+    widgets->stop_node_processing = FALSE;
     widgets->w_dlg_export_options = GTK_WIDGET(gtk_builder_get_object(builder, "dlg_export_options"));
     widgets->b_chkbtn_export_title = GTK_WIDGET(gtk_builder_get_object(builder, "chkbtn_export_title"));
     widgets->b_rdbtn_row = GTK_WIDGET(gtk_builder_get_object(builder, "rdbtn_row"));

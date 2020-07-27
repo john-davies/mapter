@@ -19,9 +19,9 @@
 #include "main.h"
 
 // --------------------------------------------------------------------------
-// name
+// on_btn_add_heading_clicked
 //
-// Description
+// Called when the "add" button is clicked
 //
 // --------------------------------------------------------------------------
 
@@ -59,9 +59,9 @@ void on_btn_add_heading_clicked( GtkWidget *widget, app_widgets *app_wdgts )
 }
 
 // --------------------------------------------------------------------------
-// name
+// on_btn_add_child_clicked
 //
-// Description
+// Called when the "add child" button is clicked
 //
 // --------------------------------------------------------------------------
 
@@ -87,9 +87,9 @@ void on_btn_add_child_clicked( GtkWidget *widget, app_widgets *app_wdgts )
 }
 
 // --------------------------------------------------------------------------
-// name
+// on_btn_delete_heading_clicked
 //
-// Description
+// Called when the "delete" button is clicked
 //
 // --------------------------------------------------------------------------
 
@@ -121,9 +121,9 @@ void on_btn_delete_heading_clicked( GtkWidget *widget, app_widgets *app_wdgts )
 }
 
 // --------------------------------------------------------------------------
-// name
+// on_notes_tree_section_r_edited
 //
-// Description
+// Called after the tree heading editing has been completed
 //
 // --------------------------------------------------------------------------
 
@@ -140,9 +140,10 @@ void on_notes_tree_section_r_edited( GtkCellRendererText *cell, gchar *path_stri
 }
 
 // --------------------------------------------------------------------------
-// name
+// on_notes_treestore_selection_changed
 //
-// Description
+// Called when the selection on the treestore has been changed. Note that
+// this will also be called after the treestore has been edited
 //
 // --------------------------------------------------------------------------
 
@@ -154,43 +155,47 @@ void on_notes_treestore_selection_changed( GtkWidget *widget, app_widgets *app_w
   GtkTextIter end;
 
   g_info( "tree.c / on_notes_treestore_selection_changed");
-  // Save the text from the previously selected node if it wasn't deleted
-  if( app_wdgts->current_node_status == TRUE )
+  // Check if processing is needed, usually only suspeded when whole tree is being deleted
+  if( app_wdgts->stop_node_processing == FALSE )
   {
-    // Get the text buffer
-    gtk_text_buffer_get_start_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ), &start );
-    gtk_text_buffer_get_end_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ), &end );
-      // Copy text to tree
-    gtk_tree_store_set( app_wdgts->w_notes_treestore, &app_wdgts->current_node,
-                  1, gtk_text_buffer_get_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ),
-                              &start,
-                              &end,
-                              FALSE ),
-                  -1 );
-  }
-  // Now show text of newly selected element
-  if( gtk_tree_selection_get_selected( GTK_TREE_SELECTION( app_wdgts->w_notes_treestore_selection ), &model, &app_wdgts->current_node ) != FALSE )
-  {
-    // Copy text to text window
-    gtk_tree_model_get( model, &app_wdgts->current_node, 1, &value, -1 );
-    gtk_text_buffer_set_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ), value, -1 );
-    // Validate the current iterator
-    app_wdgts->current_node_status = TRUE;
-    g_free( value );
-  }
-  else
-  {
-    // No nodes left so clear the text view
-    gtk_text_buffer_set_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ), "", -1 );
+    // Save the text from the previously selected node if it wasn't deleted
+    if( app_wdgts->current_node_status == TRUE )
+    {
+      // Get the text buffer
+      gtk_text_buffer_get_start_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ), &start );
+      gtk_text_buffer_get_end_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ), &end );
+        // Copy text to tree
+      gtk_tree_store_set( app_wdgts->w_notes_treestore, &app_wdgts->current_node,
+                    1, gtk_text_buffer_get_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ),
+                                &start,
+                                &end,
+                                FALSE ),
+                    -1 );
+    }
+    // Now show text of newly selected element
+    if( gtk_tree_selection_get_selected( GTK_TREE_SELECTION( app_wdgts->w_notes_treestore_selection ), &model, &app_wdgts->current_node ) != FALSE )
+    {
+      // Copy text to text window
+      gtk_tree_model_get( model, &app_wdgts->current_node, 1, &value, -1 );
+      gtk_text_buffer_set_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ), value, -1 );
+      // Validate the current iterator
+      app_wdgts->current_node_status = TRUE;
+      g_free( value );
+    }
+    else
+    {
+      // No nodes left so clear the text view
+      gtk_text_buffer_set_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ), "", -1 );
+    }
   }
 
   g_info( "tree.c / ~on_notes_treestore_selection_changed");
 }
 
 // --------------------------------------------------------------------------
-// name
+// import_single_header
 //
-// Description
+// Adds a single top level row to a blank tree
 //
 // --------------------------------------------------------------------------
 
@@ -204,6 +209,4 @@ void import_single_header( gchar *text, app_widgets *app_wdgts )
   gtk_text_buffer_set_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ),
                         text,
                         -1 );
-  // Set current iter
-
 }

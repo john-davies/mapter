@@ -67,7 +67,7 @@ _For the export it is possible to swap the order such that the column headings a
 
 #### Notes tab
 
-The notes tab is a simple free format text window.
+The notes tab is a simple free format text window with a hierarchical tree control. The tree structure can be edited by dragging the elements and by the buttons at the bottom. Text is saved automatically when the tree view changes.
 
 ![Notes Tab](/doc-images/main-notes.png)
 

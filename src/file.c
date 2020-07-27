@@ -434,14 +434,201 @@ result_return open_file( gchar* file_path, app_widgets *app_wdgts )
         text_array_element = text_array_element->next;
       }
     }
+    else if( strcmp( json_data_current_name->string, TREE_NOTES ) == 0 )
+    {
+      g_info( "  Reading tree array" );
+      // Clear the existing tree
+      app_wdgts->stop_node_processing = TRUE;
+      gtk_tree_store_clear( app_wdgts->w_notes_treestore );
+      app_wdgts->stop_node_processing = FALSE;
+      app_wdgts->current_node_status = FALSE;
+      // Clear the text view
+      gtk_text_buffer_set_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ), "", -1 );
+      // Start to parse JSON
+      struct json_array_s* array = json_value_as_array( json_data_current->value );
+      struct json_array_element_s* tree_array_element = array->start;
+      // Loop through tree
+      int count = 0;
+      gboolean first_entry = TRUE;
+      gint current_level = 0;
+      // Linked list for storing tree level iterator
+      GSList *import_tree = NULL;
+      while( tree_array_element != NULL )
+      {
+        // Get the data at this row
+        struct json_object_s *tree_array_element_object = json_value_as_object( tree_array_element->value );
+        struct json_object_element_s *tree_array_element_object_current = tree_array_element_object->start;
+
+        const gchar *name;
+        gchar *index;
+        gchar *heading;
+        gchar *text;
+
+        // Index
+        name = ( tree_array_element_object_current->name )->string;
+        if( strcmp( name, TREE_INDEX ) != 0 )
+        {
+          // Error so exit
+          g_info( "  ERROR when reading tree index: %d, abandoning import", count );
+          free( index );
+          free( heading );
+          free( text );
+          break;
+        }
+        index = strdup( json_value_as_string( tree_array_element_object_current->value )->string );
+        tree_array_element_object_current = tree_array_element_object_current->next;
+        // Heading
+        name = ( tree_array_element_object_current->name )->string;
+        if( strcmp( name, TREE_HEADING ) != 0 )
+        {
+          // Error so exit
+          g_info( "  ERROR when reading tree heading: %d, abandoning import", count );
+          free( index );
+          free( heading );
+          free( text );
+          break;
+        }
+        heading = strdup( json_value_as_string( tree_array_element_object_current->value )->string );
+        tree_array_element_object_current = tree_array_element_object_current->next;
+        // Text
+        name = ( tree_array_element_object_current->name )->string;
+        if( strcmp( name, TREE_TEXT ) != 0 )
+        {
+          // Error so exit
+          g_info( "  ERROR when reading tree text: %d, abandoning import", count );
+          free( index );
+          free( heading );
+          free( text );
+          break;
+        }
+        text = strdup( json_value_as_string( tree_array_element_object_current->value )->string );
+        tree_array_element_object_current = tree_array_element_object_current->next;
+        // Check end
+        if( tree_array_element_object_current != NULL )
+        {
+          g_info( "  ERROR when reading tree entry: %d abandoning import", count );
+          free( index );
+          free( heading );
+          free( text );
+          break;
+        }
+        // Process this row
+        // Calculate level = no of ':' characters in index string
+        gchar *ptr = index;
+        gint level = 0;
+        while( *ptr != '\0' )
+        {
+          if( *ptr == INDEX_SEPARATOR )
+          {
+            level++;
+          }
+          ptr++;
+        }
+        // Dynamically create a tree iter so that it can be stored in the liked list
+        void *iter_ptr = g_malloc( sizeof( GtkTreeIter ) );
+        if( iter_ptr == NULL )
+        {
+          // Something went wrong so abandon import
+          g_info( "  ERROR when allocating memory: %d abandoning import", count );
+          break;
+        }
+
+        // Process the data according to the previous level
+        if( first_entry == TRUE )
+        {
+          // This is the first entry so just add at top layer
+          gtk_tree_store_append( app_wdgts->w_notes_treestore, iter_ptr, NULL );
+          gtk_tree_store_set( app_wdgts->w_notes_treestore, iter_ptr, 0, heading, 1, text, -1);
+          // Add to linked list
+          import_tree = g_slist_append( import_tree, iter_ptr );
+          first_entry = FALSE;
+          current_level = 0;
+        }
+        else if( level == current_level )
+        {
+          // Add at the same level
+          if( level == 0 )
+          {
+            // Add at the top level
+            gtk_tree_store_append( app_wdgts->w_notes_treestore, iter_ptr, NULL );
+            gtk_tree_store_set( app_wdgts->w_notes_treestore, iter_ptr, 0, heading, 1, text, -1);
+          }
+          else
+          {
+            // Add at the relevant level
+            gtk_tree_store_append( app_wdgts->w_notes_treestore, iter_ptr, g_slist_nth_data( import_tree, level-1 ) );
+            gtk_tree_store_set( app_wdgts->w_notes_treestore, iter_ptr, 0, heading, 1, text, -1);
+          }
+          // Replace the entry in the list
+          // Add new one
+          import_tree = g_slist_insert( import_tree, iter_ptr, level+1 );
+          // Remove old one
+          GSList * temp_tree_ptr = g_slist_nth( import_tree, level );
+          import_tree = g_slist_delete_link( import_tree, temp_tree_ptr );
+        }
+        else if( level > current_level )
+        {
+          // Add child
+          gtk_tree_store_append( app_wdgts->w_notes_treestore, iter_ptr, g_slist_nth_data( import_tree, level-1 ) );
+          gtk_tree_store_set( app_wdgts->w_notes_treestore, iter_ptr, 0, heading, 1, text, -1);
+          // Add to linked list
+          import_tree = g_slist_append( import_tree, iter_ptr );
+          current_level = level;
+        }
+        else
+        {
+          // Move up level
+          if( level == 0 )
+          {
+            // Add at the top level
+            gtk_tree_store_append( app_wdgts->w_notes_treestore, iter_ptr, NULL );
+            gtk_tree_store_set( app_wdgts->w_notes_treestore, iter_ptr, 0, heading, 1, text, -1);
+          }
+          else
+          {
+            // Add at the relevant level
+            gtk_tree_store_append( app_wdgts->w_notes_treestore, iter_ptr, g_slist_nth_data( import_tree, level-1 ) );
+            gtk_tree_store_set( app_wdgts->w_notes_treestore, iter_ptr, 0, heading, 1, text, -1);
+          }
+          // Replace linked list element and remove all the linked list elements after this level
+          // Add new one
+          import_tree = g_slist_insert( import_tree, iter_ptr, level+1 );
+          // Remove old one
+          GSList *temp_tree_ptr = g_slist_nth( import_tree, level );
+          import_tree = g_slist_delete_link( import_tree, temp_tree_ptr );
+          // Remove remainder
+          gint length = g_slist_length( import_tree );
+          for( int i = level+1; i<length; i++)
+          {
+            temp_tree_ptr = g_slist_nth( import_tree, i );
+            g_free( g_slist_nth_data( import_tree, i ) ); // Free the data
+            import_tree = g_slist_delete_link( import_tree, temp_tree_ptr );
+          }
+          current_level = level;
+        }
+
+        // Free up copies of strings
+        free( index );
+        free( heading );
+        free( text );
+        // Next row
+        tree_array_element = tree_array_element->next;
+        count++;
+      }
+      // Import finished so clean up linked list
+      g_slist_free_full( import_tree, g_free );
+    }
     else if( strcmp( json_data_current_name->string, GENERAL_NOTES ) == 0 )
     {
+      // Clear the existing tree
+      app_wdgts->stop_node_processing = TRUE;
+      gtk_tree_store_clear( app_wdgts->w_notes_treestore );
+      app_wdgts->stop_node_processing = FALSE;
+      app_wdgts->current_node_status = FALSE;
+      // Clear the text view
+      gtk_text_buffer_set_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ), "", -1 );
       // Create just a single top level tree entry
       import_single_header( (gchar *) json_value_as_string( json_data_current->value )->string, app_wdgts );
-      //g_info( "  Reading notes" );
-      //gtk_text_buffer_set_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ),
-      //                      json_value_as_string( json_data_current->value )->string,
-      //                      -1 );
     }
     else
     {
@@ -638,18 +825,10 @@ result_return save_file( app_widgets *app_wdgts )
     fprintf( output_file, "\n\t],\n" );  // Close text_grid
 
     // General Notes Tab
-    fprintf( output_file, "\t\"%s\": \"", GENERAL_NOTES );
-    // Output contents here
-    GtkTextIter start;
-    GtkTextIter end;
-    // Copy text from editor to text grid
-    gtk_text_buffer_get_start_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ), &start );
-    gtk_text_buffer_get_end_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ), &end );
-    json_encode( output_file, gtk_text_buffer_get_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ),
-                              &start,
-                              &end,
-                              FALSE ) );
-    fprintf( output_file, "\"\n" );
+    fprintf( output_file, "\t\"%s\": [\n", TREE_NOTES );
+    // Loop through the tree structure
+    gtk_tree_model_foreach( GTK_TREE_MODEL( app_wdgts->w_notes_treestore ), print_row, output_file );
+    fprintf( output_file, "\n\t]\n" );
 
     // Footer
     fprintf( output_file, "}\n" );
@@ -666,6 +845,47 @@ result_return save_file( app_widgets *app_wdgts )
   }
   g_info( "file.c / ~save_file" );
   return( file_process );
+}
+
+// --------------------------------------------------------------------------
+// print_row
+//
+// Prints a single row from the tree to the JSON file
+//
+// --------------------------------------------------------------------------
+
+gboolean print_row( GtkTreeModel *model, GtkTreePath  *path, GtkTreeIter  *iter, gpointer output_file )
+{
+  gchar *heading;
+  gchar *text;
+  gchar *iter_path;
+  // Get the data from the tree
+  gtk_tree_model_get( model, iter, 0, &heading, 1, &text, -1 );
+  iter_path = gtk_tree_model_get_string_from_iter( model, iter );
+  // Check if this is not the first one, i.e. path != "0"
+  // If so then print the separating comma
+  if( !( ( iter_path[0] == '0' ) && ( iter_path[1] == '\0' ) ) )
+  {
+    fprintf( output_file, ",\n" );
+  }
+  // Output it
+  fprintf( output_file, "\t\t{\n" );
+  fprintf( output_file, "\t\t\"index\": \"" );
+  json_encode( output_file, iter_path );
+  fprintf( output_file, "\",\n" );
+  fprintf( output_file, "\t\t\"heading\": \"" );
+  json_encode( output_file, heading );
+  fprintf( output_file, "\",\n" );
+  fprintf( output_file, "\t\t\"text\": \"" );
+  json_encode( output_file, text );
+  fprintf( output_file, "\"\n" );
+  fprintf( output_file, "\t\t}" );
+  // Free up resources
+  g_free( heading );
+  g_free( text );
+  g_free( iter_path );
+
+  return FALSE;
 }
 
 // --------------------------------------------------------------------------

@@ -87,6 +87,7 @@ typedef struct {
     GtkWidget *w_dlg_export_options;
     GtkTreeIter current_node;
     gboolean current_node_status;
+    gboolean stop_node_processing;
     GtkWidget *b_chkbtn_export_title;
     GtkWidget *b_rdbtn_row;
     GtkWidget *b_chkbtn_export_series;

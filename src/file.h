@@ -28,6 +28,11 @@
 #define TEXT_HEADING "heading"
 #define TEXT_BODY "body"
 #define GENERAL_NOTES "general notes"
+#define TREE_NOTES "tree notes"
+#define TREE_INDEX "index"
+#define TREE_HEADING "heading"
+#define TREE_TEXT "text"
+#define INDEX_SEPARATOR ':'
 
 void on_about_activate( GtkMenuItem *, app_widgets * );
 void on_dlg_about_response( GtkDialog *, gint, app_widgets * );
@@ -43,5 +48,7 @@ result_return open_file( gchar*, app_widgets * );
 result_return save_file( app_widgets * );
 
 void json_encode( FILE*, const gchar *);
+
+gboolean print_row( GtkTreeModel *, GtkTreePath  *, GtkTreeIter  *, gpointer );
 
 #endif
