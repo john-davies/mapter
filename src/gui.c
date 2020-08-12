@@ -359,8 +359,9 @@ const gchar *glade_definition = R""""(
                           <object class="GtkTreeView" id="notes_treeview">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
+                            <property name="hscroll_policy">natural</property>
                             <property name="model">notes_treestore</property>
-                            <property name="reorderable">True</property>
+                            <property name="search_column">1</property>
                             <child internal-child="selection">
                               <object class="GtkTreeSelection" id="notes_treestore_selection">
                                 <signal name="changed" handler="on_notes_treestore_selection_changed" swapped="no"/>
@@ -368,6 +369,7 @@ const gchar *glade_definition = R""""(
                             </child>
                             <child>
                               <object class="GtkTreeViewColumn" id="notes_tree_section">
+                                <property name="spacing">1</property>
                                 <property name="title" translatable="yes">Section</property>
                                 <child>
                                   <object class="GtkCellRendererText" id="notes_tree_section_r">
@@ -470,8 +472,10 @@ const gchar *glade_definition = R""""(
                       <object class="GtkTextView" id="notes_textview">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="border_width">8</property>
+                        <property name="border_width">3</property>
                         <property name="wrap_mode">word-char</property>
+                        <property name="left_margin">2</property>
+                        <property name="right_margin">2</property>
                       </object>
                     </child>
                   </object>
@@ -582,7 +586,7 @@ const gchar *glade_definition = R""""(
     <property name="deletable">False</property>
     <property name="transient_for">window_main</property>
     <property name="program_name">mapter</property>
-    <property name="version">Version 0.5</property>
+    <property name="version">Version 0.5.1</property>
     <property name="copyright" translatable="yes">Copyright John Davies 2020</property>
     <property name="website">https://github.com/john-davies/mapter</property>
     <property name="website_label" translatable="yes">GitHub repository</property>
@@ -1096,6 +1100,8 @@ const gchar *glade_definition = R""""(
                         <property name="can_focus">True</property>
                         <property name="border_width">3</property>
                         <property name="wrap_mode">word-char</property>
+                        <property name="left_margin">2</property>
+                        <property name="right_margin">2</property>
                       </object>
                     </child>
                   </object>
@@ -1138,6 +1144,8 @@ const gchar *glade_definition = R""""(
                         <property name="can_focus">True</property>
                         <property name="border_width">3</property>
                         <property name="wrap_mode">word-char</property>
+                        <property name="left_margin">2</property>
+                        <property name="right_margin">2</property>
                       </object>
                     </child>
                   </object>
@@ -1181,6 +1189,8 @@ const gchar *glade_definition = R""""(
                         <property name="can_focus">True</property>
                         <property name="border_width">3</property>
                         <property name="wrap_mode">word-char</property>
+                        <property name="left_margin">2</property>
+                        <property name="right_margin">2</property>
                       </object>
                     </child>
                   </object>

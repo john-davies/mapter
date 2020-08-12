@@ -433,6 +433,9 @@ result_return open_file( gchar* file_path, app_widgets *app_wdgts )
         }
         text_array_element = text_array_element->next;
       }
+      // Set the initial edit point to be top left
+      app_wdgts->edit_grid_column = 0;
+      app_wdgts->edit_grid_row = 0;
     }
     else if( strcmp( json_data_current_name->string, TREE_NOTES ) == 0 )
     {
@@ -760,6 +763,9 @@ void json_encode( FILE* output_file, const gchar *input_str)
 result_return save_file( app_widgets *app_wdgts )
 {
   result_return file_process = { TRUE, "" };
+  // Save these as they will need to be restored later
+  gint save_r = app_wdgts->edit_grid_row;
+  gint save_c = app_wdgts->edit_grid_column;
 
   g_info( "file.c / save_file");
   g_info( "  Save: %s\n", app_wdgts->current_file_path );
@@ -826,6 +832,20 @@ result_return save_file( app_widgets *app_wdgts )
 
     // General Notes Tab
     fprintf( output_file, "\t\"%s\": [\n", TREE_NOTES );
+    // Save the currently selected node just in case there are outstanding edits
+    GtkTreeModel *model;
+    GtkTextIter start;
+    GtkTextIter end;
+    if( gtk_tree_selection_get_selected( GTK_TREE_SELECTION( app_wdgts->w_notes_treestore_selection ), &model, &app_wdgts->current_node ) != FALSE )
+    {
+      // Get the text buffer
+      gtk_text_buffer_get_start_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ), &start );
+      gtk_text_buffer_get_end_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ), &end );
+        // Copy text to tree
+      gtk_tree_store_set( app_wdgts->w_notes_treestore, &app_wdgts->current_node,
+                    1, gtk_text_buffer_get_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ), &start, &end, FALSE ),
+                    -1 );
+    }
     // Loop through the tree structure
     gtk_tree_model_foreach( GTK_TREE_MODEL( app_wdgts->w_notes_treestore ), print_row, output_file );
     fprintf( output_file, "\n\t]\n" );
@@ -843,6 +863,10 @@ result_return save_file( app_widgets *app_wdgts )
     file_process.result = FALSE;
     file_process.message = "Could not open file for writing";
   }
+  // Restore the editing settings
+  app_wdgts->edit_grid_row = save_r;
+  app_wdgts->edit_grid_column = save_c;
+
   g_info( "file.c / ~save_file" );
   return( file_process );
 }

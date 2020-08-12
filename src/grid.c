@@ -450,19 +450,25 @@ void on_btn_edit_save_clicked( GtkButton *button, app_widgets *app_wdgts )
   // Header
   gtk_text_buffer_get_start_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_heading ) ), &start );
   gtk_text_buffer_get_end_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_heading ) ), &end );
+  gchar *new_text = gtk_text_buffer_get_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_heading ) ), &start, &end, FALSE );
   list_put_text( HEADER_LIST,
                  app_wdgts->edit_grid_row,
                  app_wdgts->edit_grid_column,
-                 gtk_text_buffer_get_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_heading ) ), &start, &end, FALSE ),
+                 new_text,
                  app_wdgts );
+  // Free up text
+  g_free( new_text );
   // Body
   gtk_text_buffer_get_start_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_body ) ), &start );
   gtk_text_buffer_get_end_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_body ) ), &end );
+  new_text = gtk_text_buffer_get_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_body ) ), &start, &end, FALSE );
   list_put_text( BODY_LIST,
                  app_wdgts->edit_grid_row,
                  app_wdgts->edit_grid_column,
-                 gtk_text_buffer_get_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_body ) ), &start, &end, FALSE ),
+                 new_text,
                  app_wdgts );
+  // Free up text
+  g_free( new_text );
 
   g_info( "grid.c / ~on_btn_edit_save_clicked");
 }

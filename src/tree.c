@@ -159,17 +159,14 @@ void on_notes_treestore_selection_changed( GtkWidget *widget, app_widgets *app_w
   if( app_wdgts->stop_node_processing == FALSE )
   {
     // Save the text from the previously selected node if it wasn't deleted
-    if( app_wdgts->current_node_status == TRUE )
+    if( ( app_wdgts->current_node_status == TRUE ) )
     {
       // Get the text buffer
       gtk_text_buffer_get_start_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ), &start );
       gtk_text_buffer_get_end_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ), &end );
-        // Copy text to tree
+      // Copy text to tree
       gtk_tree_store_set( app_wdgts->w_notes_treestore, &app_wdgts->current_node,
-                    1, gtk_text_buffer_get_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ),
-                                &start,
-                                &end,
-                                FALSE ),
+                    1, gtk_text_buffer_get_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ), &start, &end, FALSE ),
                     -1 );
     }
     // Now show text of newly selected element
