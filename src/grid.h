@@ -40,6 +40,7 @@ void set_cell_background_yellow( GtkWidget *, app_widgets * );
 void set_cell_background_green( GtkWidget *, app_widgets * );
 void set_cell_background_blue( GtkWidget *, app_widgets * );
 
+void on_btn_statistics_clicked( GtkButton *, app_widgets * );
 void on_btn_edit_close_clicked( GtkButton *, app_widgets * );
 void on_btn_edit_save_clicked( GtkButton *, app_widgets * );
 void edit_cell( gint, gint, app_widgets * );

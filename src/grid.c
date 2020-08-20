@@ -426,6 +426,54 @@ void set_cell_background_neutral( GtkWidget *source, app_widgets *app_wdgts )
   g_info( "grid.c / ~set_cell_background_neutral");
 }
 
+
+
+// --------------------------------------------------------------------------
+// on_btn_statistics_clicked
+//
+// Statistics about text displayed in a pop up
+//
+// --------------------------------------------------------------------------
+
+void on_btn_statistics_clicked( GtkButton *button, app_widgets *app_wdgts )
+{
+  g_info( "grid.c / on_btn_statistics_clicked");
+
+  // Calculate statistics
+  gint word_count = 0;
+  gint char_count = 0;
+  // Get body text
+  GtkTextIter start;
+  GtkTextIter end;
+  gtk_text_buffer_get_start_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_body ) ), &start );
+  gtk_text_buffer_get_end_iter( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_body ) ), &end );
+  gchar *new_text = gtk_text_buffer_get_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_body ) ), &start, &end, FALSE );
+  // Loop through buffer
+  gchar *buf_ptr = new_text;
+  while( *buf_ptr != '\0' )
+  {
+    char_count++;
+    if( ( *buf_ptr == ' ' ) ||
+        ( *buf_ptr == '\n' ) )
+    {
+      word_count++;
+    }
+    buf_ptr++;
+  }
+  // Free up text
+  g_free( new_text );
+  // Show result
+  GtkWidget *dialog_box = gtk_message_dialog_new( GTK_WINDOW( app_wdgts->w_editor_window ),
+                                GTK_DIALOG_DESTROY_WITH_PARENT,
+                                GTK_MESSAGE_INFO,
+                                GTK_BUTTONS_CLOSE,
+                                "Character count: %d\n Word count: %d", char_count, word_count );
+  gtk_dialog_run( GTK_DIALOG( dialog_box ) );
+  gtk_widget_destroy( dialog_box );
+
+  g_info( "grid.c / ~on_btn_statistics_clicked");
+}
+
 // --------------------------------------------------------------------------
 // on_btn_edit_save_clicked
 //

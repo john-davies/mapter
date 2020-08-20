@@ -52,8 +52,8 @@ const gchar *glade_definition = R""""(
             <property name="homogeneous">True</property>
             <property name="layout_style">end</property>
             <child>
-              <object class="GtkButton" id="btn_delete_ok">
-                <property name="label">gtk-ok</property>
+              <object class="GtkButton" id="btn_delete_cancel">
+                <property name="label">gtk-cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -66,8 +66,8 @@ const gchar *glade_definition = R""""(
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="btn_delete_cancel">
-                <property name="label">gtk-cancel</property>
+              <object class="GtkButton" id="btn_delete_ok">
+                <property name="label">gtk-ok</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -89,8 +89,8 @@ const gchar *glade_definition = R""""(
       </object>
     </child>
     <action-widgets>
-      <action-widget response="-5">btn_delete_ok</action-widget>
       <action-widget response="-6">btn_delete_cancel</action-widget>
+      <action-widget response="-5">btn_delete_ok</action-widget>
     </action-widgets>
   </object>
   <object class="GtkMenu" id="grid_right_click_menu">
@@ -586,7 +586,7 @@ const gchar *glade_definition = R""""(
     <property name="deletable">False</property>
     <property name="transient_for">window_main</property>
     <property name="program_name">mapter</property>
-    <property name="version">Version 0.5.1</property>
+    <property name="version">Version 0.5.2</property>
     <property name="copyright" translatable="yes">Copyright John Davies 2020</property>
     <property name="website">https://github.com/john-davies/mapter</property>
     <property name="website_label" translatable="yes">GitHub repository</property>
@@ -633,12 +633,12 @@ const gchar *glade_definition = R""""(
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
-              <object class="GtkButton" id="btn_export">
-                <property name="label" translatable="yes">Export</property>
+              <object class="GtkButton" id="btn_export_cance">
+                <property name="label">gtk-cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="can_default">True</property>
                 <property name="receives_default">True</property>
+                <property name="use_stock">True</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -647,12 +647,12 @@ const gchar *glade_definition = R""""(
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="btn_export_cance">
-                <property name="label">gtk-cancel</property>
+              <object class="GtkButton" id="btn_export">
+                <property name="label" translatable="yes">Export</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="can_default">True</property>
                 <property name="receives_default">True</property>
-                <property name="use_stock">True</property>
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -673,8 +673,8 @@ const gchar *glade_definition = R""""(
       </object>
     </child>
     <action-widgets>
-      <action-widget response="-5">btn_export</action-widget>
       <action-widget response="-6">btn_export_cance</action-widget>
+      <action-widget response="-5">btn_export</action-widget>
     </action-widgets>
   </object>
   <object class="GtkDialog" id="dlg_export_options">
@@ -693,8 +693,8 @@ const gchar *glade_definition = R""""(
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
-              <object class="GtkButton" id="btn_export_ok">
-                <property name="label">gtk-ok</property>
+              <object class="GtkButton" id="btn_export_cancel">
+                <property name="label">gtk-cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -707,8 +707,8 @@ const gchar *glade_definition = R""""(
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="btn_export_cancel">
-                <property name="label">gtk-cancel</property>
+              <object class="GtkButton" id="btn_export_ok">
+                <property name="label">gtk-ok</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -809,8 +809,8 @@ const gchar *glade_definition = R""""(
       </object>
     </child>
     <action-widgets>
-      <action-widget response="-5">btn_export_ok</action-widget>
       <action-widget response="-6">btn_export_cancel</action-widget>
+      <action-widget response="-5">btn_export_ok</action-widget>
     </action-widgets>
   </object>
   <object class="GtkDialog" id="dlg_get_row_col">
@@ -828,12 +828,11 @@ const gchar *glade_definition = R""""(
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
-              <object class="GtkButton" id="btn_create">
-                <property name="label">gtk-apply</property>
+              <object class="GtkButton" id="btn_cancel">
+                <property name="label">gtk-cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="relief">none</property>
                 <property name="use_stock">True</property>
               </object>
               <packing>
@@ -843,11 +842,12 @@ const gchar *glade_definition = R""""(
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="btn_cancel">
-                <property name="label">gtk-cancel</property>
+              <object class="GtkButton" id="btn_create">
+                <property name="label">gtk-apply</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="relief">none</property>
                 <property name="use_stock">True</property>
               </object>
               <packing>
@@ -934,8 +934,8 @@ const gchar *glade_definition = R""""(
       </object>
     </child>
     <action-widgets>
-      <action-widget response="-5">btn_create</action-widget>
       <action-widget response="-6">btn_cancel</action-widget>
+      <action-widget response="-5">btn_create</action-widget>
     </action-widgets>
   </object>
   <object class="GtkFileChooserDialog" id="dlg_open">
@@ -954,11 +954,10 @@ const gchar *glade_definition = R""""(
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
-              <object class="GtkButton" id="btn_open">
-                <property name="label">gtk-open</property>
+              <object class="GtkButton" id="btn_cancel_open">
+                <property name="label">gtk-cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="can_default">True</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
               </object>
@@ -969,10 +968,11 @@ const gchar *glade_definition = R""""(
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="btn_cancel_open">
-                <property name="label">gtk-cancel</property>
+              <object class="GtkButton" id="btn_open">
+                <property name="label">gtk-open</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="can_default">True</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
               </object>
@@ -995,8 +995,8 @@ const gchar *glade_definition = R""""(
       </object>
     </child>
     <action-widgets>
-      <action-widget response="-5">btn_open</action-widget>
       <action-widget response="-6">btn_cancel_open</action-widget>
+      <action-widget response="-5">btn_open</action-widget>
     </action-widgets>
   </object>
   <object class="GtkFileChooserDialog" id="dlg_save_as">
@@ -1017,11 +1017,10 @@ const gchar *glade_definition = R""""(
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
-              <object class="GtkButton" id="btn_save_as">
-                <property name="label">gtk-save-as</property>
+              <object class="GtkButton" id="btn_cancel_save_as">
+                <property name="label">gtk-cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="can_default">True</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
               </object>
@@ -1032,10 +1031,11 @@ const gchar *glade_definition = R""""(
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="btn_cancel_save_as">
-                <property name="label">gtk-cancel</property>
+              <object class="GtkButton" id="btn_save_as">
+                <property name="label">gtk-save-as</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="can_default">True</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
               </object>
@@ -1058,8 +1058,8 @@ const gchar *glade_definition = R""""(
       </object>
     </child>
     <action-widgets>
-      <action-widget response="-5">btn_save_as</action-widget>
       <action-widget response="-6">btn_cancel_save_as</action-widget>
+      <action-widget response="-5">btn_save_as</action-widget>
     </action-widgets>
   </object>
   <object class="GtkWindow" id="editor_window">
@@ -1215,7 +1215,25 @@ const gchar *glade_definition = R""""(
           <object class="GtkBox" id="box3">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="homogeneous">True</property>
+            <property name="spacing">10</property>
+            <child>
+              <object class="GtkButton" id="btn_statistics">
+                <property name="label" translatable="yes">Statistics</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="halign">center</property>
+                <property name="margin_left">10</property>
+                <property name="margin_top">10</property>
+                <property name="margin_bottom">10</property>
+                <signal name="clicked" handler="on_btn_statistics_clicked" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
             <child>
               <object class="GtkButton" id="btn_edit_save">
                 <property name="label">gtk-save</property>
@@ -1223,6 +1241,7 @@ const gchar *glade_definition = R""""(
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="halign">center</property>
+                <property name="margin_right">10</property>
                 <property name="margin_top">10</property>
                 <property name="margin_bottom">10</property>
                 <property name="use_stock">True</property>
@@ -1232,7 +1251,8 @@ const gchar *glade_definition = R""""(
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="position">0</property>
+                <property name="pack_type">end</property>
+                <property name="position">1</property>
               </packing>
             </child>
             <child>
@@ -1245,13 +1265,16 @@ const gchar *glade_definition = R""""(
                 <property name="margin_top">10</property>
                 <property name="margin_bottom">10</property>
                 <property name="use_stock">True</property>
+                <property name="xalign">0.51999998092651367</property>
+                <property name="yalign">0.49000000953674316</property>
                 <signal name="clicked" handler="on_btn_edit_close_clicked" swapped="no"/>
                 <accelerator key="q" signal="activate" modifiers="GDK_CONTROL_MASK"/>
               </object>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="position">1</property>
+                <property name="pack_type">end</property>
+                <property name="position">2</property>
               </packing>
             </child>
           </object>

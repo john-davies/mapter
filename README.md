@@ -2,6 +2,8 @@
 
 ## Update information
 
+* v0.5.2 - Small layout changes & word count statistics
+* v0.5.1 - Urgent bug fix
 * v0.5 - Tree control for notes tab
 * v0.4 - Addition of cell background selector
 
