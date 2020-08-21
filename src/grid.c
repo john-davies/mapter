@@ -21,6 +21,7 @@
 #include "list.h"
 #include "util.h"
 #include "css.h"
+#include "file.h"
 
 // --------------------------------------------------------------------------
 // add_row
@@ -517,6 +518,9 @@ void on_btn_edit_save_clicked( GtkButton *button, app_widgets *app_wdgts )
                  app_wdgts );
   // Free up text
   g_free( new_text );
+
+  // Now save file
+  on_save_activate( GTK_MENU_ITEM( app_wdgts->m_save ), app_wdgts );
 
   g_info( "grid.c / ~on_btn_edit_save_clicked");
 }

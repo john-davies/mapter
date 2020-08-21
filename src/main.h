@@ -74,6 +74,7 @@ typedef struct {
     GtkWidget *w_edit_summary;
     GtkWidget *w_edit_heading;
     GtkWidget *w_edit_body;
+    GtkWidget *m_save;
     // Tree View
     GtkWidget *w_notes_textview;
     GtkTreeView *w_notes_treeview;
