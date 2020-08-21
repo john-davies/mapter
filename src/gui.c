@@ -586,7 +586,7 @@ const gchar *glade_definition = R""""(
     <property name="deletable">False</property>
     <property name="transient_for">window_main</property>
     <property name="program_name">mapter</property>
-    <property name="version">Version 0.5.2</property>
+    <property name="version">Version 0.5.3</property>
     <property name="copyright" translatable="yes">Copyright John Davies 2020</property>
     <property name="website">https://github.com/john-davies/mapter</property>
     <property name="website_label" translatable="yes">GitHub repository</property>

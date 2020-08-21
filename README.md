@@ -2,6 +2,7 @@
 
 ## Update information
 
+* v0.5.3 - Small change to "save" logic
 * v0.5.2 - Small layout changes & word count statistics
 * v0.5.1 - Urgent bug fix
 * v0.5 - Tree control for notes tab
@@ -23,7 +24,7 @@ _( The name comes from a portmanteau of "mapping" and "chapter" and was created 
 
 ## Current Status
 
-The current version ( 0.4 ) could generously be called a minimum viable product ( MVP ) and allows the creation and editing of a full work. The main limitation is that the editor is extremely basic and lacks common features like "search/replace".
+The current version ( 0.5.3 ) could generously be called a minimum viable product ( MVP ) and allows the creation and editing of a full work. The main limitation is that the editor is extremely basic and lacks common features like "search/replace".
 
 The build now comprises of a single executable with no other external file dependencies.
 
