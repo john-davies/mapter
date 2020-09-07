@@ -77,7 +77,7 @@ int main( int argc, char *argv[] )
     widgets->stop_node_processing = FALSE;
     widgets->w_dlg_export_options = GTK_WIDGET(gtk_builder_get_object(builder, "dlg_export_options"));
     widgets->b_chkbtn_export_title = GTK_WIDGET(gtk_builder_get_object(builder, "chkbtn_export_title"));
-    widgets->b_rdbtn_row = GTK_WIDGET(gtk_builder_get_object(builder, "rdbtn_row"));
+    widgets->b_chkbtn_export_dup_cr = GTK_WIDGET(gtk_builder_get_object(builder, "chkbtn_export_dup_cr"));
     widgets->w_dlg_export = GTK_WIDGET(gtk_builder_get_object(builder, "dlg_export"));
     widgets->b_chkbtn_export_series = GTK_WIDGET(gtk_builder_get_object(builder, "chkbtn_export_series"));
     widgets->l_row_id_label  = GTK_WIDGET(gtk_builder_get_object(builder, "row_id_label"));

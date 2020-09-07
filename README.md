@@ -24,11 +24,7 @@ _( The name comes from a portmanteau of "mapping" and "chapter" and was created 
 
 ## Current Status
 
-The current version ( 0.5.3 ) could generously be called a minimum viable product ( MVP ) and allows the creation and editing of a full work. The main limitation is that the editor is extremely basic and lacks common features like "search/replace".
-
-The build now comprises of a single executable with no other external file dependencies.
-
-The example file has been expanded to include the full body text. Two extra versions of the example have been added with Markdown and LaTeX annotations to show how the output could be typeset.
+The current version ( 0.5.4 ) could generously be called a minimum viable product ( MVP ) and allows the creation and editing of a full work. The main limitation is that the editor is extremely basic and lacks common features like "search/replace".
 
 ## Building
 
@@ -67,7 +63,6 @@ The grid tab has four main sections as described below. Double click on any of t
     * Low - green background
     * Neutral - blue background
 
-_For the export it is possible to swap the order such that the column headings are the chapter titles etc. see below_
 
 #### Notes tab
 
@@ -102,6 +97,8 @@ The usual file open, save, save as, new commands can be found under the "File" m
 File export is similar to save but exports the data in a more structured way. There are some export options:
 
 ![Edit Window](/doc-images/export.png)
+
+Some tools use two consecutive carriage returns as a paragraph marker. However it's sometimes more convenient and a nicer layout in the mapter section editor to write text using just one carriage return. The first option adds an extra carriage return into the export.
 
 The last option specifies whether extra data is added to each line, e.g.
 
@@ -153,6 +150,4 @@ Trace and debugging information can be show on the standard output by using the 
 Future planned developments include:
 
 * Improved Editor with features like search/replace and undo. At the moment the [GTKSourceView](https://gitlab.gnome.org/GNOME/gtksourceview) component looks a likely candidate.
-* Status indication ( or %age completion ) for each cell
 * A method of moving or swapping the contents of cells without a lot of cutting & pasting
-* Tree control for the notes tab so that information can be collated hierarchically

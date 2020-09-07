@@ -65,7 +65,7 @@ void on_dlg_about_response( GtkDialog *dialog, gint response_id, app_widgets *ap
 void on_export_activate( GtkMenuItem *menuitem, app_widgets *app_wdgts )
 {
   gboolean use_cell_0_0;
-  gboolean row_chapters;
+  gboolean dup_cr;
   gboolean add_series;
   gchar *file_path = NULL;        // Name of file to open from dialog box
 
@@ -78,7 +78,7 @@ void on_export_activate( GtkMenuItem *menuitem, app_widgets *app_wdgts )
   {
     // Get the options
     use_cell_0_0 = gtk_toggle_button_get_active( GTK_TOGGLE_BUTTON( app_wdgts->b_chkbtn_export_title ) );
-    row_chapters = gtk_toggle_button_get_active( GTK_TOGGLE_BUTTON( app_wdgts->b_rdbtn_row ) );
+    dup_cr = gtk_toggle_button_get_active( GTK_TOGGLE_BUTTON( app_wdgts->b_chkbtn_export_dup_cr ) );
     add_series = gtk_toggle_button_get_active( GTK_TOGGLE_BUTTON( app_wdgts->b_chkbtn_export_series ) );
     // Close the dialog
     gtk_widget_hide(app_wdgts->w_dlg_export_options );
@@ -115,75 +115,57 @@ void on_export_activate( GtkMenuItem *menuitem, app_widgets *app_wdgts )
             }
           }
 
-          if( row_chapters == TRUE )
+          // Rows as chapters
+          g_info( "  Use rows as chapters" );
+          for( gint r=1; r<app_wdgts->current_grid_rows; r++ )
           {
-            // Rows as chapters
-            g_info( "  Use rows as chapters" );
-            for( gint r=1; r<app_wdgts->current_grid_rows; r++ )
+            // Chapter title is in column 0
+            gchar *chapter = list_get_text( HEADER_LIST, r, 0, app_wdgts );
+            if( ( chapter != NULL ) && ( strlen( chapter ) > 0 ) )
             {
-              // Chapter title is in column 0
-              gchar *chapter = list_get_text( HEADER_LIST, r, 0, app_wdgts );
-              if( ( chapter != NULL ) && ( strlen( chapter ) > 0 ) )
-              {
-                fprintf( output_file, "%s\n\n", chapter );
-              }
-              // Now the sections
-              for( gint c=1; c<app_wdgts->current_grid_columns; c++ )
-              {
-                gchar *header = list_get_text( HEADER_LIST, r, c, app_wdgts );
-                gchar *body = list_get_text( BODY_LIST, r, c, app_wdgts );
-                // Header
-                if( ( header != NULL ) && ( strlen( header ) > 0 ) )
-                {
-                  if( add_series == TRUE )
-                  {
-                    fprintf( output_file, "%s - ", fetch_cell_contents( app_wdgts->w_text_grid, 0, c  ) );
-                  }
-                  fprintf( output_file, "%s\n\n", header );
-                }
-                // Body
-                if( ( body != NULL ) && ( strlen( body ) > 0 ) )
-                {
-                  fprintf( output_file, "%s\n\n", body );
-                }
-              }
-              fprintf( output_file, "\n" );
+              fprintf( output_file, "%s\n\n", chapter );
             }
-          }
-          else
-          {
-            // Columns as chapters
-            g_info( "  Use columns as chapters" );
+            // Now the sections
             for( gint c=1; c<app_wdgts->current_grid_columns; c++ )
             {
-              // Chapter title is in row 0
-              gchar *chapter = list_get_text( HEADER_LIST, 0, c, app_wdgts );
-              if( ( chapter != NULL ) && ( strlen( chapter ) > 0 ) )
+              gchar *header = list_get_text( HEADER_LIST, r, c, app_wdgts );
+              gchar *body = list_get_text( BODY_LIST, r, c, app_wdgts );
+              // Header
+              if( ( header != NULL ) && ( strlen( header ) > 0 ) )
               {
-                fprintf( output_file, "%s\n\n", chapter );
-              }
-              // Now the sections
-              for( gint r=1; r<app_wdgts->current_grid_rows; r++ )
-              {
-                gchar *header = list_get_text( HEADER_LIST, r, c, app_wdgts );
-                gchar *body = list_get_text( BODY_LIST, r, c, app_wdgts );
-                // Header
-                if( ( header != NULL ) && ( strlen( header ) > 0 ) )
+                if( add_series == TRUE )
                 {
-                  if( add_series == TRUE )
-                  {
-                    fprintf( output_file, "%s - ", fetch_cell_contents( app_wdgts->w_text_grid, r, 0  ) );
-                  }
-                  fprintf( output_file, "%s\n\n", header );
+                  fprintf( output_file, "%s - ", fetch_cell_contents( app_wdgts->w_text_grid, 0, c  ) );
                 }
-                // Body
-                if( ( body != NULL ) && ( strlen( body ) > 0 ) )
+                fprintf( output_file, "%s\n\n", header );
+              }
+              // Body
+              if( ( body != NULL ) && ( strlen( body ) > 0 ) )
+              {
+                // Check if the CRs need to be duplicated
+                if( dup_cr )
                 {
+                    // Loop through the body text
+                    gchar *ptr = body;
+                    while( *ptr != '\0' )
+                    {
+                      fprintf( output_file, "%c", *ptr );
+                      if( *ptr == '\n' )
+                      {
+                        fprintf( output_file, "\n" );
+                      }
+                      ptr++;
+                    }
+                    fprintf( output_file, "\n\n" );
+                }
+                else
+                {
+                  // Just output the body in one go
                   fprintf( output_file, "%s\n\n", body );
                 }
               }
-              fprintf( output_file, "\n" );
             }
+            fprintf( output_file, "\n" );
           }
         }
         else

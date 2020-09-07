@@ -90,7 +90,7 @@ typedef struct {
     gboolean current_node_status;
     gboolean stop_node_processing;
     GtkWidget *b_chkbtn_export_title;
-    GtkWidget *b_rdbtn_row;
+    GtkWidget *b_chkbtn_export_dup_cr;
     GtkWidget *b_chkbtn_export_series;
     GtkWidget *w_dlg_export;
     GtkWidget *l_row_id_label;

@@ -586,7 +586,7 @@ const gchar *glade_definition = R""""(
     <property name="deletable">False</property>
     <property name="transient_for">window_main</property>
     <property name="program_name">mapter</property>
-    <property name="version">Version 0.5.3</property>
+    <property name="version">Version 0.5.4</property>
     <property name="copyright" translatable="yes">Copyright John Davies 2020</property>
     <property name="website">https://github.com/john-davies/mapter</property>
     <property name="website_label" translatable="yes">GitHub repository</property>
@@ -734,24 +734,8 @@ const gchar *glade_definition = R""""(
             <property name="border_width">8</property>
             <property name="orientation">vertical</property>
             <child>
-              <object class="GtkCheckButton" id="chkbtn_export_title">
-                <property name="label" translatable="yes">Use cell at 0,0 as title</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">False</property>
-                <property name="xalign">0</property>
-                <property name="active">True</property>
-                <property name="draw_indicator">True</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkRadioButton" id="rdbtn_row">
-                <property name="label" translatable="yes">Use rows as chapter headings</property>
+              <object class="GtkCheckButton" id="chkbtn_export_dup_cr">
+                <property name="label" translatable="yes">Duplicate carriage returns</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
@@ -763,24 +747,23 @@ const gchar *glade_definition = R""""(
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="position">1</property>
+                <property name="position">0</property>
               </packing>
             </child>
             <child>
-              <object class="GtkRadioButton" id="rdbtn_column">
-                <property name="label" translatable="yes">Use columns as chapter headings</property>
+              <object class="GtkCheckButton" id="chkbtn_export_title">
+                <property name="label" translatable="yes">Use cell at 0,0 as title</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
+                <property name="margin_top">10</property>
                 <property name="xalign">0</property>
-                <property name="active">True</property>
                 <property name="draw_indicator">True</property>
-                <property name="group">rdbtn_row</property>
               </object>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="position">2</property>
+                <property name="position">1</property>
               </packing>
             </child>
             <child>
