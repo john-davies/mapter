@@ -16,6 +16,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <gtk/gtk.h>
+#include <gtksourceview/gtksource.h>
 #include "main.h"
 
 // --------------------------------------------------------------------------
@@ -172,9 +173,13 @@ void on_notes_treestore_selection_changed( GtkWidget *widget, app_widgets *app_w
     // Now show text of newly selected element
     if( gtk_tree_selection_get_selected( GTK_TREE_SELECTION( app_wdgts->w_notes_treestore_selection ), &model, &app_wdgts->current_node ) != FALSE )
     {
+      // Turn off undo for initial text load
+      gtk_source_buffer_begin_not_undoable_action( GTK_SOURCE_BUFFER( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ) ) );
       // Copy text to text window
       gtk_tree_model_get( model, &app_wdgts->current_node, 1, &value, -1 );
       gtk_text_buffer_set_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ), value, -1 );
+      // Restart the undo buffering
+      gtk_source_buffer_end_not_undoable_action( GTK_SOURCE_BUFFER( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_notes_textview ) ) ) );
       // Validate the current iterator
       app_wdgts->current_node_status = TRUE;
       g_free( value );

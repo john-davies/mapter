@@ -23,6 +23,7 @@ const gchar *glade_definition = R""""(
 <!-- Generated with glade 3.18.3 -->
 <interface>
   <requires lib="gtk+" version="3.12"/>
+  <requires lib="gtksourceview" version="3.0"/>
   <object class="GtkAdjustment" id="adj_columns">
     <property name="lower">1</property>
     <property name="upper">100</property>
@@ -469,7 +470,7 @@ const gchar *glade_definition = R""""(
                     <property name="vexpand">True</property>
                     <property name="shadow_type">in</property>
                     <child>
-                      <object class="GtkTextView" id="notes_textview">
+                      <object class="GtkSourceView" id="notes_textview">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="border_width">3</property>
@@ -1078,7 +1079,7 @@ const gchar *glade_definition = R""""(
                     <property name="can_focus">True</property>
                     <property name="shadow_type">in</property>
                     <child>
-                      <object class="GtkTextView" id="edit_summary">
+                      <object class="GtkSourceView" id="edit_summary">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="border_width">3</property>
@@ -1122,7 +1123,7 @@ const gchar *glade_definition = R""""(
                     <property name="can_focus">True</property>
                     <property name="shadow_type">in</property>
                     <child>
-                      <object class="GtkTextView" id="edit_heading">
+                      <object class="GtkSourceView" id="edit_heading">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="border_width">3</property>
@@ -1167,7 +1168,7 @@ const gchar *glade_definition = R""""(
                     <property name="can_focus">True</property>
                     <property name="shadow_type">in</property>
                     <child>
-                      <object class="GtkTextView" id="edit_body">
+                      <object class="GtkSourceView" id="edit_body">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="border_width">3</property>

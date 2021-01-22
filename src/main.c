@@ -19,6 +19,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <gtk/gtk.h>
+#include <gtksourceview/gtksourceview.h>
+#include <gtkspell/gtkspell.h>
 #include <time.h>
 #include "main.h"
 #include "file.h"
@@ -44,6 +46,7 @@ int main( int argc, char *argv[] )
 
     gtk_init(&argc, &argv);
 
+    g_type_ensure( GTK_SOURCE_TYPE_VIEW );
     //builder = gtk_builder_new_from_file("glade/window_main.glade");
     builder = gtk_builder_new_from_string( glade_definition, -1 );
 
@@ -93,6 +96,11 @@ int main( int argc, char *argv[] )
     // Attach the renderers to the tree store columns
     gtk_tree_view_column_add_attribute( widgets->w_notes_tree_section, widgets->w_notes_tree_section_r, "text", 0);
     gtk_tree_view_column_add_attribute( widgets->w_notes_tree_text, widgets->w_notes_tree_text_r, "text", 1);
+
+    // Attach a spell checker to the tree store text view
+    GtkSpellChecker* notes_spell = gtk_spell_checker_new();
+    gtk_spell_checker_set_language( notes_spell, NULL, NULL );
+    gtk_spell_checker_attach( notes_spell, GTK_TEXT_VIEW( widgets->w_notes_textview ) );
 
     // Add an accelerator group to the main window
     widgets->right_click_accel_group = gtk_accel_group_new();
