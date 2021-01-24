@@ -66,6 +66,8 @@ int main( int argc, char *argv[] )
     widgets->w_edit_summary = GTK_WIDGET(gtk_builder_get_object(builder, "edit_summary"));
     widgets->w_edit_heading = GTK_WIDGET(gtk_builder_get_object(builder, "edit_heading"));
     widgets->w_edit_body = GTK_WIDGET(gtk_builder_get_object(builder, "edit_body"));
+    widgets->w_edit_search_entry = GTK_WIDGET(gtk_builder_get_object(builder, "edit_search_entry"));
+    widgets->check_btn_edit_case = GTK_WIDGET(gtk_builder_get_object(builder, "check_btn_edit_case"));
     widgets->m_save = GTK_WIDGET( gtk_builder_get_object(builder, "save") );
     widgets->w_notes_textview = GTK_WIDGET(gtk_builder_get_object(builder, "notes_textview"));
     widgets->w_notes_treeview = GTK_TREE_VIEW( gtk_builder_get_object( builder, "notes_treeview" ));

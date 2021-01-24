@@ -22,6 +22,9 @@
 #define XOVERSCROLL 32
 #define YOVERSCROLL 20
 
+// Mark name used in search
+#define SEARCH_MARK_NAME "last_find"
+
 void add_row( app_widgets *, gint );
 void add_row_above( GtkWidget *, app_widgets * );
 void add_row_below( GtkWidget *, app_widgets * );
@@ -41,6 +44,8 @@ void set_cell_background_green( GtkWidget *, app_widgets * );
 void set_cell_background_blue( GtkWidget *, app_widgets * );
 
 void on_btn_statistics_clicked( GtkButton *, app_widgets * );
+void on_btn_edit_find_clicked( GtkButton *, app_widgets * );
+void on_edit_search_entry_changed( GtkEditable *, app_widgets * );
 void on_btn_edit_close_clicked( GtkButton *, app_widgets * );
 void on_btn_edit_save_clicked( GtkButton *, app_widgets * );
 void edit_cell( gint, gint, app_widgets * );

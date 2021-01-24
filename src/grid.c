@@ -484,6 +484,80 @@ void on_btn_statistics_clicked( GtkButton *button, app_widgets *app_wdgts )
 }
 
 // --------------------------------------------------------------------------
+// on_btn_edit_find_clicked
+//
+// Runs search on the editor window. Highlights found text if available
+// Based on http://www.bravegnu.org/gtktext/x276.html#AEN279
+//
+// --------------------------------------------------------------------------
+
+void on_btn_edit_find_clicked( GtkButton *button, app_widgets *app_wdgts )
+{
+  const gchar *search_text;
+  GtkTextIter iter;
+  GtkTextIter mstart, mend;
+  GtkTextBuffer *buffer;
+  gboolean text_found;
+  GtkTextMark *last_pos;
+
+  g_info( "grid.c / on_btn_edit_find_clicked");
+  // Get the search text
+  buffer = gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_body ) );
+  search_text = gtk_entry_get_text( GTK_ENTRY( app_wdgts->w_edit_search_entry ) );
+  // Get the case flag
+  GtkTextSearchFlags flags = 0;
+  if( gtk_toggle_button_get_active( GTK_TOGGLE_BUTTON( app_wdgts->check_btn_edit_case ) ) == FALSE )
+  {
+    flags = GTK_TEXT_SEARCH_CASE_INSENSITIVE;
+  }
+  // Check if there's a current mark
+  last_pos = gtk_text_buffer_get_mark( buffer, SEARCH_MARK_NAME );
+  if( last_pos == NULL )
+  {
+    // Not found so start from beginning
+    gtk_text_buffer_get_start_iter( buffer, &iter );
+  }
+  else
+  {
+    // Start from mark
+    gtk_text_buffer_get_iter_at_mark (buffer, &iter, last_pos);
+  }
+  // Search
+  text_found = gtk_text_iter_forward_search( &iter, search_text, flags, &mstart, &mend, NULL );
+  if( text_found == TRUE )
+  {
+    // Highlight text
+    gtk_text_buffer_select_range (buffer, &mstart, &mend);
+    // Set mark and scroll if necessary
+    gtk_text_view_scroll_mark_onscreen( GTK_TEXT_VIEW( app_wdgts->w_edit_body ),
+                                        gtk_text_buffer_create_mark( buffer, SEARCH_MARK_NAME, &mend, FALSE ) );
+  }
+
+  g_info( "grid.c / ~on_btn_edit_find_clicked");
+}
+
+// --------------------------------------------------------------------------
+// on_edit_search_entry_changed
+//
+// Runs when the search entry text is changed. In this case clear the
+// mark that was used for the "next" search
+//
+// --------------------------------------------------------------------------
+
+void on_edit_search_entry_changed( GtkEditable *editable, app_widgets *app_wdgts )
+{
+  g_info( "grid.c / on_edit_search_entry_changed");
+  // Clear mark
+  GtkTextBuffer *buffer = gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_body ) );
+  // Check that it exists otherwise we'll get a warning if it doesn't
+  if( gtk_text_buffer_get_mark( buffer, SEARCH_MARK_NAME ) != NULL )
+  {
+    gtk_text_buffer_delete_mark_by_name( buffer, SEARCH_MARK_NAME );
+  }
+  g_info( "grid.c / ~on_edit_search_entry_changed");
+}
+
+// --------------------------------------------------------------------------
 // on_btn_edit_save_clicked
 //
 // Edited text is saved back to the grid and the window closed
@@ -592,6 +666,11 @@ void edit_cell( gint row, gint column, app_widgets *app_wdgts )
   gtk_spell_checker_set_language( heading_spell, NULL, NULL );
   gtk_spell_checker_attach( heading_spell, GTK_TEXT_VIEW( app_wdgts->w_edit_heading ) );
 
+  // Attach the spell checker
+  body_spell = gtk_spell_checker_new();
+  gtk_spell_checker_set_language( body_spell, NULL, NULL );
+  gtk_spell_checker_attach( body_spell, GTK_TEXT_VIEW( app_wdgts->w_edit_body ) );
+
   // Read Body Text from the linked list
   // Turn off undo for initial test load
   gtk_source_buffer_begin_not_undoable_action( GTK_SOURCE_BUFFER( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_body ) ) ) );
@@ -600,10 +679,6 @@ void edit_cell( gint row, gint column, app_widgets *app_wdgts )
                         -1 );
   // Restart the undo buffering
   gtk_source_buffer_end_not_undoable_action( GTK_SOURCE_BUFFER( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_body ) ) ) );
-  // Attach the spell checker
-  body_spell = gtk_spell_checker_new();
-  gtk_spell_checker_set_language( body_spell, NULL, NULL );
-  gtk_spell_checker_attach( body_spell, GTK_TEXT_VIEW( app_wdgts->w_edit_body ) );
 
   // Show the Edit window
   gtk_widget_show( app_wdgts->w_editor_window );
