@@ -25,12 +25,6 @@
 #include "css.h"
 #include "file.h"
 
-// Spell checkers stored here because they're attached and detached
-// in different functions
-GtkSpellChecker* summary_spell;
-GtkSpellChecker* heading_spell;
-GtkSpellChecker* body_spell;
-
 // --------------------------------------------------------------------------
 // add_row
 //
@@ -617,10 +611,6 @@ void on_btn_edit_save_clicked( GtkButton *button, app_widgets *app_wdgts )
 void on_btn_edit_close_clicked( GtkButton *button, app_widgets *app_wdgts )
 {
   g_info( "grid.c / on_btn_edit_close_clicked" );
-  // Detach spell checker
-  gtk_spell_checker_detach( summary_spell );
-  gtk_spell_checker_detach( heading_spell );
-  gtk_spell_checker_detach( body_spell );
   gtk_widget_hide( app_wdgts->w_editor_window );
   g_info( "grid.c / ~on_btn_edit_close_clicked" );
 }
@@ -647,32 +637,19 @@ void edit_cell( gint row, gint column, app_widgets *app_wdgts )
                         gtk_label_get_text( GTK_LABEL( app_wdgts->w_current_edit_text_element ) ),
                         -1 );
   // Restart the undo buffering
-  gtk_source_buffer_end_not_undoable_action( GTK_SOURCE_BUFFER( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_summary ) ) ) );
-  // Attach the spell checker
-  summary_spell = gtk_spell_checker_new();
-  gtk_spell_checker_set_language( summary_spell, NULL, NULL );
-  gtk_spell_checker_attach( summary_spell, GTK_TEXT_VIEW( app_wdgts->w_edit_summary ) );
 
+  gtk_source_buffer_end_not_undoable_action( GTK_SOURCE_BUFFER( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_summary ) ) ) );
   // Read Heading from the linked list
-  // Turn off undo for initial test load
+  // Turn off undo for initial text load
   gtk_source_buffer_begin_not_undoable_action( GTK_SOURCE_BUFFER( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_heading ) ) ) );
   gtk_text_buffer_set_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_heading ) ),
                         list_get_text( HEADER_LIST, row, column, app_wdgts ),
                         -1 );
   // Restart the undo buffering
   gtk_source_buffer_end_not_undoable_action( GTK_SOURCE_BUFFER( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_heading ) ) ) );
-  // Attach the spell checker
-  heading_spell = gtk_spell_checker_new();
-  gtk_spell_checker_set_language( heading_spell, NULL, NULL );
-  gtk_spell_checker_attach( heading_spell, GTK_TEXT_VIEW( app_wdgts->w_edit_heading ) );
-
-  // Attach the spell checker
-  body_spell = gtk_spell_checker_new();
-  gtk_spell_checker_set_language( body_spell, NULL, NULL );
-  gtk_spell_checker_attach( body_spell, GTK_TEXT_VIEW( app_wdgts->w_edit_body ) );
 
   // Read Body Text from the linked list
-  // Turn off undo for initial test load
+  // Turn off undo for initial text load
   gtk_source_buffer_begin_not_undoable_action( GTK_SOURCE_BUFFER( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_body ) ) ) );
   gtk_text_buffer_set_text( gtk_text_view_get_buffer( GTK_TEXT_VIEW( app_wdgts->w_edit_body ) ),
                         list_get_text( BODY_LIST, row, column, app_wdgts ),
@@ -682,6 +659,7 @@ void edit_cell( gint row, gint column, app_widgets *app_wdgts )
 
   // Show the Edit window
   gtk_widget_show( app_wdgts->w_editor_window );
+
   // Put the keyboard focus in the text window
   gtk_window_present( GTK_WINDOW( app_wdgts->w_editor_window ) );
   gtk_widget_grab_focus( app_wdgts->w_edit_body );

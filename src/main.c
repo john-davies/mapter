@@ -99,10 +99,58 @@ int main( int argc, char *argv[] )
     gtk_tree_view_column_add_attribute( widgets->w_notes_tree_section, widgets->w_notes_tree_section_r, "text", 0);
     gtk_tree_view_column_add_attribute( widgets->w_notes_tree_text, widgets->w_notes_tree_text_r, "text", 1);
 
-    // Attach a spell checker to the tree store text view
+    // Attach a spell checker to the various text views
     GtkSpellChecker* notes_spell = gtk_spell_checker_new();
-    gtk_spell_checker_set_language( notes_spell, NULL, NULL );
-    gtk_spell_checker_attach( notes_spell, GTK_TEXT_VIEW( widgets->w_notes_textview ) );
+    if( gtk_spell_checker_set_language( notes_spell, NULL, NULL ) == FALSE )
+    {
+        g_info( "ERROR - Failed to set language for \"notes\" spell checker\n");
+    }
+    else
+    {
+      if( gtk_spell_checker_attach( notes_spell, GTK_TEXT_VIEW( widgets->w_notes_textview ) ) == FALSE )
+      {
+        g_info( "ERROR - Failed to attach \"notes\" spell checker\n");
+      }
+    }
+
+    GtkSpellChecker* summary_spell = gtk_spell_checker_new();
+    if( gtk_spell_checker_set_language( summary_spell, NULL, NULL ) == FALSE )
+    {
+        g_info( "ERROR - Failed to set language for \"summary\" spell checker\n");
+    }
+    else
+    {
+      if( gtk_spell_checker_attach( summary_spell, GTK_TEXT_VIEW( widgets->w_edit_summary ) ) == FALSE )
+      {
+        g_info( "ERROR - Failed to attach \"summary\" spell checker\n");
+      }
+    }
+
+    GtkSpellChecker* heading_spell = gtk_spell_checker_new();
+    if( gtk_spell_checker_set_language( heading_spell, NULL, NULL ) == FALSE )
+    {
+        g_info( "ERROR - Failed to set language for \"heading\" spell checker\n");
+    }
+    else
+    {
+      if( gtk_spell_checker_attach( heading_spell, GTK_TEXT_VIEW( widgets->w_edit_heading ) ) == FALSE )
+      {
+        g_info( "ERROR - Failed to attach \"heading\" spell checker\n");
+      }
+    }
+
+    GtkSpellChecker* body_spell = gtk_spell_checker_new();
+    if( gtk_spell_checker_set_language( body_spell, NULL, NULL ) == FALSE )
+    {
+        g_info( "ERROR - Failed to set language for \"body\" spell checker\n");
+    }
+    else
+    {
+      if( gtk_spell_checker_attach( body_spell, GTK_TEXT_VIEW( widgets->w_edit_body ) ) == FALSE )
+      {
+        g_info( "ERROR - Failed to attach \"body\" spell checker\n");
+      }
+    }
 
     // Add an accelerator group to the main window
     widgets->right_click_accel_group = gtk_accel_group_new();
