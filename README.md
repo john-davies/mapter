@@ -2,11 +2,7 @@
 
 ## Update information
 
-* v0.5.3 - Small change to "save" logic
-* v0.5.2 - Small layout changes & word count statistics
-* v0.5.1 - Urgent bug fix
-* v0.5 - Tree control for notes tab
-* v0.4 - Addition of cell background selector
+* v0.6 - Addition of spell checker, search and undo/redo
 
 ## Introduction
 
@@ -18,13 +14,13 @@ There are many, many writing tools already available but very few that support t
 * Had lots of features that I didn't want, e.g. [bibisco](https://www.bibisco.com/)
 * Online only or use web technologies which I didn't want, e.g. [Wavemaker](https://wavemaker.co.uk)
 
-It is not my intention to add word processing features like text markup, spell checking, grammar checking etc. This is designed as a no-distractions planning and writing tool. However tools like [Markdown](https://en.wikipedia.org/wiki/Markdown) or [LaTeX](https://www.latex-project.org/) could be used to format and typeset the export if necessary.
+It is not my intention to add word processing features like text markup, grammar checking etc. This is designed as a no-distractions planning and writing tool. However tools like [Markdown](https://en.wikipedia.org/wiki/Markdown) or [LaTeX](https://www.latex-project.org/) could be used to format and typeset the export if necessary.
 
 _( The name comes from a portmanteau of "mapping" and "chapter" and was created using an [online name generator](https://namelix.com/) )_
 
 ## Current Status
 
-The current version ( 0.5.4 ) could generously be called a minimum viable product ( MVP ) and allows the creation and editing of a full work. The main limitation is that the editor is extremely basic and lacks common features like "search/replace".
+The current version is a basic minimum viable product ( MVP ) which allows the creation and editing of a full work.
 
 ## Building
 
@@ -81,6 +77,8 @@ This has three sections:
 1. Text that appears on the front grid
 1. Header text for that section in the document export
 1. Body text for that section in the document export
+
+Words that fail the automated spell check will be underlined in red. Right clicking on one of these words will present a list of alternatives. Undo/redo ( Ctrl Z / Ctrl-Shift Z ) is also now available in all three text editing sections. The search facility only operates on the "Body" section.
 
 ### Changing the size of the grid
 
@@ -149,5 +147,4 @@ Trace and debugging information can be show on the standard output by using the 
 
 Future planned developments include:
 
-* Improved Editor with features like search/replace and undo. At the moment the [GTKSourceView](https://gitlab.gnome.org/GNOME/gtksourceview) component looks a likely candidate.
 * A method of moving or swapping the contents of cells without a lot of cutting & pasting
